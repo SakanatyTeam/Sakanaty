@@ -11,6 +11,11 @@ public class LoginInfo {
     public boolean adminIsLogged;
     public boolean ownerIsLogged;
     public boolean tenantIsLogged;
+    public boolean isLogged;
+
+    public LoginInfo() {
+        this.isLogged = false;
+    }
 
     public void checkAuth(String username, String password, String type) {
         for(User user: UsersList.getAdmins())
@@ -30,5 +35,15 @@ public class LoginInfo {
 
     public void showError() {
         LOGGER.info("Incorrect Username/Password");
+    }
+
+    public boolean isLoggedIn() {
+        return isLogged;
+    }
+    public void login(){
+        isLogged = true;
+    }
+    public void logout(){
+        isLogged = false;
     }
 }

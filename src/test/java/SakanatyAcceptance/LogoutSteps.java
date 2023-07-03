@@ -20,39 +20,40 @@ public class LogoutSteps {
     @Given("that the admin is logged in")
     public void that_the_admin_is_logged_in() {
         // Write code here that turns the phrase above into concrete actions
-//        loginInfo.adminIsLogged = true;
-        assertTrue(loginInfo.adminIsLogged);
+        loginInfo.login();
+        assertTrue(loginInfo.isLoggedIn());
     }
     @Then("the admin logout successfully")
     public void the_admin_logout_successfully() {
         // Write code here that turns the phrase above into concrete actions
 //        throw new io.cucumber.java.PendingException();
-        assertFalse(loginInfo.adminIsLogged);
+        loginInfo.logout();
+        assertFalse(loginInfo.isLoggedIn());
     }
 
     @Given("that the owner is logged in")
     public void that_the_owner_is_logged_in() {
         // Write code here that turns the phrase above into concrete actions
-//        loginInfo.ownerIsLogged = true;
-        assertTrue(loginInfo.ownerIsLogged);
+        loginInfo.login();
+        assertTrue(loginInfo.isLoggedIn());
     }
     @Then("the owner logout successfully")
     public void the_owner_logout_successfully() {
         // Write code here that turns the phrase above into concrete actions
-//        throw new io.cucumber.java.PendingException();
-        assertFalse(loginInfo.ownerIsLogged);
+        loginInfo.logout();
+        assertFalse(loginInfo.isLoggedIn());
     }
 
     @Given("that the tenant is logged in")
     public void that_the_tenant_is_logged_in() {
         // Write code here that turns the phrase above into concrete actions
-//        loginInfo.tenantIsLogged = true;
-        assertTrue(loginInfo.tenantIsLogged);
+        loginInfo.login();
+        assertTrue(loginInfo.isLoggedIn());
     }
     @Then("the tenant logout successfully")
     public void the_tenant_logout_successfully() {
         // Write code here that turns the phrase above into concrete actions
-//        throw new io.cucumber.java.PendingException();
-        assertFalse(loginInfo.tenantIsLogged);
+        loginInfo.logout();
+        assertFalse(loginInfo.isLoggedIn());
     }
 }
