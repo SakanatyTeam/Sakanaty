@@ -10,10 +10,9 @@ import static org.junit.Assert.assertTrue;
 
 public class LogoutSteps {
 
-    LoginInfo loginInfo;
+    LoginInfo loginInfo = new LoginInfo();
 
     public LogoutSteps(LoginInfo loginInfo) {
-        super();
         this.loginInfo = loginInfo;
     }
 

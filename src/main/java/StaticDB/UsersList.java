@@ -14,7 +14,6 @@ public class UsersList {
         users.add(new User("Yazan","Pass","Admin"));
         users.add(new User("Bdair","Pass","Owner"));
         users.add(new User("Baraa","Pass","Tenant"));
-
     }
     public static List<User> getAdmins() {
         return users;
