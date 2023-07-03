@@ -5,18 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a0b2a94a-fb6d-422d-b695-3964698dce3a" name="Changes" comment="initiate">
-      <change afterPath="$PROJECT_DIR$/src/main/java/StaticDB/Housing.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/StaticDB/UsersList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/StaticDB/UsersList.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/LoginInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/LoginInfo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/role/Admin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/role/Admin.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cases/provided/login_feautre.feature" beforeDir="false" afterPath="$PROJECT_DIR$/cases/provided/login_feautre.feature" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/role/Owner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/role/Owner.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/role/Tenant.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/role/Tenant.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/role/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/role/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/SakanatyAcceptance/AcceptanceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/SakanatyAcceptance/AcceptanceTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/SakanatyAcceptance/LoginSteps.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/SakanatyAcceptance/LoginSteps.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -32,6 +23,11 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="master" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="MarkdownSettingsMigration">
@@ -124,8 +120,17 @@
       <updated>1688324794332</updated>
       <workItem from="1688324796068" duration="5106000" />
       <workItem from="1688376569693" duration="4055000" />
-      <workItem from="1688385470331" duration="34000" />
+      <workItem from="1688385470331" duration="79000" />
+      <workItem from="1688410890374" duration="2458000" />
     </task>
+    <task id="LOCAL-00001" summary="initiate">
+      <created>1688385522093</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1688385522093</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

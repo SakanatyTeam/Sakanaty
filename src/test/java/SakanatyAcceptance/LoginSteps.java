@@ -71,7 +71,6 @@ public class LoginSteps {
         loginInfo.checkAuth(this.username, this.password,this.type);
         assertTrue(loginInfo.tenantIsLogged);
     }
-
     @Given("that the user is not logged in")
     public void that_the_user_is_not_logged_in() {
         // Write code here that turns the phrase above into concrete actions
@@ -103,6 +102,7 @@ public class LoginSteps {
         assertFalse(loginInfo.ownerIsLogged);
         assertFalse(loginInfo.adminIsLogged);
     }
+
 
 
 }
