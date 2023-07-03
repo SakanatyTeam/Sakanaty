@@ -74,7 +74,7 @@ public class LoginSteps {
     @Given("that the user is not logged in")
     public void that_the_user_is_not_logged_in() {
         // Write code here that turns the phrase above into concrete actions
-        assertFalse(loginInfo.tenantIsLogged && loginInfo.ownerIsLogged && loginInfo.tenantIsLogged);
+        assertFalse(loginInfo.adminIsLogged && loginInfo.ownerIsLogged && loginInfo.tenantIsLogged);
     }
 
     @Then("the User will not login")
