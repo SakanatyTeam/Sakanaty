@@ -10,8 +10,9 @@ public class Main {
         while(true){
             LOGGER.info("Enter username:");
             String username=scan.nextLine().trim().strip();
-            if(username.equalsIgnoreCase("exit"))
+            if(username.equalsIgnoreCase("exit")) {
                 break;
+            }
             LOGGER.info("Enter Password:");
 //            myAppInfo.loggInCheck(username,scan.nextLine());
 //            if(!myAppInfo.isLoggedIn())

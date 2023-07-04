@@ -11,7 +11,7 @@ public class LoginSteps {
     private String username;
     private String password;
     private String type;
-    LoginInfo loginInfo;
+    LoginInfo loginInfo = new LoginInfo();
 
     public LoginSteps(LoginInfo loginInfo) {
         this.loginInfo = loginInfo;
