@@ -1,7 +1,5 @@
 package role;
 
-import StaticDB.Housing;
-
 import java.util.ArrayList;
 import java.util.List;
 

@@ -1,7 +1,9 @@
 package org.example;
 
+import StaticDB.HousingList;
 import StaticDB.UsersList;
 import role.Admin;
+import role.Housing;
 import role.User;
 
 import java.util.logging.Logger;
@@ -60,6 +62,12 @@ public class LoginInfo {
 
     public void initialize(){
         // display all information about available housing found
-
+        LOGGER.info("-----------------------------------------------------");
+        int i = 1;
+        for(Housing housing: HousingList.getHousing()){
+            LOGGER.info( i + "- Location: " + housing.getLocation() + " , " + "Price: " + housing.getPrice());
+            i++;
+        }
+        LOGGER.info("-----------------------------------------------------");
     }
 }

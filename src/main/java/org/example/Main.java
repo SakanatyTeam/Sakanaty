@@ -47,13 +47,8 @@ public class Main {
             }
             else if (loginInfo.tenantIsLogged){
 //                LOGGER.info("Hello tenant");
-                // inizalize
-
-
-
-
-
-
+                loginInfo.initialize();
+                String open = scan.nextLine();
 
             }
             else continue;
