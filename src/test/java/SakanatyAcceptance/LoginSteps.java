@@ -38,8 +38,7 @@ public class LoginSteps {
     @Then("the admin logs in successfully")
     public void the_admin_logs_in_successfully() {
         // Write code here that turns the phrase above into concrete actions
-        this.type="Admin";
-        loginInfo.checkAuth(this.username, this.password,this.type);
+        loginInfo.checkAuth(this.username, this.password);
         assertTrue(loginInfo.adminIsLogged);
 
     }
@@ -54,7 +53,7 @@ public class LoginSteps {
     public void the_owner_logs_in_successfully() {
         // Write code here that turns the phrase above into concrete actions
         this.type="Owner";
-        loginInfo.checkAuth(this.username, this.password,this.type);
+        loginInfo.checkAuth(this.username, this.password);
         assertTrue(loginInfo.ownerIsLogged);
     }
 
@@ -67,11 +66,9 @@ public class LoginSteps {
     @Then("the Tenant logs in successfully")
     public void the_tenant_logs_in_successfully() {
         // Write code here that turns the phrase above into concrete actions
-        this.type="Tenant";
-        loginInfo.checkAuth(this.username, this.password,this.type);
+        loginInfo.checkAuth(this.username, this.password);
         assertTrue(loginInfo.tenantIsLogged);
     }
-
     @Given("that the user is not logged in")
     public void that_the_user_is_not_logged_in() {
         // Write code here that turns the phrase above into concrete actions
@@ -81,8 +78,7 @@ public class LoginSteps {
     @Then("the User will not login")
     public void the_user_will_not_login() {
         // Write code here that turns the phrase above into concrete actions
-        type="";
-        loginInfo.checkAuth(this.username, this.password,this.type);
+        loginInfo.checkAuth(this.username, this.password);
         assertFalse(loginInfo.tenantIsLogged);
         assertFalse(loginInfo.ownerIsLogged);
         assertFalse(loginInfo.adminIsLogged);
@@ -97,12 +93,12 @@ public class LoginSteps {
     @Then("the user will not login")
     public void theUserWillNotLogin() {
         // Write code here that turns the phrase above into concrete actions
-        type="";
-        loginInfo.checkAuth(this.username, this.password,this.type);
+        loginInfo.checkAuth(this.username, this.password);
         assertFalse(loginInfo.tenantIsLogged);
         assertFalse(loginInfo.ownerIsLogged);
         assertFalse(loginInfo.adminIsLogged);
     }
+
 
 
 }

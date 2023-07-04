@@ -16,17 +16,21 @@ public class LoginInfo {
     public LoginInfo() {
         this.isLogged = false;
     }
+    public void reset(){
+        adminIsLogged=false; ownerIsLogged=false; tenantIsLogged=false;
+    }
 
-    public void checkAuth(String username, String password, String type) {
+    public void checkAuth(String username, String password) {
+        reset();
         for(User user: UsersList.getAdmins())
         {
             if (username.equals(user.getUsername()) && password.equals(user.getPassword()))
             {
                 if (user.getType().equals("Owner"))
                     ownerIsLogged=true;
-                else if (user.getType().equals("Admin"))
+                if (user.getType().equals("Admin"))
                     adminIsLogged=true;
-                else if (user.getType().equals("Tenant"))
+                if (user.getType().equals("Tenant"))
                     tenantIsLogged=true;
             }
         }
@@ -46,4 +50,5 @@ public class LoginInfo {
     public void logout(){
         isLogged = false;
     }
+
 }
