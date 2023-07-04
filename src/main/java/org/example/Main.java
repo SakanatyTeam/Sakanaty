@@ -11,12 +11,12 @@ public class Main {
         while(true){
             LOGGER.info("Enter username:");
             String username=scan.nextLine().trim().strip();
-            if(username.equalsIgnoreCase("exit")) {
+            if(username.equalsIgnoreCase("exit"))
                 break;
-            }
             LOGGER.info("Enter Password:");
             String password = scan.nextLine();
             loginInfo.checkAuth(username,password);
+
             if(!loginInfo.adminIsLogged && !loginInfo.ownerIsLogged && !loginInfo.tenantIsLogged)
                 loginInfo.showError();
             else if (loginInfo.adminIsLogged){
@@ -46,7 +46,15 @@ public class Main {
                 LOGGER.info("Hello Owner");
             }
             else if (loginInfo.tenantIsLogged){
-                LOGGER.info("Hello tenant");
+//                LOGGER.info("Hello tenant");
+                // inizalize
+
+
+
+
+
+
+
             }
             else continue;
         }

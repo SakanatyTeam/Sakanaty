@@ -11,11 +11,12 @@ public class LoginInfo {
     public boolean adminIsLogged;
     public boolean ownerIsLogged;
     public boolean tenantIsLogged;
-    public boolean isLogged;
 
-    public LoginInfo() {
-        this.isLogged = false;
-    }
+//    public boolean isLogged;
+//    public LoginInfo() {
+//        this.isLogged = false;
+//    }
+
     public void reset(){
         adminIsLogged=false; ownerIsLogged=false; tenantIsLogged=false;
     }
@@ -42,13 +43,23 @@ public class LoginInfo {
     }
 
     public boolean isLoggedIn() {
-        return isLogged;
+        return adminIsLogged && ownerIsLogged && tenantIsLogged;
     }
     public void login(){
-        isLogged = true;
+//        isLogged = true;
+        adminIsLogged=true;
+        ownerIsLogged=true;
+        tenantIsLogged=true;
     }
     public void logout(){
-        isLogged = false;
+//        isLogged = false;
+        adminIsLogged=false;
+        ownerIsLogged=false;
+        tenantIsLogged=false;
     }
 
+    public void initialize(){
+        // display all information about available housing found
+
+    }
 }

@@ -10,49 +10,21 @@ import static org.junit.Assert.assertTrue;
 
 public class LogoutSteps {
 
-    LoginInfo loginInfo = new LoginInfo();
+    LoginInfo loginInfo;
 
-    public LogoutSteps(LoginInfo loginInfo) {
-        this.loginInfo = loginInfo;
-    }
+    public LogoutSteps(LoginInfo loginInfo) { this.loginInfo = loginInfo;}
 
-    @Given("that the admin is logged in")
-    public void that_the_admin_is_logged_in() {
+    @Given("that the user is logged in")
+    public void that_the_user_is_logged_in() {
         // Write code here that turns the phrase above into concrete actions
         loginInfo.login();
         assertTrue(loginInfo.isLoggedIn());
     }
-    @Then("the admin logout successfully")
-    public void the_admin_logout_successfully() {
-        // Write code here that turns the phrase above into concrete actions
-//        throw new io.cucumber.java.PendingException();
-        loginInfo.logout();
-        assertFalse(loginInfo.isLoggedIn());
-    }
-
-    @Given("that the owner is logged in")
-    public void that_the_owner_is_logged_in() {
-        // Write code here that turns the phrase above into concrete actions
-        loginInfo.login();
-        assertTrue(loginInfo.isLoggedIn());
-    }
-    @Then("the owner logout successfully")
-    public void the_owner_logout_successfully() {
+    @Then("the user logout successfully")
+    public void the_user_logout_successfully() {
         // Write code here that turns the phrase above into concrete actions
         loginInfo.logout();
         assertFalse(loginInfo.isLoggedIn());
     }
 
-    @Given("that the tenant is logged in")
-    public void that_the_tenant_is_logged_in() {
-        // Write code here that turns the phrase above into concrete actions
-        loginInfo.login();
-        assertTrue(loginInfo.isLoggedIn());
-    }
-    @Then("the tenant logout successfully")
-    public void the_tenant_logout_successfully() {
-        // Write code here that turns the phrase above into concrete actions
-        loginInfo.logout();
-        assertFalse(loginInfo.isLoggedIn());
-    }
 }
