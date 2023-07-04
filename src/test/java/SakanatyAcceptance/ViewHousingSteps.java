@@ -26,7 +26,7 @@ public class ViewHousingSteps {
     @Then("display all information about available housing found")
     public void display_all_information_about_available_housing_found() {
         // Write code here that turns the phrase above into concrete actions
-        loginInfo.initialize();
+        loginInfo.showHousing();
     }
 
 }

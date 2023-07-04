@@ -50,19 +50,24 @@ public class Main {
                 {
                     LOGGER.info("---------------Dashboard---------------");
                     LOGGER.info("1- View the available housing.");
-                    LOGGER.info("2- Setting");
-                    LOGGER.info("3- Sign out");
+                    LOGGER.info("2- My booking.");
+                    LOGGER.info("3- Setting");
+                    LOGGER.info("4- Sign out");
                     String open=scan.nextLine();
 
                     if (open.equals("1")){
-                        loginInfo.initialize();
+                        loginInfo.showHousing();
                         String selectHousing = scan.nextLine();
                     }
                     else if (open.equals("2"))
                     {
 
                     }
-                    else if (open.equals("3")) break;
+                    else if (open.equals("3"))
+                    {
+
+                    }
+                    else if (open.equals("4")) break;
                     else continue;
 
                 }

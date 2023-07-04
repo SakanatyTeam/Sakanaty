@@ -60,9 +60,9 @@ public class LoginInfo {
         tenantIsLogged=false;
     }
 
-    public void initialize(){
+    public void showHousing(){
         // display all information about available housing found
-        LOGGER.info("-----------------------------------------------------");
+        LOGGER.info("----------- Choose the housing you want ------------");
         int i = 1;
         for(Housing housing: HousingList.getHousing()){
             LOGGER.info( i + "- Location: " + housing.getLocation() + " , " + "Price: " + housing.getPrice());
