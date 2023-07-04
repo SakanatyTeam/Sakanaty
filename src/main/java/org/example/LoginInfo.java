@@ -68,6 +68,7 @@ public class LoginInfo {
             LOGGER.info( i + "- Location: " + housing.getLocation() + " , " + "Price: " + housing.getPrice());
             i++;
         }
+        LOGGER.info("0- Go bake.");
         LOGGER.info("-----------------------------------------------------");
     }
 }

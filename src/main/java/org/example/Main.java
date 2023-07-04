@@ -22,7 +22,7 @@ public class Main {
             else if (loginInfo.adminIsLogged){
                 while (true)
                 {
-                    LOGGER.info("---------------Dashboard---------------");
+                    LOGGER.info("--------------- Dashboard ---------------");
                     LOGGER.info("1- Show my Housing");
                     LOGGER.info("2- Add Housing");
                     LOGGER.info("3- sign out");
@@ -48,7 +48,7 @@ public class Main {
             else if (loginInfo.tenantIsLogged){
                 while (true)
                 {
-                    LOGGER.info("---------------Dashboard---------------");
+                    LOGGER.info("--------------- Dashboard ---------------");
                     LOGGER.info("1- View the available housing.");
                     LOGGER.info("2- My booking.");
                     LOGGER.info("3- Setting");
@@ -56,8 +56,32 @@ public class Main {
                     String open=scan.nextLine();
 
                     if (open.equals("1")){
-                        loginInfo.showHousing();
-                        String selectHousing = scan.nextLine();
+                        while (true){
+                            loginInfo.showHousing();
+                            String selectHousing = scan.nextLine(); // 1, 2, 3, ...
+
+                            if (selectHousing.equals("0")) break;
+                            while (true){
+                                LOGGER.info("--------------- House "+ selectHousing +" ---------------");
+                                LOGGER.info("1- View pictures.");
+                                LOGGER.info("2- View details.");
+                                LOGGER.info("3- Booking.");
+                                LOGGER.info("4- Go bake.");
+                                String house = scan.nextLine();
+
+                                if (house.equals("1")){
+
+                                }
+                                else if (house.equals("2")) {
+
+                                }
+                                else if (house.equals("3")) {
+
+                                }
+                                else if (house.equals("4")) break;
+                                else continue;
+                            }
+                        }
                     }
                     else if (open.equals("2"))
                     {
