@@ -1,5 +1,7 @@
 package org.example;
 
+import role.Tenant;
+
 import java.util.Scanner;
 import java.util.logging.Logger;
 
@@ -26,26 +28,17 @@ public class Main {
                     LOGGER.info("2- Add Housing");
                     LOGGER.info("3- sign out");
                     String open=scan.nextLine();
-
-
-
-
-
-
-
-
-
-
-
-
-
                 }
             }
             else if (loginInfo.ownerIsLogged){
                 LOGGER.info("Hello Owner");
             }
             else if (loginInfo.tenantIsLogged){
-                LOGGER.info("Hello tenant");
+                LOGGER.info("---------------MENU---------------");
+                LOGGER.info("1- View Housings");
+                int x =  scan.nextInt();
+                if (x==1)
+                    Tenant.viewHousings();
             }
             else continue;
         }

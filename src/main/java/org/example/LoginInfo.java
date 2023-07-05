@@ -36,7 +36,6 @@ public class LoginInfo {
         }
 
     }
-
     public void showError() {
         LOGGER.info("Incorrect Username/Password");
     }

@@ -4,7 +4,20 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a0b2a94a-fb6d-422d-b695-3964698dce3a" name="Changes" comment="push" />
+    <list default="true" id="a0b2a94a-fb6d-422d-b695-3964698dce3a" name="Changes" comment="push">
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cases/provided/view_housings.feature" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/StaticDB/HousingList.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/SakanatyAcceptance/ViewHousings.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cases/provided/logout_feautre.feature" beforeDir="false" afterPath="$PROJECT_DIR$/cases/provided/logout_feautre.feature" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/StaticDB/Housing.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Housing.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/LoginInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/LoginInfo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/role/Owner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/role/Owner.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/role/Tenant.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/role/Tenant.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/SakanatyAcceptance/LogoutSteps.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/SakanatyAcceptance/LogoutSteps.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -49,7 +62,7 @@
       <recent name="D:\Software_Project\Sakanaty" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.All in Sakanaty">
+  <component name="RunManager" selected="Application.Main">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="org.example.Main" />
       <module name="Sakanaty" />
@@ -82,15 +95,14 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Scenario: Admin logout successfully (1)" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java" temporary="true" nameIsGenerated="true">
+    <configuration name="Feature: view_housings" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java" temporary="true" nameIsGenerated="true">
       <option name="CUCUMBER_CORE_VERSION" value="5" />
-      <option name="FILE_PATH" value="$PROJECT_DIR$/cases/provided/logout_feautre.feature" />
+      <option name="FILE_PATH" value="$PROJECT_DIR$/cases/provided/view_housings.feature" />
       <option name="GLUE" value="SakanatyAcceptance" />
       <option name="MAIN_CLASS_NAME" value="io.cucumber.core.cli.Main" />
       <module name="Sakanaty" />
-      <option name="NAME_FILTER" value="^Admin logout successfully$" />
-      <option name="PROGRAM_PARAMETERS" value=" --plugin org.jetbrains.plugins.cucumber.java.run.CucumberJvm5SMFormatter --name &quot;^Admin logout successfully$&quot;" />
-      <option name="SUGGESTED_NAME" value="Scenario: Admin logout successfully" />
+      <option name="PROGRAM_PARAMETERS" value=" --plugin org.jetbrains.plugins.cucumber.java.run.CucumberJvm5SMFormatter" />
+      <option name="SUGGESTED_NAME" value="Feature: view_housings" />
       <option name="WORKING_DIRECTORY" value="$MODULE_WORKING_DIR$" />
       <extension name="coverage">
         <pattern>
@@ -127,11 +139,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.All in Sakanaty" />
         <item itemvalue="Application.Main" />
         <item itemvalue="JUnit.AcceptanceTest" />
+        <item itemvalue="Cucumber Java.Feature: view_housings" />
+        <item itemvalue="JUnit.All in Sakanaty" />
         <item itemvalue="Cucumber Java.Feature: logout_feautre" />
-        <item itemvalue="Cucumber Java.Scenario: Admin logout successfully (1)" />
       </list>
     </recent_temporary>
   </component>
@@ -146,6 +158,9 @@
       <workItem from="1688324796068" duration="5106000" />
       <workItem from="1688376569693" duration="4055000" />
       <workItem from="1688385470331" duration="34000" />
+      <workItem from="1688462017459" duration="1577000" />
+      <workItem from="1688473025029" duration="5140000" />
+      <workItem from="1688499509793" duration="4609000" />
     </task>
     <task id="LOCAL-00001" summary="initiate">
       <created>1688402890832</created>
@@ -161,7 +176,14 @@
       <option name="project" value="LOCAL" />
       <updated>1688418919898</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="push">
+      <created>1688462044374</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1688462044374</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
