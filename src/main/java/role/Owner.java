@@ -1,5 +1,7 @@
 package role;
 
+import org.example.Housing;
+
 import java.util.ArrayList;
 import java.util.List;
 

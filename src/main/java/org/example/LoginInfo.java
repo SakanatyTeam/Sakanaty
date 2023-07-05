@@ -37,7 +37,6 @@ public class LoginInfo {
                     tenantIsLogged=true;
             }
         }
-
     }
     public void showError() {
         LOGGER.info("Incorrect Username/Password");
