@@ -4,16 +4,12 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Owner extends User {
+    private int ownerID;
     private List<Housing> housingList = new ArrayList<Housing>();
-    private Housing housing;
-    public Owner(String username, String password, String type) {
+    public Owner(int ownerID,String username, String password, String type) {
         super(username, password, type);
+        this.ownerID=ownerID;
     }
-    public void addHousing(int id, String location, String image, int price){
-        this.housing = new Housing( location, image,price);
-
-    }
-
 
 
 }

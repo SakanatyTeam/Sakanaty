@@ -2,7 +2,6 @@ package org.example;
 
 import StaticDB.HousingList;
 import StaticDB.UsersList;
-import role.Housing;
 import role.User;
 
 import java.util.ArrayList;
@@ -40,7 +39,6 @@ public class LoginInfo {
         }
 
     }
-
     public void showError() {
         LOGGER.info("Incorrect Username/Password");
     }
@@ -66,8 +64,8 @@ public class LoginInfo {
         LOGGER.info("----------- Choose the housing you want ------------");
         int i = 1;
         for(Housing housing: HousingList.getHousing()){
-            LOGGER.info( i + "- Location: " + housing.getLocation() + " , " + "Price: " + housing.getPrice());
-            i++;
+//            LOGGER.info( i + "- Location: " + housing.getLocation() + " , " + "Price: " + housing.getPrice());
+//            i++;
         }
         LOGGER.info("0- Go bake.");
         LOGGER.info("-----------------------------------------------------");
@@ -85,8 +83,8 @@ public class LoginInfo {
             LOGGER.info("This product is not exist");
         }
         else {
-            LOGGER.info(" location: " + housing.getLocation() + "Price: " + housing.getPrice());
-            LOGGER.info("0- Go bake.");
+//            LOGGER.info(" location: " + housing.getLocation() + "Price: " + housing.getPrice());
+//            LOGGER.info("0- Go bake.");
         }
     }
 
