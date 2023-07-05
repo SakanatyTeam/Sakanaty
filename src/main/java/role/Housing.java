@@ -14,7 +14,11 @@ public class Housing {
 
     public int getPrice() {return price;}
 
-    public Housing(String location,int price) {
+    public Housing() {
+
+    }
+
+    public Housing(String location, int price) {
         this.location = location;
         this.price = price;
     }

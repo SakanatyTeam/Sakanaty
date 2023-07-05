@@ -1,5 +1,7 @@
 package org.example;
 
+import javax.swing.*;
+import java.awt.*;
 import java.util.Scanner;
 import java.util.logging.Logger;
 
@@ -70,10 +72,18 @@ public class Main {
                                 String house = scan.nextLine();
 
                                 if (house.equals("1")){
-
+//                                    String imageUrl = "C:\\Users\\AB\\Sakanaty\\src\\main\\resources\\IMGE\\zz111.jpg";
+//                                    ImageIcon imageIcon = new ImageIcon(new ImageIcon(imageUrl).getImage().getScaledInstance(500, 400, Image.SCALE_DEFAULT));
+//                                    JLabel imageLabel = new JLabel(imageIcon);
+//
+//                                    JFrame frame = new JFrame();
+//                                    frame.add(imageLabel);
+//                                    frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+//                                    frame.pack();
+//                                    frame.setVisible(true);
                                 }
                                 else if (house.equals("2")) {
-
+                                    loginInfo.showDetails(loginInfo.findHousingByNumRow(house));
                                 }
                                 else if (house.equals("3")) {
 

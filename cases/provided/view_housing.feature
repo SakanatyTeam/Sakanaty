@@ -1,4 +1,4 @@
-Feature: view the available housing
+Feature: View the available housing
 
   Scenario: view the available housing successfully
     Given that the tenant is logged in

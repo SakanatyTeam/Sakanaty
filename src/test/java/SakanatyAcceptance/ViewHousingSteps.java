@@ -10,7 +10,6 @@ import static org.junit.Assert.assertTrue;
 public class ViewHousingSteps {
 
     LoginInfo loginInfo;
-
     public ViewHousingSteps(LoginInfo loginInfo) {
         this.loginInfo = loginInfo;
     }

@@ -2,10 +2,11 @@ package org.example;
 
 import StaticDB.HousingList;
 import StaticDB.UsersList;
-import role.Admin;
 import role.Housing;
 import role.User;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.logging.Logger;
 
 public class LoginInfo {
@@ -71,4 +72,23 @@ public class LoginInfo {
         LOGGER.info("0- Go bake.");
         LOGGER.info("-----------------------------------------------------");
     }
+
+    public Housing findHousingByNumRow(String numRow) {
+        List<Housing> housingByNumRow = new ArrayList<Housing>();
+        int row = Integer.parseInt(numRow);
+
+        return housingByNumRow.get(row-1);
+    }
+    public void showDetails(Housing housing) {
+        if(housing==null)
+        {
+            LOGGER.info("This product is not exist");
+        }
+        else {
+            LOGGER.info(" location: " + housing.getLocation() + "Price: " + housing.getPrice());
+            LOGGER.info("0- Go bake.");
+        }
+    }
+
+
 }
