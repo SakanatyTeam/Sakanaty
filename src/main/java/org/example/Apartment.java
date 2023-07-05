@@ -9,14 +9,20 @@ public class Apartment {
     private int apartmentId;
     private int maxTenantsNumber;
     private int currTenants;
-    Tenant tenant;
+
+    public void setCurrTenants(int currTenants) {
+        this.currTenants = currTenants;
+    }
+
     List<Tenant> tenants = new ArrayList<Tenant>();
 
-    public Apartment(int apartmentId, int maxTenantsNumber, int currTenants, Tenant tenant, List<Tenant> tenants) {
+    public Apartment(int apartmentId, int maxTenantsNumber) {
         this.apartmentId = apartmentId;
         this.maxTenantsNumber = maxTenantsNumber;
         this.currTenants = currTenants;
-        this.tenant = tenant;
-        this.tenants = tenants;
+
+    }
+    public void addTenant(Tenant tenant){
+        this.tenants.add(tenant);
     }
 }
