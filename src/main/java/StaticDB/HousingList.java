@@ -12,7 +12,7 @@ public class HousingList {
     static{
         List<Apartment> aparts = new ArrayList<Apartment>();
 //        aparts.add(new Apartment())
-        String[] services= {"Cleaning","Eleveator"};
+        String[] services= {"Cleaning","Elevator","WiFi","Water","Electricity"};
         // public Housing( String location, String image, int price, String[] services, int floors)
         housing.add(new Housing("Sakan1","jit","link",1200,services,4));
         housing.add(new Housing("Sakan2","tulkarm","link",1200,services,4));

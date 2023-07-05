@@ -13,6 +13,11 @@ public class Tenant extends User{
         super(username, password, type);
     }
 
+    public static int viewHousings() {
+
+        return 0;
+    }
+
 //    public static int viewHousings() {
 //        for(Housing housing: HousingList.getHousings()){
 //            String[] services=housing.getServices();

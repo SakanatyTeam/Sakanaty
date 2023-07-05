@@ -16,7 +16,10 @@ public class Housing {
     private int floors;
     Owner owner;
     Apartment apartment;
-    public Housing(String name,String location, String image, int price, String[] services, int floors) {
+
+
+
+    public Housing(String name, String location, String image, int price, String[] services, int floors) {
         this.name=name;
         this.id=id++;
         this.location = location;

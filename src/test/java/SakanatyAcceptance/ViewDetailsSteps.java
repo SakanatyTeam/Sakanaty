@@ -2,6 +2,7 @@ package SakanatyAcceptance;
 
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import org.example.Housing;
 import org.example.LoginInfo;
 
 import static org.junit.Assert.assertTrue;
