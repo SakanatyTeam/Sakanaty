@@ -19,9 +19,7 @@ public class User {
         return password;
     }
 
-    public String getType() {
-        return type;
-    }
+    public String getType() {return type;}
 
     public void setUsername(String username) {
         this.username = username;

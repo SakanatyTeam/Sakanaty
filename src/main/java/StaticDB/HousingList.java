@@ -1,23 +1,20 @@
 package StaticDB;
 
-import org.example.Housing;
+import role.Housing;
 import role.User;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class HousingList {
-    static List<Housing> housings=new ArrayList<Housing>();
-    static {
-        String services[]={"Cleaning", "Elevator", "Food"};;
-        String services2[]={"Cleaning", "Elevator", "Food"};;
-        String services3[]={"Cleaning", "Elevator", "Food"};;
-        housings.add(new Housing("Tulkarm", "",1200,services));
-        housings.add(new Housing("test", "",1200,services2));
-        housings.add(new Housing("test", "",1200,services3));
-    }
+    static List<Housing> housing =new ArrayList<Housing>();
+    private HousingList() {throw new IllegalStateException("Utility class");}
+    static{
+        housing.add(new Housing("jit",800));
+        housing.add(new Housing("jit1",500));
+        housing.add(new Housing("jit2",600));
+        housing.add(new Housing("jit3",1000));
 
-    public static List<Housing> getHousings() {
-        return housings;
     }
+    public static List<Housing> getHousing() {return housing;}
 }
