@@ -58,17 +58,6 @@ public class LoginInfo {
         tenantIsLogged=false;
     }
 
-    public void showHousing(){
-        // display all information about available housing found
-        LOGGER.info("----------- Choose the housing you want ------------");
-        int i = 1;
-        for(Housing housing: HousingList.getHousing()){
-//            LOGGER.info( i + "- Location: " + housing.getLocation() + " , " + "Price: " + housing.getPrice());
-//            i++;
-        }
-        LOGGER.info("0- Go bake.");
-        LOGGER.info("-----------------------------------------------------");
-    }
 
     public Housing findHousingByNumRow(String numRow) {
         List<Housing> housingByNumRow = new ArrayList<Housing>();

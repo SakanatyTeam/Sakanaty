@@ -9,6 +9,11 @@ public class Apartment {
     private int apartmentId;
     private int maxTenantsNumber;
     private int currTenants;
+
+    public void setCurrTenants(int currTenants) {
+        this.currTenants = currTenants;
+    }
+
     List<Tenant> tenants = new ArrayList<Tenant>();
 
     public Apartment(int apartmentId, int maxTenantsNumber) {

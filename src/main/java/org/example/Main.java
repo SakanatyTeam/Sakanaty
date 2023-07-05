@@ -1,5 +1,7 @@
 package org.example;
 
+import role.Tenant;
+
 import javax.swing.*;
 import java.awt.*;
 import java.util.Scanner;
@@ -10,6 +12,7 @@ public class Main {
     private static Scanner scan=new Scanner(System.in);
     static LoginInfo loginInfo = new LoginInfo();
     public static void main(String[] args) {
+        int tenantID=1;
         while(true){
             LOGGER.info("Enter username:");
             String username=scan.nextLine().trim().strip();
@@ -30,78 +33,26 @@ public class Main {
                     LOGGER.info("3- sign out");
                     String open=scan.nextLine();
 
-
-
-
-
-
-
-
-
-
-
-
-
                 }
             }
             else if (loginInfo.ownerIsLogged){
                 LOGGER.info("Hello Owner");
             }
             else if (loginInfo.tenantIsLogged){
+                LOGGER.info("Enter your age: ");
+                int age= scan.nextInt();
+                LOGGER.info("Enter your Major: ");
+                Tenant tenant = new Tenant(username,password,tenantID++,"Tenant", scan.nextLine(),age);
                 while (true)
                 {
                     LOGGER.info("--------------- Dashboard ---------------");
-                    LOGGER.info("1- View the available housing.");
-                    LOGGER.info("2- My booking.");
-                    LOGGER.info("3- Setting");
-                    LOGGER.info("4- Sign out");
-                    String open=scan.nextLine();
-
-                    if (open.equals("1")){
-                        while (true){
-                            loginInfo.showHousing();
-                            String selectHousing = scan.nextLine(); // 1, 2, 3, ...
-
-                            if (selectHousing.equals("0")) break;
-                            while (true){
-                                LOGGER.info("--------------- House "+ selectHousing +" ---------------");
-                                LOGGER.info("1- View pictures.");
-                                LOGGER.info("2- View details.");
-                                LOGGER.info("3- Booking.");
-                                LOGGER.info("4- Go bake.");
-                                String house = scan.nextLine();
-
-                                if (house.equals("1")){
-//                                    String imageUrl = "C:\\Users\\AB\\Sakanaty\\src\\main\\resources\\IMGE\\zz111.jpg";
-//                                    ImageIcon imageIcon = new ImageIcon(new ImageIcon(imageUrl).getImage().getScaledInstance(500, 400, Image.SCALE_DEFAULT));
-//                                    JLabel imageLabel = new JLabel(imageIcon);
-//
-//                                    JFrame frame = new JFrame();
-//                                    frame.add(imageLabel);
-//                                    frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-//                                    frame.pack();
-//                                    frame.setVisible(true);
-                                }
-                                else if (house.equals("2")) {
-                                    loginInfo.showDetails(loginInfo.findHousingByNumRow(house));
-                                }
-                                else if (house.equals("3")) {
-
-                                }
-                                else if (house.equals("4")) break;
-                                else continue;
-                            }
-                        }
+                    LOGGER.info("1- View available housings");
+                    LOGGER.info("2- Sign out");
+                    if (scan.nextInt()==1) {
+                        tenant.viewHousings();
+                        LOGGER.info("Select house number to view its information:");
+                        tenant.viewDetails(scan.nextInt());
                     }
-                    else if (open.equals("2"))
-                    {
-
-                    }
-                    else if (open.equals("3"))
-                    {
-
-                    }
-                    else if (open.equals("4")) break;
                     else continue;
 
                 }

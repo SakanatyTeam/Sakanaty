@@ -3,6 +3,7 @@ package StaticDB;
 import org.example.Apartment;
 import org.example.Floor;
 import org.example.Housing;
+import role.Tenant;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -11,25 +12,37 @@ public class HousingList {
     static List<Housing> housing =new ArrayList<Housing>();
     private HousingList() {throw new IllegalStateException("Utility class");}
     static{
-        List<Apartment> aparts = new ArrayList<Apartment>();
-        List<Floor> floors = new ArrayList<Floor>();
         String[] services1= {"Cleaning","Eleveator"};
         String[] services2= {"Cleaning",};
         // public Housing( String location, String image, int price, String[] services, int floors)
+        //public Tenant(String username, String password,int tenantId,String type, String major, String age)
         Apartment apartment111=new Apartment(111,3);
+        apartment111.addTenant(new Tenant("Yazan","Pass",1,"Tenant","CE",15));
+        apartment111.addTenant(new Tenant("Baraa","Pass",2,"Tenant","Civil Engineer",17));
+        apartment111.addTenant(new Tenant("Ahmad","Pass",3,"Tenant","CAP",16));
+        apartment111.setCurrTenants(3);
         Apartment apartment112=new Apartment(112,2);
-
+        apartment111.setCurrTenants(0);
         Apartment apartment121=new Apartment(121,2);
+        apartment121.addTenant(new Tenant("Aydi","Pass",1,"Tenant","Medicine",10));
+        apartment121.setCurrTenants(1);
+
         Apartment apartment122=new Apartment(122,3);
+        apartment122.addTenant(new Tenant("Ali","Pass",1,"Tenant","Media",10));
+        apartment122.setCurrTenants(1);
         Apartment apartment123=new Apartment(123,1);
+        apartment123.setCurrTenants(0);
 
         Apartment apartment131=new Apartment(131,1);
+        apartment131.setCurrTenants(0);
         //////////
         Apartment apartment211=new Apartment(211,2);
+        apartment211.addTenant(new Tenant("Mostafa","Pass",1,"Tenant","Medicine",10));
+        apartment211.setCurrTenants(1);
         Apartment apartment212=new Apartment(212,1);
-
+        apartment212.setCurrTenants(0);
         Apartment apartment221=new Apartment(221,1);
-
+        apartment221.setCurrTenants(0);
         ////////
         //First housing Floors
         Floor floor11 = new Floor(1,2);
