@@ -13,9 +13,19 @@ public class Tenant extends User{
         super(username, password, type);
     }
 
+
     public static int viewHousings() {
 
         return 0;
+    }
+
+    public int viewDetails(int parseInt) {
+
+        return 0;
+    }
+
+    public void wrongID() {
+
     }
 
 //    public static int viewHousings() {

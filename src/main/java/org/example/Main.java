@@ -36,22 +36,48 @@ public class Main {
                 }
             }
             else if (loginInfo.ownerIsLogged){
-                LOGGER.info("Hello Owner");
+                while (true)
+                {
+                    LOGGER.info("--------------- Dashboard ---------------");
+                    LOGGER.info("1- Show My Housing");
+                    LOGGER.info("2- Add Housing");
+                    LOGGER.info("3- sign out");
+                    String open=scan.nextLine();
+
+                    if (open.equals("1")){
+
+                    }
+                    else if(open.equals("2")){
+
+                    }
+                    else if (open.equals("3")) break;
+                    else continue;
+                }
+
+
+
+
+
+
+
+
+
+
             }
             else if (loginInfo.tenantIsLogged){
                 LOGGER.info("Enter your age: ");
                 int age= scan.nextInt();
                 LOGGER.info("Enter your Major: ");
-                Tenant tenant = new Tenant(username,password,tenantID++,"Tenant", scan.nextLine(),age);
+//                Tenant tenant = new Tenant(username,password,tenantID++,"Tenant", scan.nextLine(),age);
                 while (true)
                 {
                     LOGGER.info("--------------- Dashboard ---------------");
                     LOGGER.info("1- View available housings");
                     LOGGER.info("2- Sign out");
                     if (scan.nextInt()==1) {
-                        tenant.viewHousings();
+//                        tenant.viewHousings();
                         LOGGER.info("Select house number to view its information:");
-                        tenant.viewDetails(scan.nextInt());
+//                        tenant.viewDetails(scan.nextInt());
                     }
                     else continue;
 

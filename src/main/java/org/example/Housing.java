@@ -14,6 +14,10 @@ public class Housing {
     String[] services;
     private int price;
     private int floors;
+
+    private int ownerID;
+
+
     Owner owner;
     Apartment apartment;
 
@@ -29,4 +33,13 @@ public class Housing {
         this.floors=floors;
     }
 
+    public Housing(String name, String location, String image,int price, String[] services, int floors, int ownerID) {
+        this.name = name;
+        this.location = location;
+        this.image = image;
+        this.services = services;
+        this.price = price;
+        this.floors = floors;
+        this.ownerID = ownerID;
+    }
 }

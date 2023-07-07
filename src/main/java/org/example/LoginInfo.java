@@ -77,4 +77,7 @@ public class LoginInfo {
     }
 
 
+    public void showHousing() {
+
+    }
 }
