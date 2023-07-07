@@ -14,6 +14,7 @@ public class Tenant extends User{
     public Tenant(String username, String password,int tenantId,String type, String major, int age) {
         super(username, password, type);
 
+        this.age = age;
         this.tenantId=tenantId;
     }
 
@@ -30,9 +31,21 @@ public class Tenant extends User{
     public int viewDetails(int id) {
 
         return 1;
-
     }
 
     public void wrongID() {
     }
+
+    public String getMajor() {
+        return Major;
+    }
+
+    public int getAge() {
+        return age;
+    }
+
+    public int getTenantId() {
+        return tenantId;
+    }
+
 }

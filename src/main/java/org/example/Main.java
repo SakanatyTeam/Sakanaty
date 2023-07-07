@@ -1,11 +1,14 @@
 package org.example;
 
 import role.Tenant;
+import role.User;
 
 import javax.swing.*;
 import java.awt.*;
 import java.util.Scanner;
 import java.util.logging.Logger;
+
+import static StaticDB.TenantsList.tenants;
 
 public class Main {
     private static final Logger LOGGER = Logger.getLogger(Main.class.getName());
@@ -20,8 +23,8 @@ public class Main {
                 break;
             LOGGER.info("Enter Password:");
             String password = scan.nextLine();
+            Tenant tenant = null;
             loginInfo.checkAuth(username,password);
-
             if(!loginInfo.adminIsLogged && !loginInfo.ownerIsLogged && !loginInfo.tenantIsLogged)
                 loginInfo.showError();
             else if (loginInfo.adminIsLogged){
@@ -39,10 +42,11 @@ public class Main {
                 LOGGER.info("Hello Owner");
             }
             else if (loginInfo.tenantIsLogged){
-                LOGGER.info("Enter your age: ");
-                int age= scan.nextInt();
-                LOGGER.info("Enter your Major: ");
-                Tenant tenant = new Tenant(username,password,tenantID++,"Tenant", scan.nextLine(),age);
+
+                for(Tenant tenant1 : tenants){
+                    if(tenant1.getUsername().equals(username))
+                        tenant= tenant1;
+                }
                 while (true)
                 {
                     LOGGER.info("--------------- Dashboard ---------------");
@@ -50,8 +54,12 @@ public class Main {
                     LOGGER.info("2- Sign out");
                     if (scan.nextInt()==1) {
                         tenant.viewHousings();
+                        //1-- hosuing
+                        //2--- hosung
+
                         LOGGER.info("Select house number to view its information:");
                         tenant.viewDetails(scan.nextInt());
+
                     }
                     else continue;
 
