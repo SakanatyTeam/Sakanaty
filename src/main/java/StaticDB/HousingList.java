@@ -14,7 +14,7 @@ public class HousingList {
 //        aparts.add(new Apartment())
         String[] services= {"Cleaning","Elevator","WiFi","Water","Electricity"};
         // public Housing( String location, String image, int price, String[] services, int floors)
-        housing.add(new Housing("Sakan1","jit","link",1200,services,4,101));
+        housing.add(new Housing("Sakan1","jit","link",1200,services,4,100));
         housing.add(new Housing("Sakan2","tulkarm","link",1200,services,4));
         housing.add(new Housing("Sakan3","nablus","link",1200,services,4));
         housing.add(new Housing("Sakan4","jenin","link",1200,services,4));

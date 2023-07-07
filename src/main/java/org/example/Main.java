@@ -1,16 +1,18 @@
 package org.example;
 
+import role.Owner;
 import role.Tenant;
 
 import javax.swing.*;
 import java.awt.*;
+import java.util.List;
 import java.util.Scanner;
 import java.util.logging.Logger;
 
 public class Main {
     private static final Logger LOGGER = Logger.getLogger(Main.class.getName());
     private static Scanner scan=new Scanner(System.in);
-    static LoginInfo loginInfo = new LoginInfo();
+    public static LoginInfo loginInfo = new LoginInfo();
     public static void main(String[] args) {
         int tenantID=1;
         while(true){
@@ -39,13 +41,17 @@ public class Main {
                 while (true)
                 {
                     LOGGER.info("--------------- Dashboard ---------------");
-                    LOGGER.info("1- Show My Housing");
+                    LOGGER.info("1- View My Housing");
                     LOGGER.info("2- Add Housing");
                     LOGGER.info("3- sign out");
                     String open=scan.nextLine();
 
                     if (open.equals("1")){
-
+                        List<Housing> housingList1;
+                        housingList1 = Owner.getHousingList(Integer.parseInt(open));
+                        Owner.viewMyHousings(housingList1);
+                        System.out.println("aasasaas");
+                        break;
                     }
                     else if(open.equals("2")){
 

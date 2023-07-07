@@ -42,4 +42,42 @@ public class Housing {
         this.floors = floors;
         this.ownerID = ownerID;
     }
+
+    public List<Apartment> getApartmennts() {
+        return apartmennts;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public String getLocation() {
+        return location;
+    }
+
+    public String getImage() {
+        return image;
+    }
+
+    public String[] getServices() {
+        return services;
+    }
+
+    public int getPrice() {
+        return price;
+    }
+
+    public int getFloors() {
+        return floors;
+    }
+
+    public int getOwnerID() { return ownerID; }
+
+    public Owner getOwner() {
+        return owner;
+    }
+
+    public Apartment getApartment() {
+        return apartment;
+    }
 }

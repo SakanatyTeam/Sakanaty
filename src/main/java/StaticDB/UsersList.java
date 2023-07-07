@@ -12,7 +12,7 @@ public class UsersList {
     }
     static{
         users.add(new User("YIS","123","Admin"));
-        users.add(new User(101,"Bdair","Pass","Owner"));
+        users.add(new User("Bdair","Pass","Owner"));
         users.add(new User("Baraa","Pass","Tenant"));
         users.add(new User("Yazan","123","Tenant"));
     }

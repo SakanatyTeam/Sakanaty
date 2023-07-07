@@ -8,6 +8,7 @@ import java.util.logging.Logger;
 
 public class Tenant extends User{
     private String type;
+//    private  int age;
     private static final Logger LOGGER = Logger.getLogger(LoginInfo.class.getName());
     public Tenant(String username, String password, String type) {
         super(username, password, type);
