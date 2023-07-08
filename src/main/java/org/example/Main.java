@@ -13,6 +13,10 @@ public class Main {
     private static final Logger LOGGER = Logger.getLogger(Main.class.getName());
     private static Scanner scan=new Scanner(System.in);
     public static LoginInfo loginInfo = new LoginInfo();
+
+    public static String userID;
+
+
     public static void main(String[] args) {
         int tenantID=1;
         while(true){
@@ -48,7 +52,7 @@ public class Main {
 
                     if (open.equals("1")){
                         List<Housing> housingList1;
-                        housingList1 = Owner.getHousingList(Integer.parseInt(open));
+                        housingList1 = Owner.getHousingList(userID);
                         Owner.viewMyHousings(housingList1);
                         System.out.println("aasasaas");
                         break;

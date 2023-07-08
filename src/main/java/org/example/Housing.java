@@ -15,7 +15,7 @@ public class Housing {
     private int price;
     private int floors;
 
-    private int ownerID;
+    private String ownerID;
 
 
     Owner owner;
@@ -33,7 +33,7 @@ public class Housing {
         this.floors=floors;
     }
 
-    public Housing(String name, String location, String image,int price, String[] services, int floors, int ownerID) {
+    public Housing(String name, String location, String image,int price, String[] services, int floors, String ownerID) {
         this.name = name;
         this.location = location;
         this.image = image;
@@ -71,7 +71,7 @@ public class Housing {
         return floors;
     }
 
-    public int getOwnerID() { return ownerID; }
+    public String getOwnerID() { return ownerID; }
 
     public Owner getOwner() {
         return owner;
