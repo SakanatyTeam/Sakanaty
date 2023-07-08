@@ -17,6 +17,7 @@ public class Main {
 
     public static String userID;
 
+    public static String selectHousing;
 
     public static void main(String[] args) {
         int tenantID=1;
@@ -56,18 +57,17 @@ public class Main {
                             List<Housing> housingList1;
                             housingList1 = Owner.getHousingList(userID);
                             Owner.viewMyHousings(housingList1);
-                            String selectHousing = scan.nextLine();
+                            selectHousing = scan.nextLine();
 
                             if (selectHousing.equals("0")) break;
                             else if( Integer.parseInt(selectHousing) >= Owner.numHousing) continue;
-                            // view housing details
-                            else
+                            else Owner.viewDetails(Owner.getHousing(Owner.getName(selectHousing)));
 
 
 
 
 
-                            while (true) {
+                                while (true) {
                                 String details = scan.nextLine();
                                 if (details.equals("1")) {
 
