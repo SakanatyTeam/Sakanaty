@@ -6,34 +6,45 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Housing {
-    private List<Floor> floors = new ArrayList<Floor>();
-    private int id = 1;
+    private List<Apartment> apartmennts = new ArrayList<Apartment>();
+    private int id = 0;
     private String name;
     private String location;
     private String image;
     String[] services;
     private int price;
+    private int floors;
+
+    private String ownerID;
+
+
     Owner owner;
-    private String type;
-    public Housing(String name,String location, String image, int price, String[] services, String type) {
+    Apartment apartment;
+
+
+
+    public Housing(String name, String location, String image, int price, String[] services, int floors) {
         this.name=name;
         this.id=id++;
         this.location = location;
         this.image = image;
         this.price = price;
         this.services=services;
-        this.type=type;
-    }
-    public void addFloors(Floor floor){
-        this.floors.add(floor);
+        this.floors=floors;
     }
 
-    public List<Floor> getFloors() {
-        return floors;
+    public Housing(String name, String location, String image,int price, String[] services, int floors, String ownerID) {
+        this.name = name;
+        this.location = location;
+        this.image = image;
+        this.services = services;
+        this.price = price;
+        this.floors = floors;
+        this.ownerID = ownerID;
     }
 
-    public int getId() {
-        return id;
+    public List<Apartment> getApartmennts() {
+        return apartmennts;
     }
 
     public String getName() {
@@ -56,11 +67,17 @@ public class Housing {
         return price;
     }
 
+    public int getFloors() {
+        return floors;
+    }
+
+    public String getOwnerID() { return ownerID; }
+
     public Owner getOwner() {
         return owner;
     }
 
-    public String getType() {
-        return type;
+    public Apartment getApartment() {
+        return apartment;
     }
 }

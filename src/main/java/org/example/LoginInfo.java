@@ -30,12 +30,18 @@ public class LoginInfo {
         {
             if (username.equals(user.getUsername()) && password.equals(user.getPassword()))
             {
-                if (user.getType().equals("Owner"))
-                ownerIsLogged=true;
-                if (user.getType().equals("Admin"))
-                adminIsLogged=true;
-                if (user.getType().equals("Tenant"))
-                tenantIsLogged=true;
+                if (user.getType().equals("Owner")) {
+                    ownerIsLogged = true;
+                    Main.userID = user.getId();
+                }
+                if (user.getType().equals("Admin")){
+                    adminIsLogged=true;
+                    Main.userID = user.getId();
+                }
+                if (user.getType().equals("Tenant")) {
+                    tenantIsLogged = true;
+                    Main.userID = user.getId();
+                }
                 i++;
             }
         }
@@ -80,4 +86,7 @@ public class LoginInfo {
     }
 
 
+    public void showHousing() {
+
+    }
 }
