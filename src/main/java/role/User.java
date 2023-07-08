@@ -17,6 +17,8 @@ public class User {
 
     private String id;
 
+    public static int numHousing = 0;
+
     public User(String username, String password, String type, String id) {
         this.username = username;
         this.password = password;
@@ -67,12 +69,15 @@ public class User {
     }
 
     public static void viewMyHousings(List<Housing> housingList) {
-
+        LOGGER.info("--------- Select To View Housing Details ---------");
+        LOGGER.info("0- Go Back.");
         int i = 1;
         for(Housing housing : housingList)
         {
             LOGGER.info(i + "- " + housing.getName() + " , " + housing.getLocation() + " , " + housing.getPrice() + ".");
             i++;
         }
+        numHousing = i;
+        LOGGER.info("--------------------------------------------------");
     }
 }

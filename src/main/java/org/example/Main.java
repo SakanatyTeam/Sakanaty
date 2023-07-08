@@ -2,6 +2,7 @@ package org.example;
 
 import role.Owner;
 import role.Tenant;
+import role.User;
 
 import javax.swing.*;
 import java.awt.*;
@@ -45,17 +46,35 @@ public class Main {
                 while (true)
                 {
                     LOGGER.info("--------------- Dashboard ---------------");
-                    LOGGER.info("1- View My Housing");
-                    LOGGER.info("2- Add Housing");
-                    LOGGER.info("3- sign out");
+                    LOGGER.info("1- View My Housing.");
+                    LOGGER.info("2- Add Housing.");
+                    LOGGER.info("3- sign out.");
                     String open=scan.nextLine();
 
                     if (open.equals("1")){
-                        List<Housing> housingList1;
-                        housingList1 = Owner.getHousingList(userID);
-                        Owner.viewMyHousings(housingList1);
-                        System.out.println("aasasaas");
-                        break;
+                        while (true) {
+                            List<Housing> housingList1;
+                            housingList1 = Owner.getHousingList(userID);
+                            Owner.viewMyHousings(housingList1);
+                            String selectHousing = scan.nextLine();
+
+                            if (selectHousing.equals("0")) break;
+                            else if( Integer.parseInt(selectHousing) >= Owner.numHousing) continue;
+                            // view housing details
+                            else
+
+
+
+
+
+                            while (true) {
+                                String details = scan.nextLine();
+                                if (details.equals("1")) {
+
+                                } else if (details.equals("2")) break;
+                                else continue;
+                            }
+                        }
                     }
                     else if(open.equals("2")){
 
