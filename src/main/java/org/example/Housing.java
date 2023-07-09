@@ -19,11 +19,11 @@ public class Housing {
         return type;
     }
 
-    private String ownerID;
+    private int ownerID;
     Owner owner;
     Apartment apartment;
 
-    public Housing(String name, String location, String image,int price, String[] services, String ownerID,String type) {
+    public Housing(String name, String location, String image,int price, String[] services, int ownerID,String type) {
         this.name = name;
         this.location = location;
         this.image = image;
@@ -57,7 +57,7 @@ public class Housing {
         return price;
     }
 
-    public String getOwnerID() { return ownerID; }
+    public int getOwnerID() { return ownerID; }
 
     public Owner getOwner() {
         return owner;

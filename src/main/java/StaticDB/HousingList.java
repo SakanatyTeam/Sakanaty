@@ -67,13 +67,13 @@ public class HousingList {
         floor22.addApartment(apartment221);
         /////////////////////
 
-        Housing house1=new Housing("Sakan1","jit","link",1200,services1,"100","Student");
+        Housing house1=new Housing("Sakan1","jit","link",1200,services1,100,"Student");
 
         house1.addFloors(floor11);
         house1.addFloors(floor12);
         house1.addFloors(floor13);
 
-        Housing house2=new Housing("Sakan2","Tulkarm","link2",200,services2,"100","General");
+        Housing house2=new Housing("Sakan2","Tulkarm","link2",200,services2,100,"General");
         house1.addFloors(floor21);
         house1.addFloors(floor22);
 
@@ -81,4 +81,8 @@ public class HousingList {
         housing.add(house2);
     }
     public static List<Housing> getHousing() {return housing;}
+
+    public static void addHousing(Housing housing) {
+
+    }
 }

@@ -1,8 +1,8 @@
 Feature: Add Housing
 
-  Scenario: And Housing Successfully
+  Scenario: Add Housing Successfully
     Given that the user is logged in
-    And there is a houseing with name "name",location "location", imge "img" , price price, service "service", floor floor
+    And there is a housing with name "name",location "location", image "image" , price 800, service "service", type "type"
     And the owner id is 100
-    Then the houseing will be saved in the houseing list
+    Then the housing will be saved in the housing list
 
