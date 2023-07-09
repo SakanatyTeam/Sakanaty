@@ -10,7 +10,7 @@ public class Tenant extends User{
 //    private String type;
 //    private  int age;
     private static final Logger LOGGER = Logger.getLogger(LoginInfo.class.getName());
-    public Tenant(String username, String password, String type, String id) {
+    public Tenant(String username, String password, String type, int id) {
         super(username, password, type, id);
     }
 

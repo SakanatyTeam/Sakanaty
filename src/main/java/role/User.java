@@ -17,11 +17,11 @@ public class User {
     private String password;
     private String type;
 
-    private String id;
+    private int id;
 
     public static int numHousing = 0;
 
-    public User(String username, String password, String type, String id) {
+    public User(String username, String password, String type, int id) {
         this.username = username;
         this.password = password;
         this.type = type;
@@ -39,7 +39,7 @@ public class User {
 
     public String getType() {return type;}
 
-    public String getId() {return id;}
+    public int getId() {return id;}
 
     public void setUsername(String username) {
         this.username = username;
@@ -53,63 +53,7 @@ public class User {
         this.type = type;
     }
 
-    public void setId(String id) {this.id = id;}
+    public void setId(int id) {this.id = id;}
 
-
-
-    public static List<Housing> getHousingList(String id) {
-
-        List<Housing> housinglist = new ArrayList();
-//        int id = Integer.parseInt(int1);
-        for(Housing housing : HousingList.getHousing())
-        {
-//            System.out.println( housing.getOwnerID());
-            if(housing.getOwnerID().equals(id))
-                housinglist.add(housing);
-        }
-        return housinglist;
-    }
-
-    public static void viewMyHousings(List<Housing> housingList) {
-        LOGGER.info("--------- Select To View Housing Details ---------");
-        LOGGER.info("0- Go Back.");
-        int i = 1;
-        for(Housing housing : housingList)
-        {
-            LOGGER.info(i + "- " + housing.getName() + " , " + housing.getLocation() + " , " + housing.getPrice() + ".");
-            i++;
-        }
-        numHousing = i;
-        LOGGER.info("--------------------------------------------------");
-    }
-
-
-    public static String getName(String selectHousing) {
-        int i = 1;
-        for(Housing housing : HousingList.getHousing()){
-            if (i == Integer.parseInt(selectHousing)){
-                return housing.getName();
-            }
-            i++;
-        }
-        return null;
-    }
-    public static Housing getHousing(String name) {
-        for(Housing housing : HousingList.getHousing()){
-            if (housing != null && housing.getName().equals(name)) {
-                return housing;
-            }
-        }
-        return null;
-    }
-    public static void viewDetails(Housing housing) {
-        LOGGER.info("--------- Select To View Housing Details ---------");
-        LOGGER.info("Housing Details: " + housing.getName() + " , " + housing.getLocation() + " , "+ housing.getImage() +
-                " , " + housing.getPrice() + " , " + Arrays.toString(housing.getServices()) + " , " + housing.getFloors() +  ".");
-        LOGGER.info("0- Go Back.");
-        LOGGER.info("1- Update.");
-        LOGGER.info("2- Delete.");
-        LOGGER.info("--------------------------------------------------");
-    }
 
 }

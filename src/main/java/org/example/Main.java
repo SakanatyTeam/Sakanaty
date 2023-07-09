@@ -15,7 +15,7 @@ public class Main {
     private static Scanner scan=new Scanner(System.in);
     public static LoginInfo loginInfo = new LoginInfo();
 
-    public static String userID;
+    public static int userID;
 
     public static String selectHousing;
 
@@ -49,34 +49,35 @@ public class Main {
                     LOGGER.info("--------------- Dashboard ---------------");
                     LOGGER.info("1- View My Housing.");
                     LOGGER.info("2- Add Housing.");
-                    LOGGER.info("3- sign out.");
+                    LOGGER.info("3- Sign Out.");
                     String open=scan.nextLine();
 
                     if (open.equals("1")){
                         while (true) {
                             List<Housing> housingList1;
                             housingList1 = Owner.getHousingList(userID);
+                            LOGGER.info("--------- Select Housing To Update Or Delete ---------");
                             Owner.viewMyHousings(housingList1);
+                            LOGGER.info( Owner.numHousing + "- Go Back.");
+                            LOGGER.info("------------------------------------------------------");
                             selectHousing = scan.nextLine();
 
-                            if (selectHousing.equals("0")) break;
-                            else if( Integer.parseInt(selectHousing) >= Owner.numHousing) continue;
-                            else Owner.viewDetails(Owner.getHousing(Owner.getName(selectHousing)));
-
-
-
-
-
-                                while (true) {
-                                String details = scan.nextLine();
-                                if (details.equals("1")) {
-
-                                } else if (details.equals("2")) break;
-                                else continue;
+                            if ( Integer.parseInt(selectHousing) > Owner.numHousing) continue;
+                            else if(Integer.parseInt(selectHousing) == Owner.numHousing) break;
+                            else {
+                                // update and delete ....
+//                                while (true) {
+//                                    String details = scan.nextLine();
+//                                    if (details.equals("1")) {
+//
+//                                    } else if (details.equals("2")) break;
+//                                    else continue;
+//                                }
                             }
                         }
                     }
                     else if(open.equals("2")){
+                        LOGGER.info("Add Photos: ");
 
                     }
                     else if (open.equals("3")) break;

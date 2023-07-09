@@ -24,13 +24,13 @@ public class ViewOwnerHousings {
         this.loginInfo = loginInfo;
     }
 
-    @When("the user select {string} with <{string}>")
-    public void the_user_select_with(String string, String id) {
-        housingList = User.getHousingList(id);
+    @When("the user select {string} with <{int}>")
+    public void the_user_select_with(String string, int id) {
+        housingList = Owner.getHousingList(id);
     }
     @Then("display user housings list")
     public void display_user_housings_list() {
-        User.viewMyHousings(housingList);
+        Owner.viewMyHousings(housingList);
     }
 
 }

@@ -11,10 +11,10 @@ public class UsersList {
         throw new IllegalStateException("Utility class");
     }
     static{
-        users.add(new User("YIS","123","Admin", "1"));
-        users.add(new User("Bdair","Pass","Owner", "100"));
-        users.add(new User("Baraa","Pass","Tenant", "1000"));
-        users.add(new User("Yazan","123","Tenant", "1001"));
+        users.add(new User("YIS","123","Admin", 1));
+        users.add(new User("Bdair","Pass","Owner", 100));
+        users.add(new User("Baraa","Pass","Tenant", 1000));
+        users.add(new User("Yazan","123","Tenant", 1001));
     }
     public static List<User> getAdmins() {
         return users;
