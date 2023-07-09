@@ -10,12 +10,14 @@ import java.util.List;
 import java.util.Scanner;
 import java.util.logging.Logger;
 
+import static StaticDB.TenantsList.tenants;
+
 public class Main {
     private static final Logger LOGGER = Logger.getLogger(Main.class.getName());
     private static Scanner scan=new Scanner(System.in);
     public static LoginInfo loginInfo = new LoginInfo();
 
-    public static int userID;
+    public static String userID;
 
     public static String selectHousing;
 
@@ -49,65 +51,62 @@ public class Main {
                     LOGGER.info("--------------- Dashboard ---------------");
                     LOGGER.info("1- View My Housing.");
                     LOGGER.info("2- Add Housing.");
-                    LOGGER.info("3- Sign Out.");
+                    LOGGER.info("3- sign out.");
                     String open=scan.nextLine();
 
                     if (open.equals("1")){
                         while (true) {
                             List<Housing> housingList1;
                             housingList1 = Owner.getHousingList(userID);
-                            LOGGER.info("--------- Select Housing To Update Or Delete ---------");
                             Owner.viewMyHousings(housingList1);
-                            LOGGER.info( Owner.numHousing + "- Go Back.");
-                            LOGGER.info("------------------------------------------------------");
                             selectHousing = scan.nextLine();
 
-                            if ( Integer.parseInt(selectHousing) > Owner.numHousing) continue;
-                            else if(Integer.parseInt(selectHousing) == Owner.numHousing) break;
-                            else {
-                                // update and delete ....
-//                                while (true) {
-//                                    String details = scan.nextLine();
-//                                    if (details.equals("1")) {
-//
-//                                    } else if (details.equals("2")) break;
-//                                    else continue;
-//                                }
+                            if (selectHousing.equals("0")) break;
+                            else if( Integer.parseInt(selectHousing) >= Owner.numHousing) continue;
+                            else Owner.viewDetails(Owner.getHousing(Owner.getName(selectHousing)));
+
+
+                                while (true) {
+                                String details = scan.nextLine();
+                                if (details.equals("1")) {
+
+                                } else if (details.equals("2")) break;
+                                else continue;
                             }
                         }
                     }
                     else if(open.equals("2")){
-                        LOGGER.info("Add Photos: ");
 
                     }
                     else if (open.equals("3")) break;
                     else continue;
                 }
-
-
-
-
-
-
-
-
-
-
             }
             else if (loginInfo.tenantIsLogged){
-                LOGGER.info("Enter your age: ");
-                int age= scan.nextInt();
-                LOGGER.info("Enter your Major: ");
-//                Tenant tenant = new Tenant(username,password,tenantID++,"Tenant", scan.nextLine(),age);
+
+                Tenant tenant = new Tenant();
+                for(Tenant tenant1 : tenants){
+                    if(tenant1.getUsername().equals(username))
+                        tenant= tenant1;
+                }
                 while (true)
                 {
                     LOGGER.info("--------------- Dashboard ---------------");
                     LOGGER.info("1- View available housings");
                     LOGGER.info("2- Sign out");
                     if (scan.nextInt()==1) {
-//                        tenant.viewHousings();
+                        tenant.viewHousings();
                         LOGGER.info("Select house number to view its information:");
-//                        tenant.viewDetails(scan.nextInt());
+                        try{
+                            tenant.viewDetails(scan.nextInt());
+                            LOGGER.info("Select house number to book it!");
+                            tenant.bookHouse(scan.nextInt());
+                        }
+                        catch (IndexOutOfBoundsException e){
+                            System.out.println("Wrong ID");
+                        }
+
+
                     }
                     else continue;
 

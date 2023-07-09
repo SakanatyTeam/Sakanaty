@@ -6,45 +6,35 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Housing {
-    private List<Apartment> apartmennts = new ArrayList<Apartment>();
+    private List<Floor> floors = new ArrayList<Floor>();
     private int id = 0;
     private String name;
     private String location;
     private String image;
     String[] services;
     private int price;
-    private int floors;
+    private String type;
 
-    private int ownerID;
+    public String getType() {
+        return type;
+    }
 
-
+    private String ownerID;
     Owner owner;
     Apartment apartment;
 
-
-
-    public Housing(String name, String location, String image, int price, String[] services, int floors) {
-        this.name=name;
-        this.id=id++;
-        this.location = location;
-        this.image = image;
-        this.price = price;
-        this.services=services;
-        this.floors=floors;
-    }
-
-    public Housing(String name, String location, String image,int price, String[] services, int floors, int ownerID) {
+    public Housing(String name, String location, String image,int price, String[] services, String ownerID,String type) {
         this.name = name;
         this.location = location;
         this.image = image;
         this.services = services;
         this.price = price;
-        this.floors = floors;
+        this.type=type;
         this.ownerID = ownerID;
     }
 
-    public List<Apartment> getApartmennts() {
-        return apartmennts;
+    public List<Floor> getFloors() {
+        return floors;
     }
 
     public String getName() {
@@ -67,11 +57,7 @@ public class Housing {
         return price;
     }
 
-    public int getFloors() {
-        return floors;
-    }
-
-    public int getOwnerID() { return ownerID; }
+    public String getOwnerID() { return ownerID; }
 
     public Owner getOwner() {
         return owner;
@@ -79,5 +65,9 @@ public class Housing {
 
     public Apartment getApartment() {
         return apartment;
+    }
+
+    public void addFloors(Floor floor11) {
+        floors.add(floor11);
     }
 }

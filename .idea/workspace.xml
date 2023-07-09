@@ -4,12 +4,20 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a0b2a94a-fb6d-422d-b695-3964698dce3a" name="Changes" comment="pushing to yis">
-      <change afterPath="$PROJECT_DIR$/src/main/java/StaticDB/TenantsList.java" afterDir="false" />
+    <list default="true" id="a0b2a94a-fb6d-422d-b695-3964698dce3a" name="Changes" comment="backup">
+      <change afterPath="$PROJECT_DIR$/cases/provided/view_tenant_details.feature" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/SakanatyAcceptance/ViewDetails.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_7_5_2023_1_29_PM__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_7_5_2023_1_29_PM__Changes_.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/LoginInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/LoginInfo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/StaticDB/HousingList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/StaticDB/HousingList.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/StaticDB/OwnersList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/StaticDB/OwnersList.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Apartment.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Apartment.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Floor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Floor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Housing.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Housing.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/role/Owner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/role/Owner.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/role/Tenant.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/role/Tenant.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/role/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/role/User.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -22,9 +30,6 @@
         <option value="Class" />
       </list>
     </option>
-  </component>
-  <component name="Git.Rebase.Settings">
-    <option name="NEW_BASE" value="origin/Bdair_DEV" />
   </component>
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
@@ -51,6 +56,7 @@
     &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
     &quot;last_opened_file_path&quot;: &quot;C:/Users/Bdair/Desktop/SoftWare-project-master&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
     &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
     &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
     &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;
@@ -64,7 +70,7 @@
       <recent name="D:\Software_Project\Sakanaty" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.AcceptanceTest">
+  <component name="RunManager" selected="Application.Main">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="org.example.Main" />
       <module name="Sakanaty" />
@@ -78,14 +84,14 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Feature: view_details" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java" temporary="true" nameIsGenerated="true">
+    <configuration name="Feature: view_owner_details" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java" temporary="true" nameIsGenerated="true">
       <option name="CUCUMBER_CORE_VERSION" value="5" />
-      <option name="FILE_PATH" value="$PROJECT_DIR$/cases/provided/view_details.feature" />
+      <option name="FILE_PATH" value="$PROJECT_DIR$/cases/provided/view_owner_details.feature" />
       <option name="GLUE" value="SakanatyAcceptance" />
       <option name="MAIN_CLASS_NAME" value="io.cucumber.core.cli.Main" />
       <module name="Sakanaty" />
       <option name="PROGRAM_PARAMETERS" value=" --plugin org.jetbrains.plugins.cucumber.java.run.CucumberJvm5SMFormatter" />
-      <option name="SUGGESTED_NAME" value="Feature: view_details" />
+      <option name="SUGGESTED_NAME" value="Feature: view_owner_details" />
       <option name="WORKING_DIRECTORY" value="$MODULE_WORKING_DIR$" />
       <extension name="coverage">
         <pattern>
@@ -97,31 +103,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Feature: view_housing" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java" temporary="true" nameIsGenerated="true">
+    <configuration name="Feature: view_owner_housings" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java" temporary="true" nameIsGenerated="true">
       <option name="CUCUMBER_CORE_VERSION" value="5" />
-      <option name="FILE_PATH" value="$PROJECT_DIR$/cases/provided/view_housing.feature" />
+      <option name="FILE_PATH" value="$PROJECT_DIR$/cases/provided/view_owner_housings.feature" />
       <option name="MAIN_CLASS_NAME" value="io.cucumber.core.cli.Main" />
       <module name="Sakanaty" />
       <option name="PROGRAM_PARAMETERS" value=" --plugin org.jetbrains.plugins.cucumber.java.run.CucumberJvm5SMFormatter" />
-      <option name="SUGGESTED_NAME" value="Feature: view_housing" />
-      <option name="WORKING_DIRECTORY" value="$MODULE_WORKING_DIR$" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="io.cucumber.core.cli.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="Feature: view_pictures" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java" temporary="true" nameIsGenerated="true">
-      <option name="CUCUMBER_CORE_VERSION" value="5" />
-      <option name="FILE_PATH" value="$PROJECT_DIR$/cases/provided/view_pictures.feature" />
-      <option name="MAIN_CLASS_NAME" value="io.cucumber.core.cli.Main" />
-      <module name="Sakanaty" />
-      <option name="PROGRAM_PARAMETERS" value=" --plugin org.jetbrains.plugins.cucumber.java.run.CucumberJvm5SMFormatter" />
-      <option name="SUGGESTED_NAME" value="Feature: view_pictures" />
+      <option name="SUGGESTED_NAME" value="Feature: view_owner_housings" />
       <option name="WORKING_DIRECTORY" value="$MODULE_WORKING_DIR$" />
       <extension name="coverage">
         <pattern>
@@ -148,13 +136,27 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="SakanatyAcceptance in Sakanaty" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Sakanaty" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="SakanatyAcceptance.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="SakanatyAcceptance" />
+      <option name="TEST_OBJECT" value="package" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.AcceptanceTest" />
         <item itemvalue="Application.Main" />
-        <item itemvalue="Cucumber Java.Feature: view_details" />
-        <item itemvalue="Cucumber Java.Feature: view_pictures" />
-        <item itemvalue="Cucumber Java.Feature: view_housing" />
+        <item itemvalue="JUnit.AcceptanceTest" />
+        <item itemvalue="JUnit.SakanatyAcceptance in Sakanaty" />
+        <item itemvalue="Cucumber Java.Feature: view_owner_details" />
+        <item itemvalue="Cucumber Java.Feature: view_owner_housings" />
       </list>
     </recent_temporary>
   </component>
@@ -169,7 +171,7 @@
       <workItem from="1688324796068" duration="5106000" />
       <workItem from="1688376569693" duration="4055000" />
       <workItem from="1688385470331" duration="34000" />
-      <workItem from="1688638948904" duration="4690000" />
+      <workItem from="1688894928203" duration="1347000" />
     </task>
     <task id="LOCAL-00001" summary="initiate">
       <created>1688402890832</created>
@@ -241,28 +243,63 @@
       <option name="project" value="LOCAL" />
       <updated>1688510011958</updated>
     </task>
-    <task id="LOCAL-00011" summary="pushing">
-      <created>1688555677501</created>
+    <task id="LOCAL-00011" summary="new message!">
+      <created>1688552643133</created>
       <option name="number" value="00011" />
       <option name="presentableId" value="LOCAL-00011" />
       <option name="project" value="LOCAL" />
-      <updated>1688555677501</updated>
+      <updated>1688552643133</updated>
     </task>
-    <task id="LOCAL-00012" summary="pushing to yis">
-      <created>1688559333936</created>
+    <task id="LOCAL-00012" summary="new message!">
+      <created>1688555706559</created>
       <option name="number" value="00012" />
       <option name="presentableId" value="LOCAL-00012" />
       <option name="project" value="LOCAL" />
-      <updated>1688559333936</updated>
+      <updated>1688555706559</updated>
     </task>
-    <task id="LOCAL-00013" summary="pushing to yis">
-      <created>1688566772409</created>
+    <task id="LOCAL-00013" summary="new message!">
+      <created>1688567091948</created>
       <option name="number" value="00013" />
       <option name="presentableId" value="LOCAL-00013" />
       <option name="project" value="LOCAL" />
-      <updated>1688566772409</updated>
+      <updated>1688567091948</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="new message!">
+      <created>1688734301105</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1688734301105</updated>
+    </task>
+    <task id="LOCAL-00015" summary="new message!">
+      <created>1688742355084</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1688742355084</updated>
+    </task>
+    <task id="LOCAL-00016" summary="new message!">
+      <created>1688816391515</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1688816391515</updated>
+    </task>
+    <task id="LOCAL-00017" summary="new message!">
+      <created>1688818515276</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1688818515276</updated>
+    </task>
+    <task id="LOCAL-00018" summary="new message!">
+      <created>1688827853110</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1688827853110</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -282,11 +319,15 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="initiate" />
     <MESSAGE value="new message!" />
-    <MESSAGE value="pushing" />
-    <MESSAGE value="pushing to yis" />
-    <option name="LAST_COMMIT_MESSAGE" value="pushing to yis" />
+    <option name="LAST_COMMIT_MESSAGE" value="new message!" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/Sakanaty$Main.ic" NAME="Main Coverage Results" MODIFIED="1688848232927" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>org.example.*</FILTER>
+    </SUITE>
     <SUITE FILE_PATH="coverage/Sakanaty$All_in_Sakanaty.ic" NAME="All in Sakanaty Coverage Results" MODIFIED="1688417577956" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/Sakanaty$AcceptanceTest.ic" NAME="AcceptanceTest Coverage Results" MODIFIED="1688848139408" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>SakanatyAcceptance.*</FILTER>
+    </SUITE>
   </component>
 </project>
