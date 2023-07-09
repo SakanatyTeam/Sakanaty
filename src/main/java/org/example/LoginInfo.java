@@ -23,29 +23,24 @@ public class LoginInfo {
         adminIsLogged=false; ownerIsLogged=false; tenantIsLogged=false;
     }
 
-    public void checkAuth(String username, String password) {
+    public int checkAuth(String username, String password) {
         reset();
-        int i=0;
-        for(User user: UsersList.getAdmins())
-        {
-            if (username.equals(user.getUsername()) && password.equals(user.getPassword()))
-            {
-                if (user.getType().equals("Owner")) {
+        int i = 0;
+        for (User user : UsersList.getAdmins()) {
+            if (username.equals(user.getUsername()) && password.equals(user.getPassword())) {
+                if (user.getType().equals("Owner"))
                     ownerIsLogged = true;
-                    Main.userID = user.getId();
-                }
-                if (user.getType().equals("Admin")){
-                    adminIsLogged=true;
-                    Main.userID = user.getId();
-                }
-                if (user.getType().equals("Tenant")) {
+
+                if (user.getType().equals("Admin"))
+                    adminIsLogged = true;
+
+                if (user.getType().equals("Tenant"))
                     tenantIsLogged = true;
-                    Main.userID = user.getId();
-                }
+
                 i++;
             }
         }
-
+        return 1;
     }
     public void showError() {
         LOGGER.info("Incorrect Username/Password");

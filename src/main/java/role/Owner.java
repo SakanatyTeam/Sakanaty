@@ -12,14 +12,14 @@ import java.util.logging.Logger;
 public class Owner extends User {
 
     private static final Logger LOGGER = Logger.getLogger(LoginInfo.class.getName());
-    private String ownerID;
+    private int ownerID;
     private String phone;
     private int numHousings;
 
     private List<Housing> housingList = new ArrayList<Housing>();
-    public Owner(String username, String password, String type, String ownerID , String phone, int numHousings) {
+    public Owner(String username, String password, String type, int ownerID , String phone, int numHousings) {
         super(username, password, type, ownerID);
-//        this.ownerID = ownerID;
+        this.ownerID = ownerID;
         this.phone = phone;
         this.numHousings = numHousings;
     }
