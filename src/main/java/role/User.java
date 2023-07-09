@@ -28,6 +28,8 @@ public class User {
         this.id = id;
     }
 
+    public User() {
+    }
 
     public String getUsername() {
         return username;
@@ -105,7 +107,7 @@ public class User {
     public static void viewDetails(Housing housing) {
         LOGGER.info("--------- Select To View Housing Details ---------");
         LOGGER.info("Housing Details: " + housing.getName() + " , " + housing.getLocation() + " , "+ housing.getImage() +
-                " , " + housing.getPrice() + " , " + Arrays.toString(housing.getServices()) + " , " + housing.getFloors() +  ".");
+                " , " + housing.getPrice() + " , " + Arrays.toString(housing.getServices()) + ".");
         LOGGER.info("0- Go Back.");
         LOGGER.info("1- Update.");
         LOGGER.info("2- Delete.");

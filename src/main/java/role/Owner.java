@@ -17,13 +17,6 @@ public class Owner extends User {
     private int numHousings;
 
     private List<Housing> housingList = new ArrayList<Housing>();
-
-
-    public Owner(String username, String password, String type, String ownerID) {
-        super(username, password, type, ownerID);
-//        this.ownerID = ownerID;
-    }
-
     public Owner(String username, String password, String type, String ownerID , String phone, int numHousings) {
         super(username, password, type, ownerID);
 //        this.ownerID = ownerID;

@@ -10,6 +10,8 @@ import java.util.List;
 import java.util.Scanner;
 import java.util.logging.Logger;
 
+import static StaticDB.TenantsList.tenants;
+
 public class Main {
     private static final Logger LOGGER = Logger.getLogger(Main.class.getName());
     private static Scanner scan=new Scanner(System.in);
@@ -64,9 +66,6 @@ public class Main {
                             else Owner.viewDetails(Owner.getHousing(Owner.getName(selectHousing)));
 
 
-
-
-
                                 while (true) {
                                 String details = scan.nextLine();
                                 if (details.equals("1")) {
@@ -82,31 +81,32 @@ public class Main {
                     else if (open.equals("3")) break;
                     else continue;
                 }
-
-
-
-
-
-
-
-
-
-
             }
             else if (loginInfo.tenantIsLogged){
-                LOGGER.info("Enter your age: ");
-                int age= scan.nextInt();
-                LOGGER.info("Enter your Major: ");
-//                Tenant tenant = new Tenant(username,password,tenantID++,"Tenant", scan.nextLine(),age);
+
+                Tenant tenant = new Tenant();
+                for(Tenant tenant1 : tenants){
+                    if(tenant1.getUsername().equals(username))
+                        tenant= tenant1;
+                }
                 while (true)
                 {
                     LOGGER.info("--------------- Dashboard ---------------");
                     LOGGER.info("1- View available housings");
                     LOGGER.info("2- Sign out");
                     if (scan.nextInt()==1) {
-//                        tenant.viewHousings();
+                        tenant.viewHousings();
                         LOGGER.info("Select house number to view its information:");
-//                        tenant.viewDetails(scan.nextInt());
+                        try{
+                            tenant.viewDetails(scan.nextInt());
+                            LOGGER.info("Select house number to book it!");
+                            tenant.bookHouse(scan.nextInt());
+                        }
+                        catch (IndexOutOfBoundsException e){
+                            System.out.println("Wrong ID");
+                        }
+
+
                     }
                     else continue;
 

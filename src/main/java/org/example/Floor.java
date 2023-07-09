@@ -4,6 +4,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Floor {
+    public List<Apartment> getApartments() {
+        return apartments;
+    }
+
     private List<Apartment> apartments = new ArrayList<Apartment>();
     private int floorId;
     private int maxApartments;

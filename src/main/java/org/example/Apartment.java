@@ -9,6 +9,15 @@ public class Apartment {
     private int apartmentId;
     private int maxTenantsNumber;
     private int currTenants;
+    private boolean apartmentIsFull;
+
+    public void setApartmentIsFull(boolean apartmentIsFull) {
+        this.apartmentIsFull = apartmentIsFull;
+    }
+
+    public boolean isApartmentIsFull() {
+        return apartmentIsFull;
+    }
 
     public void setCurrTenants(int currTenants) {
         this.currTenants = currTenants;
@@ -22,6 +31,11 @@ public class Apartment {
         this.currTenants = currTenants;
 
     }
+
+    public List<Tenant> getTenants() {
+        return tenants;
+    }
+
     public void addTenant(Tenant tenant){
         this.tenants.add(tenant);
     }
