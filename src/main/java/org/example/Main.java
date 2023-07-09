@@ -66,13 +66,13 @@ public class Main {
                             else Owner.viewDetails(Owner.getHousing(Owner.getName(selectHousing)));
 
 
-                                while (true) {
-                                String details = scan.nextLine();
-                                if (details.equals("1")) {
-
-                                } else if (details.equals("2")) break;
-                                else continue;
-                            }
+//                                while (true) {
+//                                String details = scan.nextLine();
+//                                if (details.equals("1")) {
+//
+//                                } else if (details.equals("2")) break;
+//                                else continue;
+//                                }
                         }
                     }
                     else if(open.equals("2")){
