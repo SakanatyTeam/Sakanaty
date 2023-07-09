@@ -17,11 +17,11 @@ public class User {
     private String password;
     private String type;
 
-    private String id;
+    private int id;
 
     public static int numHousing = 0;
 
-    public User(String username, String password, String type, String id) {
+    public User(String username, String password, String type, int id) {
         this.username = username;
         this.password = password;
         this.type = type;
@@ -41,7 +41,7 @@ public class User {
 
     public String getType() {return type;}
 
-    public String getId() {return id;}
+    public int getId() {return id;}
 
     public void setUsername(String username) {
         this.username = username;
@@ -55,7 +55,7 @@ public class User {
         this.type = type;
     }
 
-    public void setId(String id) {this.id = id;}
+    public void setId(int id) {this.id = id;}
 
 
 

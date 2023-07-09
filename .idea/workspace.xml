@@ -4,19 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a0b2a94a-fb6d-422d-b695-3964698dce3a" name="Changes" comment="backup">
-      <change afterPath="$PROJECT_DIR$/cases/provided/view_tenant_details.feature" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/SakanatyAcceptance/ViewDetails.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_7_5_2023_1_29_PM__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_7_5_2023_1_29_PM__Changes_.xml" afterDir="false" />
+    <list default="true" id="a0b2a94a-fb6d-422d-b695-3964698dce3a" name="Changes" comment="PUSHH TO YAZ">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/StaticDB/HousingList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/StaticDB/HousingList.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/StaticDB/OwnersList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/StaticDB/OwnersList.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Apartment.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Apartment.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Floor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Floor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Housing.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Housing.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/LoginInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/LoginInfo.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/role/Owner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/role/Owner.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/role/Tenant.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/role/Tenant.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/role/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/role/User.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -171,7 +162,7 @@
       <workItem from="1688324796068" duration="5106000" />
       <workItem from="1688376569693" duration="4055000" />
       <workItem from="1688385470331" duration="34000" />
-      <workItem from="1688894928203" duration="1347000" />
+      <workItem from="1688894928203" duration="2701000" />
     </task>
     <task id="LOCAL-00001" summary="initiate">
       <created>1688402890832</created>
@@ -299,7 +290,14 @@
       <option name="project" value="LOCAL" />
       <updated>1688827853110</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="PUSHH TO YAZ">
+      <created>1688896306606</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1688896306606</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -319,7 +317,9 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="initiate" />
     <MESSAGE value="new message!" />
-    <option name="LAST_COMMIT_MESSAGE" value="new message!" />
+    <MESSAGE value="backup" />
+    <MESSAGE value="PUSHH TO YAZ" />
+    <option name="LAST_COMMIT_MESSAGE" value="PUSHH TO YAZ" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/Sakanaty$Main.ic" NAME="Main Coverage Results" MODIFIED="1688848232927" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
