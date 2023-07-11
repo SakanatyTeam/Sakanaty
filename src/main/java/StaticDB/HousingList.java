@@ -9,7 +9,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class HousingList {
-    static List<Housing> housing =new ArrayList<Housing>();
+    static List<Housing> housings =new ArrayList<Housing>();
     private HousingList() {throw new IllegalStateException("Utility class");}
     static{
         String[] services1= {"Cleaning","Eleveator"};
@@ -77,12 +77,12 @@ public class HousingList {
         house1.addFloors(floor21);
         house1.addFloors(floor22);
 
-        housing.add(house1);
-        housing.add(house2);
+        housings.add(house1);
+        housings.add(house2);
     }
-    public static List<Housing> getHousing() {return housing;}
+    public static List<Housing> getHousing() {return housings;}
 
     public static void addHousing(Housing housing) {
-
+        housings.add(housing);
     }
 }

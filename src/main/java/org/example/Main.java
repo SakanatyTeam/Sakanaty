@@ -39,10 +39,15 @@ public class Main {
                 while (true)
                 {
                     LOGGER.info("--------------- Dashboard ---------------");
-                    LOGGER.info("1- Show my Housing");
-                    LOGGER.info("2- Add Housing");
-                    LOGGER.info("3- sign out");
+                    LOGGER.info("1- View All Housing.");
+                    LOGGER.info("2- Pending Housing.");
+                    LOGGER.info("3- Add Housing.");
+                    LOGGER.info("4- Sign Out.");
                     String open=scan.nextLine();
+
+                    if (open.equals("2")){
+
+                    }
                 }
             }
             else if (loginInfo.ownerIsLogged) {
@@ -66,6 +71,7 @@ public class Main {
                             if (Integer.parseInt(selectHousing) > Owner.numHousing) continue;
                             else if (Integer.parseInt(selectHousing) == Owner.numHousing) break;
                             else {
+
                                 // update and delete ....
 //                                while (true) {
 //                                    String details = scan.nextLine();

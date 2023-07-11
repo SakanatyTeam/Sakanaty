@@ -11,6 +11,7 @@ public class Apartment {
     private int currTenants;
     private boolean apartmentIsFull;
 
+
     public void setApartmentIsFull(boolean apartmentIsFull) {
         this.apartmentIsFull = apartmentIsFull;
     }
@@ -38,5 +39,18 @@ public class Apartment {
 
     public void addTenant(Tenant tenant){
         this.tenants.add(tenant);
+    }
+
+    public static List<Apartment> createApartment(String string, String string2) {
+        List<Apartment> apartmentList  = new ArrayList();
+        String []ids = string.split(",");
+        String []maxApartment = string2.split(",");
+        for (int i=0; i< ids.length; i++){
+            int id = Integer.parseInt(ids[i]);
+            int max = Integer.parseInt(maxApartment[i]);
+            Apartment apartment = new Apartment(id,max);
+            apartmentList.add(apartment);
+        }
+        return apartmentList;
     }
 }
