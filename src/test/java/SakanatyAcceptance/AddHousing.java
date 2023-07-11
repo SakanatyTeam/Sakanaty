@@ -60,7 +60,6 @@ public void the_floor_by_id_have_apartments_with_id_and_max_tenant_number(Intege
             }
         }
     }
-
 }
 
     @Given("that services are {string}")
@@ -75,12 +74,11 @@ public void the_floor_by_id_have_apartments_with_id_and_max_tenant_number(Intege
     public void the_housing_will_be_saved_in_the_housing_list() {
         int numOfHousingBeforeAdd = HousingList.getHousing().size();
         housing = new Housing(name,loction,imge,price,service.split(","),ownerId,type);
+        for (Floor floor1: floorList){
+            housing.addFloors(floor1);
+        }
         HousingList.addHousing(housing);
         int numOfHousingAfterAdd = HousingList.getHousing().size();
         assertEquals(numOfHousingBeforeAdd + 1, numOfHousingAfterAdd);
     }
-
-
-
-
 }

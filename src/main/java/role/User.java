@@ -62,7 +62,6 @@ public class User {
     public static List<Housing> getHousingList(int id) {
 
         List<Housing> housinglist = new ArrayList();
-//        int id = Integer.parseInt(int1);
         for(Housing housing : HousingList.getHousing())
         {
             if(housing.getOwnerID() == id)
@@ -78,7 +77,7 @@ public class User {
         {
 //            System.out.println( housing.getOwnerID() + "sssssssssss");
             LOGGER.info( i+ "- " + housing.getName() + " , " + housing.getLocation() + " , "+ housing.getImage() +
-                    " , " + housing.getPrice() + " , " + Arrays.toString(housing.getServices()) + " , " + housing.getFloors() +  ".");
+                    " , " + housing.getPrice() + " , " + Arrays.toString(housing.getServices()) + ".");
             i++;
         }
         numHousing = i;

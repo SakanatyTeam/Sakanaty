@@ -13,6 +13,6 @@ Feature: Add Housing
   | 22       | 3             | 998          | 2                |
   | 33       | 2             | 997          | 1                |
 
-    Scenario: House info created successfully
+  Scenario: House info created successfully
       Given that services are "services"
       Then the housing will be saved in the housing list

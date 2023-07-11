@@ -1,11 +1,13 @@
 package org.example;
 
+import StaticDB.HousingList;
 import role.Owner;
 import role.Tenant;
 import role.User;
 
 import javax.swing.*;
 import java.awt.*;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 import java.util.logging.Logger;
@@ -21,6 +23,12 @@ public class Main {
     public static int userID;
 
     public static String selectHousing;
+
+    public static Housing housing1;
+    public static Floor floor1;
+    public static Apartment apartment1;
+
+    public static List <Floor> floorList1 = new ArrayList<Floor>();
 
     public static void main(String[] args) {
         int tenantID=1;
@@ -62,6 +70,7 @@ public class Main {
                         while (true) {
                             List<Housing> housingList1;
                             housingList1 = Owner.getHousingList(userID);
+                            System.out.println(userID);
                             LOGGER.info("--------- Select Housing To Update Or Delete ---------");
                             Owner.viewMyHousings(housingList1);
                             LOGGER.info(Owner.numHousing + "- Go Back.");
@@ -82,10 +91,54 @@ public class Main {
 //                                }
                             }
                         }
-                    } else if (open.equals("2")) {
-                        LOGGER.info("Add Photos: ");
+                    }
+                    else if (open.equals("2")) {
+                        String name;
+                        String location;
+                        String image;
+                        int price;
+                        String []service;
+                        String type;
+                        int ownerId = LoginInfo.userId;
 
-                    } else if (open.equals("3")) break;
+                        LOGGER.info("Add Name: ");
+                        name = scan.nextLine();
+                        LOGGER.info("Add Location: ");
+                        location = scan.nextLine();
+                        LOGGER.info("Add image: ");
+                        image = scan.nextLine();
+                        LOGGER.info("Add Price: ");
+                        price = Integer.parseInt(scan.nextLine());
+                        LOGGER.info("Add Service: ");
+                        service = scan.nextLine().split(",");
+                        LOGGER.info("Add Type: ");
+                        type = scan.nextLine();
+                        housing1 = new Housing(name,location,image,price,service,ownerId,type);
+
+                        LOGGER.info("Add Number of Floors: ");
+                        int numFloor = Integer.parseInt(scan.nextLine());
+                        String []temp = new String[numFloor];
+                        String []xy = new String[2];
+                        int []numApartments = new int[numFloor];
+                        int []maxTenantNum = new int[numFloor];
+                        for (int z=0; z< numFloor; z++){
+                            LOGGER.info("Add Number of Apartments in floor" + z + " and Max Tenants Number (x,y): ");
+                            temp[z] = scan.nextLine();
+                            xy = temp[z].split(",");
+                            numApartments[z] = Integer.parseInt(xy[0]);
+                            maxTenantNum[z] = Integer.parseInt(xy[1]);
+                            floor1 = new Floor(Floor.autoIncrementTenantId(),numApartments[z]);
+                            for (int i=0; i<numApartments[z]; i++){
+                                apartment1 = new Apartment(Apartment.autoIncrementFloorId(),maxTenantNum[z]);
+                                floor1.addApartment(apartment1);
+                            }
+                            housing1.addFloors(floor1);
+                        }
+                        HousingList.addHousing(housing1);
+                        LOGGER.info("------------------------ DONE ------------------------");
+
+                    }
+                    else if (open.equals("3")) break;
                     else continue;
                 }
             }

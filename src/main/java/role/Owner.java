@@ -1,6 +1,7 @@
 package role;
 
 import StaticDB.HousingList;
+import StaticDB.OwnersList;
 import org.example.Housing;
 import org.example.LoginInfo;
 
@@ -23,5 +24,13 @@ public class Owner extends User {
         this.phone = phone;
         this.numHousings = numHousings;
     }
+
+//    public static int autoIncrementOwnerId(){
+//        int id = 101;
+//        for (Owner owner: OwnersList.owners){
+//            if (owner.ownerID > id) id = owner.ownerID+1;
+//        }
+//        return id;
+//    }
 
 }

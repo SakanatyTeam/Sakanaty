@@ -37,6 +37,10 @@ public class Apartment {
         return tenants;
     }
 
+    public int getApartmentId() {
+        return apartmentId;
+    }
+
     public void addTenant(Tenant tenant){
         this.tenants.add(tenant);
     }
@@ -52,5 +56,13 @@ public class Apartment {
             apartmentList.add(apartment);
         }
         return apartmentList;
+    }
+
+    public static int autoIncrementFloorId(){
+        int id = 301;
+        for (Apartment apartment: Floor.getApartments()){
+            if (apartment.getApartmentId() > id) id = apartment.getApartmentId();
+        }
+        return id;
     }
 }
