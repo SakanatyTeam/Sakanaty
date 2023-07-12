@@ -134,8 +134,13 @@ public class Main {
                             }
                             housing1.addFloors(floor1);
                         }
+                        System.out.println(housing1);
                         HousingList.addHousing(housing1);
                         LOGGER.info("------------------------ DONE ------------------------");
+
+                        for (Housing h: HousingList.getHousing()){
+                            System.out.println(h);
+                        }
 
                     }
                     else if (open.equals("3")) break;

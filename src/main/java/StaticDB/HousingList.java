@@ -9,7 +9,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class HousingList {
-    static List<Housing> housings =new ArrayList<Housing>();
+    static List<Housing> housings = new ArrayList<>();
     private HousingList() {throw new IllegalStateException("Utility class");}
     static{
         String[] services1= {"Cleaning","Eleveator"};
@@ -83,6 +83,7 @@ public class HousingList {
     public static List<Housing> getHousing() {return housings;}
 
     public static void addHousing(Housing housing) {
+        /* housing = new Housing(); */
         housings.add(housing);
     }
 }
