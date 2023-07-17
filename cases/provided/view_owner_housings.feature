@@ -8,6 +8,6 @@ Feature: View User Housings By Id
     Example:
     | ID   |
     | 100  |
-    | 1  |
+    | 1    |
     | 1001  |
     | 1002  |

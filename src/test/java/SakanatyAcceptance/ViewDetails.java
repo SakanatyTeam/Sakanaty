@@ -12,6 +12,7 @@ import static org.junit.Assert.assertTrue;
 
 public class ViewDetails {
     private Throwable exception;
+    LoginInfo loginInfo;
     Tenant tenant;
     public ViewDetails(Tenant tenant) {
         this.tenant=tenant;
@@ -19,7 +20,7 @@ public class ViewDetails {
     int id;
     @Given("that the user is tenant")
     public void that_the_user_is_tenant() {
-        assertTrue(true);
+        assertTrue(tenant.getType().equals("Tenant"));
     }
     @Given("the housing selected is {int}")
     public void the_housing_selected_is(Integer int1) {

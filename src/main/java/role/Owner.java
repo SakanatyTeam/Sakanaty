@@ -18,7 +18,7 @@ public class Owner extends User {
 
     private List<Housing> housingList = new ArrayList<Housing>();
     public Owner(String username, String password, String type, int ownerID , String phone, int numHousings) {
-        super(username, password, type, ownerID);
+        super(username, password, type);
         this.ownerID = ownerID;
         this.phone = phone;
         this.numHousings = numHousings;

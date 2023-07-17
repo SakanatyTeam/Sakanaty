@@ -1,8 +1,8 @@
 package org.example;
 
-import role.Owner;
-import role.Tenant;
-import role.User;
+import StaticDB.HousingList;
+import StaticDB.TenantsList;
+import role.*;
 
 import javax.swing.*;
 import java.awt.*;
@@ -35,14 +35,39 @@ public class Main {
             if(!loginInfo.adminIsLogged && !loginInfo.ownerIsLogged && !loginInfo.tenantIsLogged)
                 loginInfo.showError();
             else if (loginInfo.adminIsLogged){
-                while (true)
-                {
+                Admin admin = new Admin();
+                while (true){
                     LOGGER.info("--------------- Dashboard ---------------");
-                    LOGGER.info("1- Show my Housing");
-                    LOGGER.info("2- Add Housing");
+                    LOGGER.info("1- Show Pending Houses info");
+                    LOGGER.info("2- Show Reservations");
                     LOGGER.info("3- sign out");
-                    String open=scan.nextLine();
+                    int in=scan.nextInt();
+                    if (in==1){
+                        int i=admin.viewRequests();
+                        if(i>1) {
+                            System.out.println("Enter a number from the menu above to accept or reject it");
+                            int x = scan.nextInt();
+                            if(x<i)
+                            {
+                                System.out.println("Choose Action:\n1-Accept\n2-Reject");
+                                if(admin.takeAction(scan.nextInt(),x)==1)
+                                    System.out.println("House accepted Successfully");
+                                else   System.out.println("House Rejected Successfully");
 
+                            }else{
+                                System.out.println("Wrong house number");
+                            }
+
+                        }
+                        else{
+                            System.out.println("No current requests");
+                        }
+                    }
+                    else if(in==2){
+                        System.out.println("test");
+                        admin.showReservations();
+                    }
+                    else break;
                 }
             }
             else if (loginInfo.ownerIsLogged){
@@ -93,23 +118,50 @@ public class Main {
                 {
                     LOGGER.info("--------------- Dashboard ---------------");
                     LOGGER.info("1- View available housings");
-                    LOGGER.info("2- Sign out");
-                    if (scan.nextInt()==1) {
+                    LOGGER.info("2- View Furnitures");
+                    LOGGER.info("3- Sign out");
+                    int x = scan.nextInt();
+                    scan.nextLine();
+                    if (x==1) {
                         tenant.viewHousings();
                         LOGGER.info("Select house number to view its information:");
                         try{
                             tenant.viewDetails(scan.nextInt());
                             LOGGER.info("Select house number to book it!");
-                            tenant.bookHouse(scan.nextInt());
+                            int hid=scan.nextInt();
+                            Housing housing = HousingList.getHousing().get(--hid);
+                            LOGGER.info("Choose floor: ");
+                            int i = 1;
+                            for (; i <= housing.getFloors().size(); i++) {
+                                System.out.println(i);
+                            }
+                            int floorNum = scan.nextInt();
+                            floorNum--;
+                            i=1;
+                            LOGGER.info("Choose Apartment: ");
+                            for (; i <= housing.getFloors().get(floorNum).getApartments().size(); i++) {
+                                System.out.println(i);
+                            }
+                            int apartNum = scan.nextInt();
+                            apartNum--;
+                            tenant.bookHouse(hid,floorNum,apartNum, tenant);
                         }
                         catch (IndexOutOfBoundsException e){
                             System.out.println("Wrong ID");
                         }
-
-
+                    }
+                    else if(x==2){
+                        tenant.viewFurnitures(tenant);
+                        System.out.println("Enter Owner name and furniture type you want to buy or enter exit to quit:");
+                        System.out.println("Owner name: ");
+                        String name = scan.nextLine();
+                        if (name.equals("exit"))
+                            continue;
+                        System.out.println("Enter Furniture name as in the list:");
+                        String f = scan.nextLine();
+                        tenant.buyFurniture(tenant,name,f);
                     }
                     else continue;
-
                 }
             }
             else continue;
