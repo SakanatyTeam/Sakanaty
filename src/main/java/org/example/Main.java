@@ -79,17 +79,7 @@ public class Main {
 
                             if (Integer.parseInt(selectHousing) > Owner.numHousing) continue;
                             else if (Integer.parseInt(selectHousing) == Owner.numHousing) break;
-                            else {
 
-                                // update and delete ....
-//                                while (true) {
-//                                    String details = scan.nextLine();
-//                                    if (details.equals("1")) {
-//
-//                                    } else if (details.equals("2")) break;
-//                                    else continue;
-//                                }
-                            }
                         }
                     }
                     else if (open.equals("2")) {
