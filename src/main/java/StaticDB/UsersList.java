@@ -1,6 +1,5 @@
 package StaticDB;
 
-import role.Tenant;
 import role.User;
 
 import java.util.ArrayList;

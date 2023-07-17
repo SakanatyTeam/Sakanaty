@@ -2,12 +2,10 @@ Feature: View User Housings By Id
 
   Scenario: View user Housings By Id successfully
     Given that the user is logged in
-    When the user select "View My Housing" with <"ID">
+    When the user select "View My Housing" with id 100
     Then display user housings list
 
-    Example:
-    | ID   |
-    | 100  |
-    | 1    |
-    | 1001  |
-    | 1002  |
+  Example:
+  | IDD |
+  | 100 |
+

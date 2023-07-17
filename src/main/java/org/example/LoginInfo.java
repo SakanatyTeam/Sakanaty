@@ -14,6 +14,8 @@ public class LoginInfo {
     public boolean ownerIsLogged;
     public boolean tenantIsLogged;
 
+    public static int userId;
+
 //    public boolean isLogged;
 //    public LoginInfo() {
 //        this.isLogged = false;
@@ -38,6 +40,7 @@ public class LoginInfo {
                     tenantIsLogged = true;
 
                 i++;
+                Main.userID = user.getId();
             }
         }
         return 1;
