@@ -99,8 +99,7 @@ public class Main {
                         int price;
                         String []service;
                         String type;
-                        int ownerId = LoginInfo.userId;
-
+                        int ownerId = userID;
                         LOGGER.info("Add Name: ");
                         name = scan.nextLine();
                         LOGGER.info("Add Location: ");

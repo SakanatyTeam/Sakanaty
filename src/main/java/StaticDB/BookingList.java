@@ -1,7 +1,8 @@
 package StaticDB;
 
-public class BookingList {
+import org.example.Main;
 
+public class BookingList {
 
 
 }

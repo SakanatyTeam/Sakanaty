@@ -57,8 +57,6 @@ public class User {
 
     public void setId(int id) {this.id = id;}
 
-
-
     public static List<Housing> getHousingList(int id) {
 
         List<Housing> housinglist = new ArrayList();
