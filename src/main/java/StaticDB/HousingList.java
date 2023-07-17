@@ -82,7 +82,7 @@ public class HousingList {
     }
     public static List<Housing> getHousing() {return housings;}
 
-    public static void addHousing(Housing housing) {
+    public static  void addHousing(Housing housing) {
         /* housing = new Housing(); */
         housings.add(housing);
     }

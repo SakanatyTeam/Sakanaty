@@ -45,7 +45,7 @@ public class Floor {
         }
     }
 
-    public static int autoIncrementTenantId(){
+    public static  int autoIncrementTenantId(){
         int id = 300;
         for (Floor floor: Housing.getFloors()){
             if (floor.getFloorId() > id) id = floor.getFloorId();
