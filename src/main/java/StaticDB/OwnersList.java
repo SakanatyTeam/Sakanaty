@@ -10,7 +10,7 @@ import java.util.List;
 public class OwnersList {
     public static List<Owner> owners=new ArrayList<Owner>();
     static{
-        owners.add(new Owner("Bdair","Pass","Owner",100,"0599407101",3));
+        owners.add(new Owner("Bdair","123","Owner",100,"0599407101",3));
     }
 
 }

@@ -119,9 +119,10 @@ public class HousingList {
 
     public static List<Housing> getPendingHousings() {
         return pendingHousings;
+    }
         public static void addHousing (Housing h){
             /* housing = new Housing(); */
             housing.add(h);
         }
-    }
 }
+

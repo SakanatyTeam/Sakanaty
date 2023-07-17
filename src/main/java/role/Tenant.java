@@ -26,7 +26,7 @@ public class Tenant extends User{
     private static final Logger LOGGER = Logger.getLogger(LoginInfo.class.getName());
 
     public Tenant(String username, String password, int tenantId, String type, String major, int age) {
-        super(username,password,type);
+        super(username,password,type,tenantId);
         this.major=major;
         this.age = age;
         this.apartmentID = -1;
@@ -77,6 +77,7 @@ public class Tenant extends User{
     }
 
     public static int viewDetails(int id) {
+        System.out.println(HousingList.getHousing().get(1).getFloors().size());
         id--;
         Housing housing = HousingList.getHousing().get(id);
         System.out.println("Name: "+ housing.getName()+"\nFloors: "+housing.getFloors().size());
@@ -157,7 +158,6 @@ public class Tenant extends User{
                 fr = furniture;
             }
         }
-
         if(fr==null){
             System.out.println("Invalid Furniture!");
             return 1;

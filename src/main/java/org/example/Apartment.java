@@ -6,6 +6,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Apartment {
+    public static int aid=1;
     private int currTenants;
     private boolean apartmentIsFull;
     private int apartmentId;
@@ -71,9 +72,6 @@ public class Apartment {
         return tenants;
     }
 
-    public int getApartmentId() {
-        return apartmentId;
-    }
 
     public void addTenant(Tenant tenant){
         this.tenants.add(tenant);
@@ -93,10 +91,6 @@ public class Apartment {
     }
 
     public static int autoIncrementFloorId(){
-        int id = 301;
-        for (Apartment apartment: Floor.getApartments()){
-            if (apartment.getApartmentId() > id) id = apartment.getApartmentId();
-        }
-        return id;
+        return aid++;
     }
 }

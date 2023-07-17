@@ -21,10 +21,11 @@ public class User {
 
     public static int numHousing = 0;
 
-    public User(String username, String password, String type) {
+    public User(String username, String password, String type, int id) {
         this.username = username;
         this.password = password;
         this.type = type;
+        this.id=id;
     }
 
     public User() {

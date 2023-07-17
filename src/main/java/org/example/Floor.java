@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Floor {
+    public static int fid=1;
     public List<Apartment> getApartments() {
         return apartments;
     }
@@ -49,11 +50,7 @@ public class Floor {
         }
     }
 
-    public static  int autoIncrementTenantId(){
-        int id = 300;
-        for (Floor floor: Housing.getFloors()){
-            if (floor.getFloorId() > id) id = floor.getFloorId();
-        }
-        return id;
+    public static int autoIncrementTenantId(){
+        return fid++;
     }
 }
