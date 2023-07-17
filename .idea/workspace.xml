@@ -6,9 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="a0b2a94a-fb6d-422d-b695-3964698dce3a" name="Changes" comment="PUSHH TO YAZ">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/LoginInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/LoginInfo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/role/Owner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/role/Owner.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/role/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/role/User.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -322,10 +319,13 @@
     <option name="LAST_COMMIT_MESSAGE" value="PUSHH TO YAZ" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/Sakanaty$Main.ic" NAME="Main Coverage Results" MODIFIED="1688848232927" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+    <SUITE FILE_PATH="coverage/Sakanaty$Main.ic" NAME="Main Coverage Results" MODIFIED="1689099612760" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>org.example.*</FILTER>
     </SUITE>
-    <SUITE FILE_PATH="coverage/Sakanaty$All_in_Sakanaty.ic" NAME="All in Sakanaty Coverage Results" MODIFIED="1688417577956" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/Sakanaty$All_in_Sakanaty.ic" NAME="All in Sakanaty Coverage Results" MODIFIED="1689586793527" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/Sakanaty$SakanatyAcceptance_in_Sakanaty.ic" NAME="SakanatyAcceptance in Sakanaty Coverage Results" MODIFIED="1689187488227" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>SakanatyAcceptance.LoginSteps</FILTER>
+    </SUITE>
     <SUITE FILE_PATH="coverage/Sakanaty$AcceptanceTest.ic" NAME="AcceptanceTest Coverage Results" MODIFIED="1688848139408" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>SakanatyAcceptance.*</FILTER>
     </SUITE>
