@@ -6,18 +6,48 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Apartment {
-    private int apartmentId;
-    private int maxTenantsNumber;
+    public static int aid=1;
     private int currTenants;
     private boolean apartmentIsFull;
+    private int apartmentId;
+    private int maxTenantsNumber;
+
+    public int getCurrTenants() {
+        return currTenants;
+    }
+
+    public int getMaxTenantsNumber() {
+        return maxTenantsNumber;
+    }
+
+    int bathrooms;
+    int bedrooms;
+
+    public void setBathrooms(int bathrooms) {
+        this.bathrooms = bathrooms;
+    }
+
+    public void setBedrooms(int bedrooms) {
+        this.bedrooms = bedrooms;
+    }
+
+    public int getBathrooms() {
+        return bathrooms;
+    }
+
+    public int getBedrooms() {
+        return bedrooms;
+    }
+
+
 
 
     public void setApartmentIsFull(boolean apartmentIsFull) {
         this.apartmentIsFull = apartmentIsFull;
     }
 
-    public boolean isApartmentIsFull() {
-        return apartmentIsFull;
+    public boolean apartmentIsFull() {
+        return this.apartmentIsFull;
     }
 
     public void setCurrTenants(int currTenants) {
@@ -29,17 +59,19 @@ public class Apartment {
     public Apartment(int apartmentId, int maxTenantsNumber) {
         this.apartmentId = apartmentId;
         this.maxTenantsNumber = maxTenantsNumber;
-        this.currTenants = currTenants;
+        this.currTenants = 0;
+        this.apartmentIsFull=false;
 
+    }
+
+    public int getApartmentId() {
+        return apartmentId;
     }
 
     public List<Tenant> getTenants() {
         return tenants;
     }
 
-    public int getApartmentId() {
-        return apartmentId;
-    }
 
     public void addTenant(Tenant tenant){
         this.tenants.add(tenant);
@@ -59,10 +91,6 @@ public class Apartment {
     }
 
     public static int autoIncrementFloorId(){
-        int id = 301;
-        for (Apartment apartment: Floor.getApartments()){
-            if (apartment.getApartmentId() > id) id = apartment.getApartmentId();
-        }
-        return id;
+        return aid++;
     }
 }

@@ -6,7 +6,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Housing {
-    private static List<Floor> floors = new ArrayList<Floor>();
+    private List<Floor> floors = new ArrayList<Floor>();
     private int id = 0;
     private String name;
     private String location;
@@ -33,7 +33,7 @@ public class Housing {
         this.ownerID = ownerID;
     }
 
-    public static List<Floor> getFloors() {
+    public List<Floor> getFloors() {
         return floors;
     }
 

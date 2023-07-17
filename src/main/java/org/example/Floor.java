@@ -4,12 +4,20 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Floor {
+    public static int fid=1;
+    public List<Apartment> getApartments() {
+        return apartments;
+    }
 
-    private static List<Apartment> apartments = new ArrayList<Apartment>();
+    private List<Apartment> apartments = new ArrayList<Apartment>();
     private int floorId;
 
     public int getFloorId() {
         return floorId;
+    }
+
+    public int getMaxApartments() {
+        return maxApartments;
     }
 
     private int maxApartments;
@@ -22,9 +30,6 @@ public class Floor {
         apartments.add(apartment);
     }
 
-    public static List<Apartment> getApartments() {
-        return apartments;
-    }
 
 //    public static List<Floor> createFloor(String string, String string2) {
 //        List<Floor> floorList  = new ArrayList();
@@ -45,11 +50,7 @@ public class Floor {
         }
     }
 
-    public static  int autoIncrementTenantId(){
-        int id = 300;
-        for (Floor floor: Housing.getFloors()){
-            if (floor.getFloorId() > id) id = floor.getFloorId();
-        }
-        return id;
+    public static int autoIncrementTenantId(){
+        return fid++;
     }
 }

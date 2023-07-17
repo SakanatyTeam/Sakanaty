@@ -25,7 +25,7 @@ public class User {
         this.username = username;
         this.password = password;
         this.type = type;
-        this.id = id;
+        this.id=id;
     }
 
     public User() {

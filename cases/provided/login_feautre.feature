@@ -9,7 +9,7 @@ Feature: User login
   Scenario: Owner logs in successfully
     Given that the owner is not logged in
     And the username is "Bdair"
-    And the password is "Pass"
+    And the password is "123"
     Then the Owner logs in successfully
 
   Scenario: Tenant logs in successfully

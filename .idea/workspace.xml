@@ -4,9 +4,18 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a0b2a94a-fb6d-422d-b695-3964698dce3a" name="Changes" comment="ownerZXczac&gt;?AMSdsa,.mD&lt;&gt;">
+    <list default="true" id="9b262339-5038-47c3-a39c-a441acc0a66f" name="Changes" comment="new message b">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/StaticDB/HousingList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/StaticDB/HousingList.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/StaticDB/OwnersList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/StaticDB/OwnersList.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/StaticDB/UsersList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/StaticDB/UsersList.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Apartment.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Apartment.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Floor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Floor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Housing.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Housing.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/role/Owner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/role/Owner.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/role/Tenant.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/role/Tenant.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/role/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/role/User.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -27,7 +36,6 @@
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
-    <option name="RESET_MODE" value="HARD" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -342,14 +350,7 @@
       <option name="project" value="LOCAL" />
       <updated>1689195912574</updated>
     </task>
-    <task id="LOCAL-00024" summary="ownerZXczac&gt;?AMSdsa,.mD&lt;&gt;">
-      <created>1689589052664</created>
-      <option name="number" value="00024" />
-      <option name="presentableId" value="LOCAL-00024" />
-      <option name="project" value="LOCAL" />
-      <updated>1689589052664</updated>
-    </task>
-    <option name="localTasksCounter" value="25" />
+    <option name="localTasksCounter" value="24" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -372,9 +373,7 @@
     <MESSAGE value="PUSHH TO YAZ" />
     <MESSAGE value="backup" />
     <MESSAGE value="new message b" />
-    <MESSAGE value="owner" />
-    <MESSAGE value="ownerZXczac&gt;?AMSdsa,.mD&lt;&gt;" />
-    <option name="LAST_COMMIT_MESSAGE" value="ownerZXczac&gt;?AMSdsa,.mD&lt;&gt;" />
+    <option name="LAST_COMMIT_MESSAGE" value="new message b" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -387,12 +386,15 @@
     </breakpoint-manager>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/Sakanaty$All_in_Sakanaty.ic" NAME="All in Sakanaty Coverage Results" MODIFIED="1689587086960" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
-    <SUITE FILE_PATH="coverage/Sakanaty$AcceptanceTest.ic" NAME="AcceptanceTest Coverage Results" MODIFIED="1689054528559" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
-      <FILTER>SakanatyAcceptance.*</FILTER>
-    </SUITE>
-    <SUITE FILE_PATH="coverage/Sakanaty$Main.ic" NAME="Main Coverage Results" MODIFIED="1688848232927" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+    <SUITE FILE_PATH="coverage/Sakanaty$Main.ic" NAME="Main Coverage Results" MODIFIED="1689099612760" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>org.example.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/Sakanaty$All_in_Sakanaty.ic" NAME="All in Sakanaty Coverage Results" MODIFIED="1689586793527" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/Sakanaty$SakanatyAcceptance_in_Sakanaty.ic" NAME="SakanatyAcceptance in Sakanaty Coverage Results" MODIFIED="1689187488227" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>SakanatyAcceptance.LoginSteps</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/Sakanaty$AcceptanceTest.ic" NAME="AcceptanceTest Coverage Results" MODIFIED="1688848139408" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>SakanatyAcceptance.*</FILTER>
     </SUITE>
   </component>
 </project>
