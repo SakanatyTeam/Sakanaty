@@ -2,20 +2,20 @@ Feature: User login
 
   Scenario: Admin logs in successfully
     Given that the admin is not logged in
-    And the username is "Yazan"
-    And the password is "Pass"
+    And the username is "YIS"
+    And the password is "123"
     Then the admin logs in successfully
 
   Scenario: Owner logs in successfully
     Given that the owner is not logged in
     And the username is "Bdair"
-    And the password is "Pass"
+    And the password is "123"
     Then the Owner logs in successfully
 
   Scenario: Tenant logs in successfully
     Given that the tenant is not logged in
-    And the username is "Baraa"
-    And the password is "Pass"
+    And the username is "Yazan"
+    And the password is "123"
     Then the Tenant logs in successfully
 
   Scenario: User entered wrong username

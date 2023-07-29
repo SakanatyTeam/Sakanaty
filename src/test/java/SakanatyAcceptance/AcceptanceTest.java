@@ -11,6 +11,7 @@ import org.junit.runner.RunWith;
         snippets = SnippetType.CAMELCASE,
         glue="SakanatyAcceptance")
 
+
 public class AcceptanceTest{
 
 }

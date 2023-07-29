@@ -1,21 +1,44 @@
 package org.example;
 
+import role.Owner;
+
+import java.util.ArrayList;
+import java.util.List;
+
 public class Housing {
-    private static int id;
+    private List<Floor> floors = new ArrayList<Floor>();
+    private int id = 0;
+    private String name;
     private String location;
     private String image;
     String[] services;
     private int price;
+    private String type;
 
-    public Housing(String location, String image, int price, String[] services) {
-        this.location = location;
-        this.image = image;
-        this.price = price;
-        this.services=services;
+    public String getType() {
+        return type;
     }
 
-    public static int getId() {
-        return id;
+    private int ownerID;
+    Owner owner;
+    Apartment apartment;
+
+    public Housing(String name, String location, String image,int price, String[] services, int ownerID,String type) {
+        this.name = name;
+        this.location = location;
+        this.image = image;
+        this.services = services;
+        this.price = price;
+        this.type=type;
+        this.ownerID = ownerID;
+    }
+
+    public List<Floor> getFloors() {
+        return floors;
+    }
+
+    public String getName() {
+        return name;
     }
 
     public String getLocation() {
@@ -33,4 +56,19 @@ public class Housing {
     public int getPrice() {
         return price;
     }
+
+    public int getOwnerID() { return ownerID; }
+
+    public Owner getOwner() {
+        return owner;
+    }
+
+    public Apartment getApartment() {
+        return apartment;
+    }
+
+    public void addFloors(Floor floor11) {
+        floors.add(floor11);
+    }
+
 }

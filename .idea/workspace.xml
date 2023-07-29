@@ -59,7 +59,7 @@
       <recent name="D:\Software_Project\Sakanaty" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Main">
+  <component name="RunManager" selected="JUnit.AcceptanceTest">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="org.example.Main" />
       <module name="Sakanaty" />
@@ -73,14 +73,14 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Feature: logout_feautre" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java" temporary="true" nameIsGenerated="true">
+    <configuration name="Feature: add_housing" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java" temporary="true" nameIsGenerated="true">
       <option name="CUCUMBER_CORE_VERSION" value="5" />
-      <option name="FILE_PATH" value="$PROJECT_DIR$/cases/provided/logout_feautre.feature" />
+      <option name="FILE_PATH" value="$PROJECT_DIR$/cases/provided/add_housing.feature" />
       <option name="GLUE" value="SakanatyAcceptance" />
       <option name="MAIN_CLASS_NAME" value="io.cucumber.core.cli.Main" />
       <module name="Sakanaty" />
       <option name="PROGRAM_PARAMETERS" value=" --plugin org.jetbrains.plugins.cucumber.java.run.CucumberJvm5SMFormatter" />
-      <option name="SUGGESTED_NAME" value="Feature: logout_feautre" />
+      <option name="SUGGESTED_NAME" value="Feature: add_housing" />
       <option name="WORKING_DIRECTORY" value="$MODULE_WORKING_DIR$" />
       <extension name="coverage">
         <pattern>
@@ -92,14 +92,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Feature: view_housings" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java" temporary="true" nameIsGenerated="true">
+    <configuration name="Feature: view_owner_housings" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java" temporary="true" nameIsGenerated="true">
       <option name="CUCUMBER_CORE_VERSION" value="5" />
-      <option name="FILE_PATH" value="$PROJECT_DIR$/cases/provided/view_housings.feature" />
-      <option name="GLUE" value="SakanatyAcceptance" />
+      <option name="FILE_PATH" value="$PROJECT_DIR$/cases/provided/view_owner_housings.feature" />
       <option name="MAIN_CLASS_NAME" value="io.cucumber.core.cli.Main" />
       <module name="Sakanaty" />
       <option name="PROGRAM_PARAMETERS" value=" --plugin org.jetbrains.plugins.cucumber.java.run.CucumberJvm5SMFormatter" />
-      <option name="SUGGESTED_NAME" value="Feature: view_housings" />
+      <option name="SUGGESTED_NAME" value="Feature: view_owner_housings" />
       <option name="WORKING_DIRECTORY" value="$MODULE_WORKING_DIR$" />
       <extension name="coverage">
         <pattern>
@@ -126,9 +125,17 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="All in Sakanaty" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="org.example in Sakanaty" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Sakanaty" />
-      <option name="PACKAGE_NAME" value="" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="SakanatyAcceptance.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="org.example" />
+      <option name="MAIN_CLASS_NAME" value="" />
+      <option name="METHOD_NAME" value="" />
       <option name="TEST_OBJECT" value="package" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -152,11 +159,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.All in Sakanaty" />
         <item itemvalue="JUnit.AcceptanceTest" />
-        <item itemvalue="Cucumber Java.Feature: view_housings" />
-        <item itemvalue="Cucumber Java.Feature: logout_feautre" />
         <item itemvalue="Application.Main" />
+        <item itemvalue="JUnit.org.example in Sakanaty" />
+        <item itemvalue="JUnit.org.example in Sakanaty" />
+        <item itemvalue="Cucumber Java.Feature: add_housing" />
       </list>
     </recent_temporary>
   </component>

@@ -3,10 +3,11 @@ package SakanatyAcceptance;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import org.example.LoginInfo;
+import org.junit.FixMethodOrder;
+import org.junit.runners.MethodSorters;
 
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
-
 public class LoginSteps {
     private String username;
     private String password;
