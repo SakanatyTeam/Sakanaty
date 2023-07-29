@@ -4,19 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a0b2a94a-fb6d-422d-b695-3964698dce3a" name="Changes" comment="push">
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/cases/provided/view_housings.feature" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/StaticDB/HousingList.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/SakanatyAcceptance/ViewHousings.java" afterDir="false" />
+    <list default="true" id="9b262339-5038-47c3-a39c-a441acc0a66f" name="Changes" comment="w12e12312">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cases/provided/logout_feautre.feature" beforeDir="false" afterPath="$PROJECT_DIR$/cases/provided/logout_feautre.feature" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/StaticDB/Housing.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Housing.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/LoginInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/LoginInfo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/role/Owner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/role/Owner.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/role/Tenant.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/role/Tenant.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/SakanatyAcceptance/LogoutSteps.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/SakanatyAcceptance/LogoutSteps.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/SakanatyAcceptance/ViewDetails.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/SakanatyAcceptance/ViewDetails.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -31,6 +21,11 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="master" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="MarkdownSettingsMigration">
@@ -50,13 +45,15 @@
     &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
     &quot;last_opened_file_path&quot;: &quot;C:/Users/Bdair/Desktop/SoftWare-project-master&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Libraries&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.3908046&quot;
   }
 }</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\AB\Sakanaty\src\main\resources\IMGE" />
       <recent name="C:\Users\AB\Sakanaty\cases\provided" />
       <recent name="C:\Users\AB\Sakanaty\cases" />
       <recent name="D:\Software_Project\Sakanaty" />
@@ -137,20 +134,36 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="org.example in Sakanaty" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Sakanaty" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="SakanatyAcceptance.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="org.example" />
+      <option name="MAIN_CLASS_NAME" value="" />
+      <option name="METHOD_NAME" value="" />
+      <option name="TEST_OBJECT" value="package" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.Main" />
+        <item itemvalue="JUnit.All in Sakanaty" />
         <item itemvalue="JUnit.AcceptanceTest" />
         <item itemvalue="Cucumber Java.Feature: view_housings" />
-        <item itemvalue="JUnit.All in Sakanaty" />
         <item itemvalue="Cucumber Java.Feature: logout_feautre" />
+        <item itemvalue="Application.Main" />
       </list>
     </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="a0b2a94a-fb6d-422d-b695-3964698dce3a" name="Changes" comment="" />
+      <changelist id="9b262339-5038-47c3-a39c-a441acc0a66f" name="Changes" comment="w12e12312" />
       <created>1688324794332</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
@@ -158,9 +171,10 @@
       <workItem from="1688324796068" duration="5106000" />
       <workItem from="1688376569693" duration="4055000" />
       <workItem from="1688385470331" duration="34000" />
-      <workItem from="1688462017459" duration="1577000" />
-      <workItem from="1688473025029" duration="5140000" />
-      <workItem from="1688499509793" duration="4609000" />
+      <workItem from="1688894928203" duration="2701000" />
+      <workItem from="1689880311557" duration="484000" />
+      <workItem from="1689961131427" duration="1700000" />
+      <workItem from="1690473182745" duration="169000" />
     </task>
     <task id="LOCAL-00001" summary="initiate">
       <created>1688402890832</created>
@@ -169,21 +183,168 @@
       <option name="project" value="LOCAL" />
       <updated>1688402890832</updated>
     </task>
-    <task id="LOCAL-00002" summary="push">
-      <created>1688418919898</created>
+    <task id="LOCAL-00002" summary="new message!">
+      <created>1688404927622</created>
       <option name="number" value="00002" />
       <option name="presentableId" value="LOCAL-00002" />
       <option name="project" value="LOCAL" />
-      <updated>1688418919898</updated>
+      <updated>1688404927622</updated>
     </task>
-    <task id="LOCAL-00003" summary="push">
-      <created>1688462044374</created>
+    <task id="LOCAL-00003" summary="new message!">
+      <created>1688413855526</created>
       <option name="number" value="00003" />
       <option name="presentableId" value="LOCAL-00003" />
       <option name="project" value="LOCAL" />
-      <updated>1688462044374</updated>
+      <updated>1688413855526</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="new message!">
+      <created>1688461762819</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1688461762819</updated>
+    </task>
+    <task id="LOCAL-00005" summary="new message!">
+      <created>1688462095296</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1688462095296</updated>
+    </task>
+    <task id="LOCAL-00006" summary="new message!">
+      <created>1688483899871</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1688483899871</updated>
+    </task>
+    <task id="LOCAL-00007" summary="new message!">
+      <created>1688486388619</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1688486388619</updated>
+    </task>
+    <task id="LOCAL-00008" summary="new message!">
+      <created>1688487166183</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1688487166183</updated>
+    </task>
+    <task id="LOCAL-00009" summary="new message!">
+      <created>1688506270984</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1688506270984</updated>
+    </task>
+    <task id="LOCAL-00010" summary="new message!">
+      <created>1688510011958</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1688510011958</updated>
+    </task>
+    <task id="LOCAL-00011" summary="new message!">
+      <created>1688552643133</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1688552643133</updated>
+    </task>
+    <task id="LOCAL-00012" summary="new message!">
+      <created>1688555706559</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1688555706559</updated>
+    </task>
+    <task id="LOCAL-00013" summary="new message!">
+      <created>1688567091948</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1688567091948</updated>
+    </task>
+    <task id="LOCAL-00014" summary="new message!">
+      <created>1688734301105</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1688734301105</updated>
+    </task>
+    <task id="LOCAL-00015" summary="new message!">
+      <created>1688742355084</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1688742355084</updated>
+    </task>
+    <task id="LOCAL-00016" summary="new message!">
+      <created>1688816391515</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1688816391515</updated>
+    </task>
+    <task id="LOCAL-00017" summary="new message!">
+      <created>1688818515276</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1688818515276</updated>
+    </task>
+    <task id="LOCAL-00018" summary="new message!">
+      <created>1688827853110</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1688827853110</updated>
+    </task>
+    <task id="LOCAL-00019" summary="PUSHH TO YAZ">
+      <created>1688896306606</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1688896306606</updated>
+    </task>
+    <task id="LOCAL-00020" summary="backup">
+      <created>1688938092284</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1688938092284</updated>
+    </task>
+    <task id="LOCAL-00021" summary="backup">
+      <created>1689085804281</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1689085804281</updated>
+    </task>
+    <task id="LOCAL-00022" summary="new message b">
+      <created>1689109563745</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1689109563745</updated>
+    </task>
+    <task id="LOCAL-00023" summary="new message b">
+      <created>1689195912573</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1689195912574</updated>
+    </task>
+    <task id="LOCAL-00024" summary="w12e12312">
+      <created>1689595657564</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1689595657564</updated>
+    </task>
+    <option name="localTasksCounter" value="25" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -202,11 +363,33 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="initiate" />
-    <MESSAGE value="pulling from yis" />
-    <MESSAGE value="push" />
-    <option name="LAST_COMMIT_MESSAGE" value="push" />
+    <MESSAGE value="new message!" />
+    <MESSAGE value="PUSHH TO YAZ" />
+    <MESSAGE value="backup" />
+    <MESSAGE value="new message b" />
+    <MESSAGE value="w12e12312" />
+    <option name="LAST_COMMIT_MESSAGE" value="w12e12312" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <breakpoint enabled="true" type="java-exception">
+          <properties class="junit.framework.AssertionFailedError" package="junit.framework" />
+          <option name="timeStamp" value="1" />
+        </breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/Sakanaty$All_in_Sakanaty.ic" NAME="All in Sakanaty Coverage Results" MODIFIED="1688417577956" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/Sakanaty$Main.ic" NAME="Main Coverage Results" MODIFIED="1689099612760" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>org.example.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/Sakanaty$All_in_Sakanaty.ic" NAME="All in Sakanaty Coverage Results" MODIFIED="1689586793527" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/Sakanaty$SakanatyAcceptance_in_Sakanaty.ic" NAME="SakanatyAcceptance in Sakanaty Coverage Results" MODIFIED="1689187488227" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>SakanatyAcceptance.LoginSteps</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/Sakanaty$AcceptanceTest.ic" NAME="AcceptanceTest Coverage Results" MODIFIED="1688848139408" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>SakanatyAcceptance.*</FILTER>
+    </SUITE>
   </component>
 </project>
