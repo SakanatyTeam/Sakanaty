@@ -33,7 +33,8 @@ public class ViewDetails {
     }
     @Then("display Fails")
     public void display_fails() {
-        exception = assertThrows(IndexOutOfBoundsException.class, () -> {
+
+         assertThrows(IndexOutOfBoundsException.class, () -> {
             int x= tenant.viewDetails(-1);
         });
     }
