@@ -1,4 +1,4 @@
-package StaticDB;
+package staticdb;
 
 import role.User;
 

@@ -1,6 +1,6 @@
 package role;
-import StaticDB.HousingList;
-import StaticDB.TenantsList;
+import staticdb.HousingList;
+import staticdb.TenantsList;
 import org.example.Apartment;
 import org.example.Floor;
 import org.example.Housing;

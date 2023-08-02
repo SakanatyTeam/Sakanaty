@@ -1,5 +1,5 @@
 package org.example;
-import StaticDB.UsersList;
+import staticdb.UsersList;
 import role.User;
 
 import java.util.logging.Logger;

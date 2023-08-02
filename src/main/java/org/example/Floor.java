@@ -12,9 +12,7 @@ public class Floor {
     private List<Apartment> apartments = new ArrayList<Apartment>();
     private int floorId;
 
-    public int getFloorId() {
-        return floorId;
-    }
+    public int getFloorId() {return floorId;}
 
     public int getMaxApartments() {
         return maxApartments;

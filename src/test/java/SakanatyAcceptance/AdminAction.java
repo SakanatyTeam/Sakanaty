@@ -1,13 +1,10 @@
 package SakanatyAcceptance;
 
-import StaticDB.HousingList;
+import staticdb.HousingList;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import org.example.Housing;
 import role.Admin;
-
-import java.util.ArrayList;
-import java.util.List;
 
 import static org.junit.Assert.assertTrue;
 

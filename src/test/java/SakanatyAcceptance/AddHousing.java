@@ -1,14 +1,11 @@
 package SakanatyAcceptance;
 
-import StaticDB.HousingList;
+import staticdb.HousingList;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
-import io.cucumber.java.sl.In;
-import junit.framework.TestCase;
 import org.example.Apartment;
 import org.example.Floor;
 import org.example.Housing;
-import org.w3c.dom.ls.LSOutput;
 
 import java.util.ArrayList;
 import java.util.List;

@@ -1,20 +1,16 @@
 package org.example;
 
-import StaticDB.HousingList;
-import StaticDB.TenantsList;
+import staticdb.HousingList;
 import role.*;
-import StaticDB.HousingList;
 import role.Tenant;
 import role.User;
 
-import javax.swing.*;
-import java.awt.*;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 import java.util.logging.Logger;
 
-import static StaticDB.TenantsList.tenants;
+import static staticdb.TenantsList.tenants;
 
 public class Main {
     private static final Logger LOGGER = Logger.getLogger(Main.class.getName());

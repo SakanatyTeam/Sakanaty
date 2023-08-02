@@ -1,12 +1,11 @@
 package SakanatyAcceptance;
 
-import StaticDB.HousingList;
+import staticdb.HousingList;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import org.example.Apartment;
 import org.example.Floor;
 import org.example.Housing;
-import org.example.LoginInfo;
 import role.Tenant;
 
 import static org.junit.Assert.assertFalse;

@@ -1,8 +1,7 @@
-package StaticDB;
+package staticdb;
 
 import role.Furniture;
 import role.Tenant;
-import role.User;
 
 import java.util.ArrayList;
 import java.util.List;

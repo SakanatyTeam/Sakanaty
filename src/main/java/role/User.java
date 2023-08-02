@@ -1,9 +1,8 @@
 package role;
 
-import StaticDB.HousingList;
+import staticdb.HousingList;
 import org.example.Housing;
 import org.example.LoginInfo;
-import org.example.Main;
 
 import java.util.ArrayList;
 import java.util.Arrays;

@@ -1,15 +1,9 @@
-package StaticDB;
-
+package staticdb;
 import org.example.Apartment;
 import org.example.Floor;
 import org.example.Housing;
-import role.Tenant;
-
-import java.awt.*;
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
-
 public class HousingList {
     static List<Housing> housing = new ArrayList<Housing>();
     public static List<Housing> pendingHousings = new ArrayList<Housing>();
@@ -120,7 +114,6 @@ public class HousingList {
         return pendingHousings;
     }
         public static void addHousing (Housing h){
-            /* housing = new Housing(); */
             housing.add(h);
         }
 }
