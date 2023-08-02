@@ -135,7 +135,7 @@ public class Main {
                                     }
                                     housing1.addFloors(floor1);
                                 }
-                                Floor.fid=1;
+                                Floor.setFid();
 
                                 HousingList.pendingHousings.add(housing1);
                                 LOGGER.info("------------------------ DONE ------------------------");

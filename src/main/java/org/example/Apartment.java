@@ -6,7 +6,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Apartment {
-    public static int aid=1;
+    private static int aid=1;
     private int currTenants;
     private boolean apartmentIsFull;
     private int apartmentId;

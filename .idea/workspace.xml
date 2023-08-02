@@ -6,18 +6,9 @@
   <component name="ChangeListManager">
     <list default="true" id="9b262339-5038-47c3-a39c-a441acc0a66f" name="Changes" comment="pushing to cloud">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/StaticDB/HousingList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/staticdb/HousingList.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/StaticDB/TenantsList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/staticdb/TenantsList.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/StaticDB/UsersList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/staticdb/UsersList.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Apartment.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Apartment.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Floor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Floor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/LoginInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/LoginInfo.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/role/Admin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/role/Admin.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/role/Tenant.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/role/Tenant.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/role/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/role/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/SakanatyAcceptance/AddHousing.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/SakanatyAcceptance/AddHousing.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/SakanatyAcceptance/AdminAction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/SakanatyAcceptance/AdminAction.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/SakanatyAcceptance/BookHousing.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/SakanatyAcceptance/BookHousing.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -188,6 +179,7 @@
       <workItem from="1690918738148" duration="1494000" />
       <workItem from="1690968402468" duration="1394000" />
       <workItem from="1690973835034" duration="630000" />
+      <workItem from="1690976880462" duration="287000" />
     </task>
     <task id="LOCAL-00001" summary="initiate">
       <created>1688402890832</created>
@@ -371,7 +363,14 @@
       <option name="project" value="LOCAL" />
       <updated>1690968961952</updated>
     </task>
-    <option name="localTasksCounter" value="27" />
+    <task id="LOCAL-00027" summary="pushing to cloud">
+      <created>1690976902994</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1690976902994</updated>
+    </task>
+    <option name="localTasksCounter" value="28" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

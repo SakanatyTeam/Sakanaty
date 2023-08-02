@@ -4,7 +4,12 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Floor {
-    public static int fid=1;
+    private static int fid=1;
+
+    public static void setFid() {
+        fid=1;
+    }
+
     public List<Apartment> getApartments() {
         return apartments;
     }
