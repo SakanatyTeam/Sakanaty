@@ -55,7 +55,6 @@ public class User {
         this.type = type;
     }
 
-    public void setId(int id) {this.id = id;}
 
     public static List<Housing> getHousingList(int id) {
 

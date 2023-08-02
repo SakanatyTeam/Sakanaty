@@ -32,7 +32,7 @@ public class TenantsList {
         t5.setApartmentID(122);
         Furniture.addFurniture(t5,new Furniture(1,"Chair Leg Aydi",0));
         Tenant t6=  new Tenant("Mostafa","Pass",7,"Tenant","Medicine",10);
-        t6.setApartmentID(221);
+        //t6.setApartmentID(221);
         Furniture.addFurniture(t6,new Furniture(1,"Desk",2000));
         tenants.add(t1);tenants.add(t2);tenants.add(t3);tenants.add(t4);tenants.add(t5);tenants.add(t6);
 

@@ -4,7 +4,6 @@ import StaticDB.HousingList;
 import StaticDB.TenantsList;
 import role.*;
 import StaticDB.HousingList;
-import role.Owner;
 import role.Tenant;
 import role.User;
 
@@ -76,7 +75,7 @@ public class Main {
                         admin.showReservations();
                     } else break;
                 }
-            } else if (loginInfo.ownerIsLogged) {
+            } else if (loginInfo.ownerIsLogged){
                 while (true) {
                     LOGGER.info("--------------- Dashboard ---------------");
                     LOGGER.info("1- View My Housing.");
@@ -87,16 +86,16 @@ public class Main {
                     if (open.equals("1")) {
                         while (true) {
                             List<Housing> housingList1;
-                            housingList1 = Owner.getHousingList(userID);
+                            housingList1 = User.getHousingList(userID);
 //                            System.out.println(userID);
                             LOGGER.info("--------- Select Housing To Update Or Delete ---------");
-                            Owner.viewMyHousings(housingList1);
-                            LOGGER.info(Owner.numHousing + "- Go Back.");
+                            User.viewMyHousings(housingList1);
+                            LOGGER.info(User.numHousing + "- Go Back.");
                             LOGGER.info("------------------------------------------------------");
                             selectHousing = scan.nextLine();
 
-                            if (Integer.parseInt(selectHousing) > Owner.numHousing) continue;
-                            else if (Integer.parseInt(selectHousing) == Owner.numHousing) break;
+                            if (Integer.parseInt(selectHousing) > User.numHousing) continue;
+                            else if (Integer.parseInt(selectHousing) == User.numHousing) break;
                         }
                     }
                             else if (open.equals("2")) {
@@ -141,14 +140,9 @@ public class Main {
                                     housing1.addFloors(floor1);
                                 }
                                 Floor.fid=1;
-                                System.out.println(housing1);
+
                                 HousingList.pendingHousings.add(housing1);
                                 LOGGER.info("------------------------ DONE ------------------------");
-
-                                for (Housing h : HousingList.getHousing()) {
-                                    System.out.println(h);
-                                }
-
                             } else if (open.equals("3")) break;
                             else continue;
                         }
@@ -171,6 +165,7 @@ public class Main {
                                 LOGGER.info("Select house number to view its information:");
                                 try {
                                     tenant.viewDetails(scan.nextInt());
+
                                     LOGGER.info("Select house number to book it!");
                                     int hid = scan.nextInt();
                                     Housing housing = HousingList.getHousing().get(--hid);

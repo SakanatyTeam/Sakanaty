@@ -7,9 +7,6 @@ import java.util.List;
 
 public class UsersList {
     static List<User> users=new ArrayList<User>();
-    private UsersList() {
-        throw new IllegalStateException("Utility class");
-    }
     static{
         users.add(new User("YIS","123","Admin",0));
         users.add(new User("Bdair","123","Owner",100));

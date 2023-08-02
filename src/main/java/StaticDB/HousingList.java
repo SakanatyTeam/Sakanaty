@@ -5,16 +5,14 @@ import org.example.Floor;
 import org.example.Housing;
 import role.Tenant;
 
+import java.awt.*;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
 public class HousingList {
     static List<Housing> housing = new ArrayList<Housing>();
     public static List<Housing> pendingHousings = new ArrayList<Housing>();
-
-    private HousingList() {
-        throw new IllegalStateException("Utility class");
-    }
 
     static {
         String[] services1 = {"Cleaning", "Eleveator"};
@@ -101,8 +99,9 @@ public class HousingList {
         house1.addFloors(floor11);
         house1.addFloors(floor12);
         house1.addFloors(floor13);
-
+        house1.setImage("");
         Housing house2 = new Housing("Sakan2", "Tulkarm", "link2", 200, services2, 100, "General");
+        house1.setImage("https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/8105260c-cfc1-463e-b35b-5de2d500fac9/df9wgvg-801e4bc3-486b-47e4-8cbe-6399082ce140.png/v1/fill/w_809,h_560/luffy___nika___gear_5_by_caiquenadal_df9wgvg-fullview.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9NTYwIiwicGF0aCI6IlwvZlwvODEwNTI2MGMtY2ZjMS00NjNlLWIzNWItNWRlMmQ1MDBmYWM5XC9kZjl3Z3ZnLTgwMWU0YmMzLTQ4NmItNDdlNC04Y2JlLTYzOTkwODJjZTE0MC5wbmciLCJ3aWR0aCI6Ijw9ODA5In1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmltYWdlLm9wZXJhdGlvbnMiXX0.EsZtlByyzE5ZPoRUDcRc4SyhvXJNx27eQ3lEDR5RPmk");
         house2.addFloors(floor21);
         house2.addFloors(floor22);
 
