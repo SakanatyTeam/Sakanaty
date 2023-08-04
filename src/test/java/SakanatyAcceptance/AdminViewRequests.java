@@ -4,6 +4,7 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import role.Admin;
 
+import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 
 public class AdminViewRequests {
@@ -15,7 +16,7 @@ public class AdminViewRequests {
 
     @Given("that the user is an admin")
     public void that_the_user_is_an_admin() {
-        assertTrue(admin.getType().equals("Admin"));
+        assertEquals("Admin",admin.getType());
     }
 
     @Then("the admin can view the requests")

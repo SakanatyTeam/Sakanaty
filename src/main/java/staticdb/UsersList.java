@@ -7,7 +7,9 @@ import java.util.List;
 
 public class UsersList {
     private static final String TENANT = "Tenant";
-    public UsersList() {
+    private UsersList()
+    {
+        throw new IllegalStateException("Utility class");
     }
 
     static List<User> users=new ArrayList<User>();

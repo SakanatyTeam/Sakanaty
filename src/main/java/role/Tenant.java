@@ -4,7 +4,6 @@ import staticdb.TenantsList;
 import org.example.Apartment;
 import org.example.Floor;
 import org.example.Housing;
-import org.example.LoginInfo;
 import java.util.*;
 import java.util.logging.Logger;
 

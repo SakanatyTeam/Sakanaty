@@ -6,8 +6,8 @@ import java.util.ArrayList;
 import java.util.List;
 public class HousingList {
 
-    public HousingList() {
-        throw new UnsupportedOperationException();
+    private HousingList() {
+            throw new IllegalStateException("Utility class");
     }
 
     static List<Housing> housing = new ArrayList<Housing>();
