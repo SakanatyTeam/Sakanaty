@@ -159,8 +159,7 @@ public class Main {
                                 String s = "Select house number to view its information:";
                                 LOGGER.info(s);
                                 try {
-                                    int a=scan.nextInt();
-                                    tenant.viewDetails(a);
+                                    tenant.viewDetails(scan.nextInt());
                                     s="Select house number to book it!";
                                     LOGGER.info(s);
                                     int hid = scan.nextInt();
@@ -168,14 +167,16 @@ public class Main {
                                     LOGGER.info("Choose floor: ");
                                     int i = 1;
                                     for (; i <= housing.getFloors().size(); i++) {
-                                        LOGGER.info(String.valueOf(i));
+                                        s=String.valueOf(i);
+                                        LOGGER.info(s);
                                     }
                                     int floorNum = scan.nextInt();
                                     floorNum--;
                                     i = 1;
                                     LOGGER.info("Choose Apartment: ");
                                     for (; i <= housing.getFloors().get(floorNum).getApartments().size(); i++) {
-                                        LOGGER.info(String.valueOf(i));
+                                        s=String.valueOf(i);
+                                        LOGGER.info(s);
                                     }
                                     int apartNum = scan.nextInt();
                                     apartNum--;

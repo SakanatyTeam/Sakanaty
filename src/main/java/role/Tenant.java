@@ -51,7 +51,7 @@ public class Tenant extends User{
         return age;
     }
 
-    public static int viewDetails(int id) {
+    public int viewDetails(int id) {
         id--;
         Housing housing = HousingList.getHousing().get(id);
         System.out.println("Name: "+ housing.getName()+"\nFloors: "+housing.getFloors().size());
