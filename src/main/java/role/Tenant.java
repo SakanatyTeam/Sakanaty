@@ -62,8 +62,7 @@ public class Tenant extends User{
                 if (housing.getType().equals("Student"))
                 {
                     System.out.println("Tenants: " + apartment.getCurrTenants());
-                    if(apartment.getTenants().isEmpty())
-                        System.out.println("This apartment is empty.");
+                    if(apartment.getTenants().isEmpty()) System.out.println("This apartment is empty.");
                     else {
                         for (Tenant tenant : apartment.getTenants()) {
                             System.out.println("Name: " + tenant.getUsername() + "\nMajor: " + tenant.getMajor() + "\nAge: " + tenant.getAge() + "\n-------");
@@ -141,7 +140,8 @@ public class Tenant extends User{
         if(tenant!=o) {
             Furniture.getFurnitureList().get(tenant).add(fr);
             Furniture.getFurnitureList().get(o).remove(fr);
-            return 2;
-        } else {System.out.println("You cant buy from yourself!");return 3;}
+            return 2;}
+        else
+        {System.out.println("You cant buy from yourself!");return 3;}
     }
 }

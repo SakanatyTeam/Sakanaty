@@ -52,7 +52,8 @@ public class Main {
                     if (in == 1) {
                         int i = admin.viewRequests();
                         if (i > 1) {
-                            System.out.println("Enter a number from the menu above to accept or reject it");
+                            String s = "Enter a number from the menu above to accept or reject it";
+                            LOGGER.info(s);
                             int x = scan.nextInt();
                             if (x < i) {
                                 System.out.println("Choose Action:\n1-Accept\n2-Reject");
