@@ -19,7 +19,10 @@ public class User {
 
     private static int numHousing = 0;
 
-    public static int getNumHousing() {return numHousing;}
+    public static int getNumHousing() {
+        return numHousing;
+    }
+
     public User(String username, String password, String type, int id) {
         this.username = username;
         this.password = password;
@@ -66,7 +69,7 @@ public class User {
         return housinglist;
     }
 
-    public static int viewMyHousings(List<Housing> housingList) {
+    public static void viewMyHousings(List<Housing> housingList) {
 
         int i = 1;
         for(Housing housing : housingList)
@@ -77,7 +80,5 @@ public class User {
             i++;
         }
         numHousing = i;
-        return numHousing;
     }
-
-    }
+}

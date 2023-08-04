@@ -8,6 +8,7 @@ import java.util.*;
 import java.util.logging.Logger;
 
 public class Tenant extends User{
+
     public Tenant() {
         setType("Tenant");
         setApartmentID(-1);
@@ -54,40 +55,59 @@ public class Tenant extends User{
     public int viewDetails(int id) {
         id--;
         Housing housing = HousingList.getHousing().get(id);
-        System.out.println("Name: "+ housing.getName()+"\nFloors: "+housing.getFloors().size());
+        String s;
+        s="Name: "+ housing.getName()+"\nFloors: "+housing.getFloors().size();
+        LOGGER.info(s);
         for(Floor floor:housing.getFloors()){
-            System.out.println("****************\nFloor id: "+floor.getFloorId()+"\nMaximum apartments: "+floor.getMaxApartments());
+            s="****************\nFloor id: "+floor.getFloorId()+"\nMaximum apartments: "+floor.getMaxApartments();
+            LOGGER.info(s);
             for (Apartment apartment: floor.getApartments()){
-                System.out.println("________\nApartment ID:" + apartment.getApartmentId()+"\nMax Tenants: " +apartment.getMaxTenantsNumber()+"\nBathrooms: " + apartment.getBathrooms()+"\nBedrooms = "+apartment.getBedrooms());
+                s="________\nApartment ID:" + apartment.getApartmentId()+"\nMax Tenants: " +apartment.getMaxTenantsNumber()+"\nBathrooms: " + apartment.getBathrooms()+"\nBedrooms = "+apartment.getBedrooms();
+                LOGGER.info(s);
                 if (housing.getType().equals("Student"))
                 {
-                    System.out.println("Tenants: " + apartment.getCurrTenants());
-                    if(apartment.getTenants().isEmpty()) System.out.println("This apartment is empty.");
+                    s="Tenants: " + apartment.getCurrTenants();
+                    LOGGER.info(s);
+                    if(apartment.getTenants().isEmpty()) {
+                        s="This apartment is empty.";
+                        LOGGER.info(s);
+                    }
                     else {
                         for (Tenant tenant : apartment.getTenants()) {
-                            System.out.println("Name: " + tenant.getUsername() + "\nMajor: " + tenant.getMajor() + "\nAge: " + tenant.getAge() + "\n-------");
+                            s="Name: " + tenant.getUsername() + "\nMajor: " + tenant.getMajor() + "\nAge: " + tenant.getAge() + "\n-------";
+                            LOGGER.info(s);
                         }
                     }
                 }
-                if(apartment.apartmentIsFull())
-                    System.out.println("Not available - Apartment is full!");
-                else System.out.println("Available - you can rent here!");
+                if(apartment.apartmentIsFull()) {
+                    s = "Not available - Apartment is full!";
+                    LOGGER.info(s);
+                }
+                else {
+                    s="Available - you can rent here!";
+                    LOGGER.info(s);
+                }
             }
-            System.out.println("***************************");
-            System.out.println("Preview: " + housing.getImage());
+            s="***************************";
+            LOGGER.info(s);
+            s="Preview: " + housing.getImage();
+            LOGGER.info(s);
         }
         return 1;
     }
 
     public int bookHouse(int id,int floorID, int apartmentID1,Tenant tenant) {
+        String s;
         if(tenant.getApartmentID()!=-1) {
-            System.out.println("You cant rent because you already rented in apartment " + tenant.getApartmentID());
+            s="You cant rent because you already rented in apartment " + tenant.getApartmentID();
+            LOGGER.info(s);
             return 0;
         }
         else {
             Housing housing = HousingList.getHousing().get(id);
             if (housing.getFloors().get(floorID).getApartments().get(apartmentID1).apartmentIsFull()) {
-                System.out.println("You cant book here because this apartment is full!");
+                s="You cant book here because this apartment is full!";
+                LOGGER.info(s);
                 return 1;
             }
             else {
@@ -102,19 +122,24 @@ public class Tenant extends User{
     }
 
     public int viewFurnitures(Tenant tenant) {
+        String s;
         for (Map.Entry<Tenant,ArrayList<Furniture>> entry : Furniture.getFurnitureList().entrySet()) {
             if(entry.getKey()!=tenant) {
-                System.out.println("Owner " + entry.getKey().getUsername() + ":");
+                s="Owner " + entry.getKey().getUsername() + ":";
+                LOGGER.info(s);
                 for (Furniture furniture : entry.getValue()) {
-                    System.out.println(furniture.getName() + "\t|\tPrice: " + furniture.getPrice() + "\t|\t");
+                    s=furniture.getName() + "\t|\tPrice: " + furniture.getPrice() + "\t|\t";
+                    LOGGER.info(s);
                 }
-                System.out.println("*************");
+                s="*************";
+                LOGGER.info(s);
             }
         }
         return 1;
     }
 
     public int buyFurniture(Tenant tenant, String name, String f) {
+        String s;
         Tenant o = null;
         Furniture fr = null;
         for(Tenant t: TenantsList.getTenants()){
@@ -124,7 +149,8 @@ public class Tenant extends User{
             }
         }
         if(o==null){
-            System.out.println("Invalid Name!");
+            s="Invalid Name!";
+            LOGGER.info(s);
             return 0;
         }
         for(Furniture furniture : Furniture.getFurnitureList().get(o)) {
@@ -133,15 +159,19 @@ public class Tenant extends User{
             }
         }
         if(fr==null){
-            System.out.println("Invalid Furniture!");
+            s="Invalid Furniture!";
+            LOGGER.info(s);
             return 1;
 
         }
         if(tenant!=o) {
             Furniture.getFurnitureList().get(tenant).add(fr);
             Furniture.getFurnitureList().get(o).remove(fr);
-            return 2;}
-        else
-        {System.out.println("You cant buy from yourself!");return 3;}
+            return 2;
+        } else {
+            s= "You cant buy from yourself!";
+            LOGGER.info(s);
+            return 3;
+        }
     }
 }

@@ -10,8 +10,8 @@ public class LoginInfo {
     private boolean ownerIsLogged;
     private boolean tenantIsLogged;
     public int checkAuth(String username, String password) {
-       logout();
-       int id=1;
+        logout();
+        int id=1;
         for (User user : UsersList.getAdmins()) {
             if (username.equals(user.getUsername()) && password.equals(user.getPassword())) {
                 if (user.getType().equals("Owner"))
