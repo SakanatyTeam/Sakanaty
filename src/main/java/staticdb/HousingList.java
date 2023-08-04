@@ -5,16 +5,21 @@ import org.example.Housing;
 import java.util.ArrayList;
 import java.util.List;
 public class HousingList {
+
+    public HousingList() {
+    }
+
     static List<Housing> housing = new ArrayList<Housing>();
-    public static List<Housing> pendingHousings = new ArrayList<Housing>();
+    private static List<Housing> pendingHousings = new ArrayList<Housing>();
+
 
     static {
         String[] services1 = {"Cleaning", "Eleveator"};
         String[] services2 = {"Cleaning"};
         Apartment apartment111 = new Apartment(111, 3);
-        apartment111.addTenant(TenantsList.tenants.get(1));
-        apartment111.addTenant(TenantsList.tenants.get(2));
-        apartment111.addTenant(TenantsList.tenants.get(3));
+        apartment111.addTenant(TenantsList.getTenants().get(1));
+        apartment111.addTenant(TenantsList.getTenants().get(2));
+        apartment111.addTenant(TenantsList.getTenants().get(3));
         apartment111.setBathrooms(1);
         apartment111.setBedrooms(2);
         apartment111.setApartmentIsFull(true);
@@ -29,14 +34,14 @@ public class HousingList {
         Apartment apartment121 = new Apartment(121, 2);
         apartment121.setBedrooms(3);
         apartment121.setBathrooms(1);
-        apartment121.addTenant(TenantsList.tenants.get(4));
+        apartment121.addTenant(TenantsList.getTenants().get(4));
         apartment121.setCurrTenants(1);
 
 
         Apartment apartment122 = new Apartment(122, 3);
         apartment122.setBathrooms(3);
         apartment122.setBedrooms(4);
-        apartment122.addTenant(TenantsList.tenants.get(5));
+        apartment122.addTenant(TenantsList.getTenants().get(5));
         apartment122.setCurrTenants(1);
 
 
@@ -52,7 +57,7 @@ public class HousingList {
         apartment131.setCurrTenants(0);
 
         Apartment apartment211 = new Apartment(211, 2);
-        apartment211.addTenant(TenantsList.tenants.get(6));
+        apartment211.addTenant(TenantsList.getTenants().get(6));
         apartment211.setCurrTenants(1);
         apartment211.setBedrooms(2);
         apartment211.setBathrooms(3);

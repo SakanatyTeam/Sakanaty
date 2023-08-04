@@ -36,14 +36,14 @@ public class AdminAction {
     public void the_house_is_accepted() {
         housing=HousingList.getPendingHousings().get(id-1);
         assertTrue(admin.takeAction(action,id)==1);
-        HousingList.pendingHousings.add(id-1,housing);
+        HousingList.getPendingHousings().add(id-1,housing);
     }
 
     @Then("the house is rejected")
     public void the_house_is_rejected() {
         housing=HousingList.getPendingHousings().get(id-1);
         assertTrue(admin.takeAction(action,id)==2);
-        HousingList.pendingHousings.add(id-1,housing);
+        HousingList.getPendingHousings().add(id-1,housing);
     }
 
 }

@@ -4,12 +4,12 @@ import staticdb.HousingList;
 import role.*;
 import role.Tenant;
 import role.User;
+import staticdb.TenantsList;
 
 import java.util.List;
 import java.util.Scanner;
 import java.util.logging.Logger;
 
-import static staticdb.TenantsList.tenants;
 
 public class Main {
 
@@ -19,7 +19,7 @@ public class Main {
     private static LoginInfo loginInfo = new LoginInfo();
 
     private static int userID;
-    private static final String dashboard="--------------- Dashboard ---------------";
+    private static final String DASHBOARD ="--------------- Dashboard ---------------";
 
 
     private static String selectHousing;
@@ -29,6 +29,7 @@ public class Main {
     private static Apartment apartment1;
 
     public static void main(String[] args) {
+        Tenant tenant = new Tenant();
         while (true) {
             LOGGER.info("Enter username:");
             String username = scan.nextLine().trim().strip();
@@ -43,7 +44,7 @@ public class Main {
             else if (loginInfo.isAdminIsLogged()) {
                 Admin admin = new Admin();
                 while (true) {
-                    LOGGER.info(dashboard);
+                    LOGGER.info(DASHBOARD);
                     LOGGER.info("1- Show Pending Houses info");
                     LOGGER.info("2- Show Reservations");
                     LOGGER.info("3- sign out");
@@ -73,7 +74,7 @@ public class Main {
                 }
             } else if (loginInfo.isOwnerIsLogged()){
                 while (true) {
-                    LOGGER.info(dashboard);
+                    LOGGER.info(DASHBOARD);
                     LOGGER.info("1- View My Housing.");
                     LOGGER.info("2- Add Housing.");
                     LOGGER.info("3- Sign Out.");
@@ -85,11 +86,11 @@ public class Main {
                             housingList1 = User.getHousingList(userID);
                             LOGGER.info("--------- Select Housing To Update Or Delete ---------");
                             User.viewMyHousings(housingList1);
-                            String s =  User.numHousing + "- Go Back.";
+                            String s =  User.getNumHousing() + "- Go Back.";
                             LOGGER.info(s);
                             LOGGER.info("------------------------------------------------------");
                             selectHousing = scan.nextLine();
-                             if (Integer.parseInt(selectHousing) == User.numHousing) break;
+                             if (Integer.parseInt(selectHousing) == User.getNumHousing()) break;
                         }
                     }
                             else if (open.equals("2")) {
@@ -121,7 +122,8 @@ public class Main {
                                 int[] numApartments = new int[numFloor];
                                 int[] maxTenantNum = new int[numFloor];
                                 for (int z = 0; z < numFloor; z++) {
-                                    LOGGER.info("Add Number of Apartments in floor" + z + " and Max Tenants Number (x,y): ");
+                                    String s = "Add Number of Apartments in floor" + z + " and Max Tenants Number (x,y): ";
+                                    LOGGER.info(s);
                                     temp[z] = scan.nextLine();
                                     xy = temp[z].split(",");
                                     numApartments[z] = Integer.parseInt(xy[0]);
@@ -134,19 +136,19 @@ public class Main {
                                     housing1.addFloors(floor1);
                                 }
                                 Floor.setFid();
-                                HousingList.pendingHousings.add(housing1);
+                                HousingList.getPendingHousings().add(housing1);
                                 LOGGER.info("------------------------ DONE ------------------------");
                             } else if (open.equals("3")) break;
                         }
                     } else if (loginInfo.isTenantIsLogged()) {
 
-                        Tenant tenant = new Tenant();
-                        for (Tenant tenant1 : tenants) {
+
+                        for (Tenant tenant1 : TenantsList.getTenants()) {
                             if (tenant1.getUsername().equals(username))
                                 tenant = tenant1;
                         }
                         while (true) {
-                            LOGGER.info(dashboard);
+                            LOGGER.info(DASHBOARD);
                             LOGGER.info("1- View available housings");
                             LOGGER.info("2- View Furnitures");
                             LOGGER.info("3- Sign out");
@@ -154,42 +156,48 @@ public class Main {
                             scan.nextLine();
                             if (x == 1) {
                                 tenant.viewHousings();
-                                LOGGER.info("Select house number to view its information:");
+                                String s = "Select house number to view its information:";
+                                LOGGER.info(s);
                                 try {
                                     tenant.viewDetails(scan.nextInt());
-
-                                    LOGGER.info("Select house number to book it!");
+                                    s="Select house number to book it!";
+                                    LOGGER.info(s);
                                     int hid = scan.nextInt();
                                     Housing housing = HousingList.getHousing().get(--hid);
                                     LOGGER.info("Choose floor: ");
                                     int i = 1;
                                     for (; i <= housing.getFloors().size(); i++) {
-                                        System.out.println(i);
+                                        LOGGER.info(String.valueOf(i));
                                     }
                                     int floorNum = scan.nextInt();
                                     floorNum--;
                                     i = 1;
                                     LOGGER.info("Choose Apartment: ");
                                     for (; i <= housing.getFloors().get(floorNum).getApartments().size(); i++) {
-                                        System.out.println(i);
+                                        LOGGER.info(String.valueOf(i));
                                     }
                                     int apartNum = scan.nextInt();
                                     apartNum--;
                                     tenant.bookHouse(hid, floorNum, apartNum, tenant);
                                 } catch (IndexOutOfBoundsException e) {
-                                    System.out.println("Wrong ID");
+                                    s="Wrong ID";
+                                    LOGGER.info(s);
                                 }
                             } else if (x == 2) {
                                 tenant.viewFurnitures(tenant);
-                                System.out.println("Enter Owner name and furniture type you want to buy or enter exit to quit:");
-                                System.out.println("Owner name: ");
+                                String s;
+                                s="Enter Owner name and furniture type you want to buy or enter exit to quit:";
+                                LOGGER.info(s);
+                                s="Owner name: ";
+                                LOGGER.info(s);
                                 String name = scan.nextLine();
                                 if (name.equals("exit"))
                                     continue;
-                                System.out.println("Enter Furniture name as in the list:");
+                                s="Enter Furniture name as in the list:";
+                                LOGGER.info(s);
                                 String f = scan.nextLine();
                                 tenant.buyFurniture(tenant, name, f);
-                            } else break;
+                            }
 
                         }
                     }

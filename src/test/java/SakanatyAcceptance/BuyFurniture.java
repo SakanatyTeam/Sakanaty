@@ -29,7 +29,7 @@ Tenant tenant;
 
     @Then("the tenant buys it")
     public void the_tenant_buys_it() {
-        Furniture.furnitureList.put(tenant,new ArrayList<>());
+        Furniture.getFurnitureList().put(tenant,new ArrayList<>());
         assertTrue(tenant.buyFurniture(tenant,oname,fname)==2);
     }
 

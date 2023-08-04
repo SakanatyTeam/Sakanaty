@@ -18,7 +18,7 @@ public class Tenant extends User{
     private int age;
     private int tenantId;
     private int apartmentID;
-    private static final Logger LOGGER = Logger.getLogger(LoginInfo.class.getName());
+    private static final Logger LOGGER = Logger.getLogger(Tenant.class.getName());
 
     public Tenant(String username, String password, int tenantId, String type, String major, int age) {
         super(username,password,type,tenantId);
@@ -38,7 +38,8 @@ public class Tenant extends User{
 
     public int viewHousings() {int i=1;
         for(Housing housing:HousingList.getHousing()){
-            LOGGER.info(i+ "- Name: "+housing.getName()+"\nLocation: "+ housing.getLocation()+ "\nPrice: "+housing.getPrice()+"\nType: "+housing.getType());i++;
+            String s = i+ "- Name: "+housing.getName()+"\nLocation: "+ housing.getLocation()+ "\nPrice: "+housing.getPrice()+"\nType: "+housing.getType();
+            LOGGER.info(s);i++;
         }
         return 1;
     }
@@ -52,7 +53,6 @@ public class Tenant extends User{
     }
 
     public static int viewDetails(int id) {
-//        System.out.println(HousingList.getHousing().get(1).getFloors().size());
         id--;
         Housing housing = HousingList.getHousing().get(id);
         System.out.println("Name: "+ housing.getName()+"\nFloors: "+housing.getFloors().size());
@@ -60,11 +60,12 @@ public class Tenant extends User{
             System.out.println("****************\nFloor id: "+floor.getFloorId()+"\nMaximum apartments: "+floor.getMaxApartments());
             for (Apartment apartment: floor.getApartments()){
                 System.out.println("________\nApartment ID:" + apartment.getApartmentId()+"\nMax Tenants: " +apartment.getMaxTenantsNumber()+"\nBathrooms: " + apartment.getBathrooms()+"\nBedrooms = "+apartment.getBedrooms());
-                if (housing.getType().equals("Student"));
+                if (housing.getType().equals("Student"))
                 {
                     System.out.println("Tenants: " + apartment.getCurrTenants());
-                    if(apartment.getTenants().size()==0)
-                        System.out.println("This apartment is empty.");else
+                    if(apartment.getTenants().isEmpty())
+                        System.out.println("This apartment is empty.");
+                    else
                     for (Tenant tenant : apartment.getTenants())
                     {
                         System.out.println("Name: "+tenant.getUsername()+"\nMajor: "+ tenant.getMajor() + "\nAge: "+ tenant.getAge()+"\n-------");
@@ -103,11 +104,11 @@ public class Tenant extends User{
     }
 
     public int viewFurnitures(Tenant tenant) {
-        for (Map.Entry<Tenant,ArrayList<Furniture>> entry : Furniture.furnitureList.entrySet()) {
+        for (Map.Entry<Tenant,ArrayList<Furniture>> entry : Furniture.getFurnitureList().entrySet()) {
             if(entry.getKey()!=tenant) {
                 System.out.println("Owner " + entry.getKey().getUsername() + ":");
                 for (Furniture furniture : entry.getValue()) {
-                    System.out.println(furniture.name + "\t|\tPrice: " + furniture.price + "\t|\t");
+                    System.out.println(furniture.getName() + "\t|\tPrice: " + furniture.getPrice() + "\t|\t");
                 }
                 System.out.println("*************");
             }
@@ -118,7 +119,7 @@ public class Tenant extends User{
     public int buyFurniture(Tenant tenant, String name, String f) {
         Tenant o = null;
         Furniture fr = null;
-        for(Tenant t: TenantsList.tenants){
+        for(Tenant t: TenantsList.getTenants()){
             if(t.getUsername().equals(name))
             {
                 o=t;
@@ -128,8 +129,8 @@ public class Tenant extends User{
             System.out.println("Invalid Name!");
             return 0;
         }
-        for(Furniture furniture : Furniture.furnitureList.get(o)) {
-            if (furniture.name.equals(f)) {
+        for(Furniture furniture : Furniture.getFurnitureList().get(o)) {
+            if (furniture.getName().equals(f)) {
                 fr = furniture;
             }
         }
@@ -139,8 +140,8 @@ public class Tenant extends User{
 
         }
         if(tenant!=o) {
-            Furniture.furnitureList.get(tenant).add(fr);
-            Furniture.furnitureList.get(o).remove(fr);
+            Furniture.getFurnitureList().get(tenant).add(fr);
+            Furniture.getFurnitureList().get(o).remove(fr);
             return 2;
         } else {System.out.println("You cant buy from yourself!");return 3;}
     }
