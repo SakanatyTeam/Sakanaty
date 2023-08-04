@@ -7,8 +7,7 @@ import role.Tenant;
 
 import java.util.ArrayList;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.*;
 
 public class BuyFurniture {
 Tenant tenant;
@@ -51,6 +50,6 @@ Tenant tenant;
     @Given("tenant name is not {string}")
     public void tenant_name_is_not(String string) {
         tenant.setUsername("Yazan");
-        assertTrue(!tenant.getUsername().equals(string));
+        assertNotEquals(string,tenant.getUsername());
     }
 }

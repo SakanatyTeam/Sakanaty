@@ -64,10 +64,10 @@ public class Tenant extends User{
                     System.out.println("Tenants: " + apartment.getCurrTenants());
                     if(apartment.getTenants().isEmpty())
                         System.out.println("This apartment is empty.");
-                    else
-                    for (Tenant tenant : apartment.getTenants())
-                    {
-                        System.out.println("Name: "+tenant.getUsername()+"\nMajor: "+ tenant.getMajor() + "\nAge: "+ tenant.getAge()+"\n-------");
+                    else {
+                        for (Tenant tenant : apartment.getTenants()) {
+                            System.out.println("Name: " + tenant.getUsername() + "\nMajor: " + tenant.getMajor() + "\nAge: " + tenant.getAge() + "\n-------");
+                        }
                     }
                 }
                 if(apartment.apartmentIsFull())
