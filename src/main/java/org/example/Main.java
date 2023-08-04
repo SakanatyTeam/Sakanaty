@@ -19,6 +19,7 @@ public class Main {
     private static LoginInfo loginInfo = new LoginInfo();
 
     private static int userID;
+    private static final String dashboard="--------------- Dashboard ---------------";
 
 
     private static String selectHousing;
@@ -42,7 +43,7 @@ public class Main {
             else if (loginInfo.isAdminIsLogged()) {
                 Admin admin = new Admin();
                 while (true) {
-                    LOGGER.info("--------------- Dashboard ---------------");
+                    LOGGER.info(dashboard);
                     LOGGER.info("1- Show Pending Houses info");
                     LOGGER.info("2- Show Reservations");
                     LOGGER.info("3- sign out");
@@ -72,7 +73,7 @@ public class Main {
                 }
             } else if (loginInfo.isOwnerIsLogged()){
                 while (true) {
-                    LOGGER.info("--------------- Dashboard ---------------");
+                    LOGGER.info(dashboard);
                     LOGGER.info("1- View My Housing.");
                     LOGGER.info("2- Add Housing.");
                     LOGGER.info("3- Sign Out.");
@@ -82,15 +83,13 @@ public class Main {
                         while (true) {
                             List<Housing> housingList1;
                             housingList1 = User.getHousingList(userID);
-//                            System.out.println(userID);
                             LOGGER.info("--------- Select Housing To Update Or Delete ---------");
                             User.viewMyHousings(housingList1);
-                            LOGGER.info(User.numHousing + "- Go Back.");
+                            String s =  User.numHousing + "- Go Back.";
+                            LOGGER.info(s);
                             LOGGER.info("------------------------------------------------------");
                             selectHousing = scan.nextLine();
-
-                            if (Integer.parseInt(selectHousing) > User.numHousing) continue;
-                            else if (Integer.parseInt(selectHousing) == User.numHousing) break;
+                             if (Integer.parseInt(selectHousing) == User.numHousing) break;
                         }
                     }
                             else if (open.equals("2")) {
@@ -135,11 +134,9 @@ public class Main {
                                     housing1.addFloors(floor1);
                                 }
                                 Floor.setFid();
-
                                 HousingList.pendingHousings.add(housing1);
                                 LOGGER.info("------------------------ DONE ------------------------");
                             } else if (open.equals("3")) break;
-                            else continue;
                         }
                     } else if (loginInfo.isTenantIsLogged()) {
 
@@ -149,7 +146,7 @@ public class Main {
                                 tenant = tenant1;
                         }
                         while (true) {
-                            LOGGER.info("--------------- Dashboard ---------------");
+                            LOGGER.info(dashboard);
                             LOGGER.info("1- View available housings");
                             LOGGER.info("2- View Furnitures");
                             LOGGER.info("3- Sign out");
@@ -195,7 +192,7 @@ public class Main {
                             } else break;
 
                         }
-                    } else continue;
+                    }
                 }
             }
         }
