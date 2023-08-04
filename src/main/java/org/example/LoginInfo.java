@@ -6,15 +6,11 @@ import java.util.logging.Logger;
 
 public class LoginInfo {
     private static final Logger LOGGER = Logger.getLogger(LoginInfo.class.getName());
-    public boolean adminIsLogged;
-    public boolean ownerIsLogged;
-    public boolean tenantIsLogged;
-    public void reset(){
-        adminIsLogged=false; ownerIsLogged=false; tenantIsLogged=false;
-    }
-    public int checkAuth(String username, String password) {
-        reset();
-        int i = 0;
+    private boolean adminIsLogged;
+    private boolean ownerIsLogged;
+    private boolean tenantIsLogged;
+    public int checkAuth(String username, String password, Integer id) {
+       logout();
         for (User user : UsersList.getAdmins()) {
             if (username.equals(user.getUsername()) && password.equals(user.getPassword())) {
                 if (user.getType().equals("Owner"))
@@ -24,8 +20,7 @@ public class LoginInfo {
                     adminIsLogged = true;
                 if (user.getType().equals("Tenant"))
                     tenantIsLogged = true;
-                i++;
-                Main.userID = user.getId();
+                id = user.getId();
             }
         }
         return 1;
@@ -48,5 +43,15 @@ public class LoginInfo {
         tenantIsLogged=false;
     }
 
+    public boolean isAdminIsLogged() {
+        return adminIsLogged;
+    }
 
+    public boolean isOwnerIsLogged() {
+        return ownerIsLogged;
+    }
+
+    public boolean isTenantIsLogged() {
+        return tenantIsLogged;
+    }
 }

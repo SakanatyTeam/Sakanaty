@@ -13,20 +13,20 @@ import java.util.logging.Logger;
 import static staticdb.TenantsList.tenants;
 
 public class Main {
+
     private static final Logger LOGGER = Logger.getLogger(Main.class.getName());
     private static Scanner scan = new Scanner(System.in);
 
-    public static LoginInfo loginInfo = new LoginInfo();
+    private static LoginInfo loginInfo = new LoginInfo();
 
-    public static int userID;
+    private static int userID;
 
-    public static String selectHousing;
 
-    public static Housing housing1;
-    public static Floor floor1;
-    public static Apartment apartment1;
+    private static String selectHousing;
 
-    public static List<Floor> floorList1 = new ArrayList<Floor>();
+    private static Housing housing1;
+    private static Floor floor1;
+    private static Apartment apartment1;
 
     public static void main(String[] args) {
         while (true) {
@@ -36,11 +36,11 @@ public class Main {
                 break;
             LOGGER.info("Enter Password:");
             String password = scan.nextLine();
-            loginInfo.checkAuth(username, password);
+            loginInfo.checkAuth(username, password,userID);
 
-            if (!loginInfo.adminIsLogged && !loginInfo.ownerIsLogged && !loginInfo.tenantIsLogged)
+            if (!loginInfo.isAdminIsLogged() && !loginInfo.isOwnerIsLogged() && !loginInfo.isTenantIsLogged())
                 loginInfo.showError();
-            else if (loginInfo.adminIsLogged) {
+            else if (loginInfo.isAdminIsLogged()) {
                 Admin admin = new Admin();
                 while (true) {
                     LOGGER.info("--------------- Dashboard ---------------");
@@ -71,7 +71,7 @@ public class Main {
                         admin.showReservations();
                     } else break;
                 }
-            } else if (loginInfo.ownerIsLogged){
+            } else if (loginInfo.isOwnerIsLogged()){
                 while (true) {
                     LOGGER.info("--------------- Dashboard ---------------");
                     LOGGER.info("1- View My Housing.");
@@ -142,7 +142,7 @@ public class Main {
                             } else if (open.equals("3")) break;
                             else continue;
                         }
-                    } else if (loginInfo.tenantIsLogged) {
+                    } else if (loginInfo.isTenantIsLogged()) {
 
                         Tenant tenant = new Tenant();
                         for (Tenant tenant1 : tenants) {

@@ -21,7 +21,7 @@ public class LoginSteps {
     @Given("that the admin is not logged in")
     public void that_the_admin_is_not_logged_in() {
         // Write code here that turns the phrase above into concrete actions
-       assertFalse(loginInfo.adminIsLogged);
+       assertFalse(loginInfo.isAdminIsLogged());
     }
 
     @Given("the username is {string}")
@@ -39,50 +39,50 @@ public class LoginSteps {
     @Then("the admin logs in successfully")
     public void the_admin_logs_in_successfully() {
         // Write code here that turns the phrase above into concrete actions
-        loginInfo.checkAuth(this.username, this.password);
-        assertTrue(loginInfo.adminIsLogged);
+        loginInfo.checkAuth(this.username, this.password,-1);
+        assertTrue(loginInfo.isAdminIsLogged());
 
     }
 
     @Given("that the owner is not logged in")
     public void that_the_owner_is_not_logged_in() {
         // Write code here that turns the phrase above into concrete actions
-       assertFalse(loginInfo.ownerIsLogged);
+       assertFalse(loginInfo.isOwnerIsLogged());
     }
 
     @Then("the Owner logs in successfully")
     public void the_owner_logs_in_successfully() {
         // Write code here that turns the phrase above into concrete actions
         this.type="Owner";
-        loginInfo.checkAuth(this.username, this.password);
-        assertTrue(loginInfo.ownerIsLogged);
+        loginInfo.checkAuth(this.username, this.password,-1);
+        assertTrue(loginInfo.isOwnerIsLogged());
     }
 
     @Given("that the tenant is not logged in")
     public void that_the_tenant_is_not_logged_in() {
         // Write code here that turns the phrase above into concrete actions
-        assertFalse(loginInfo.tenantIsLogged);
+        assertFalse(loginInfo.isTenantIsLogged());
     }
 
     @Then("the Tenant logs in successfully")
     public void the_tenant_logs_in_successfully() {
         // Write code here that turns the phrase above into concrete actions
-        loginInfo.checkAuth(this.username, this.password);
-        assertTrue(loginInfo.tenantIsLogged);
+        loginInfo.checkAuth(this.username, this.password,-1);
+        assertTrue(loginInfo.isTenantIsLogged());
     }
     @Given("that the user is not logged in")
     public void that_the_user_is_not_logged_in() {
         // Write code here that turns the phrase above into concrete actions
-        assertFalse(loginInfo.adminIsLogged && loginInfo.ownerIsLogged && loginInfo.tenantIsLogged);
+        assertFalse(loginInfo.isAdminIsLogged() && loginInfo.isOwnerIsLogged() && loginInfo.isTenantIsLogged());
     }
 
     @Then("the User will not login")
     public void the_user_will_not_login() {
         // Write code here that turns the phrase above into concrete actions
-        loginInfo.checkAuth(this.username, this.password);
-        assertFalse(loginInfo.tenantIsLogged);
-        assertFalse(loginInfo.ownerIsLogged);
-        assertFalse(loginInfo.adminIsLogged);
+        loginInfo.checkAuth(this.username, this.password,-1);
+        assertFalse(loginInfo.isTenantIsLogged());
+        assertFalse(loginInfo.isOwnerIsLogged());
+        assertFalse(loginInfo.isAdminIsLogged());
     }
 
     @Then("show error")
@@ -94,10 +94,10 @@ public class LoginSteps {
     @Then("the user will not login")
     public void theUserWillNotLogin() {
         // Write code here that turns the phrase above into concrete actions
-        loginInfo.checkAuth(this.username, this.password);
-        assertFalse(loginInfo.tenantIsLogged);
-        assertFalse(loginInfo.ownerIsLogged);
-        assertFalse(loginInfo.adminIsLogged);
+        loginInfo.checkAuth(this.username, this.password,-1);
+        assertFalse(loginInfo.isTenantIsLogged());
+        assertFalse(loginInfo.isOwnerIsLogged());
+        assertFalse(loginInfo.isAdminIsLogged());
     }
 
 
