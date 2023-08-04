@@ -3,8 +3,6 @@ package SakanatyAcceptance;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import org.example.LoginInfo;
-import org.junit.FixMethodOrder;
-import org.junit.runners.MethodSorters;
 
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
@@ -39,7 +37,7 @@ public class LoginSteps {
     @Then("the admin logs in successfully")
     public void the_admin_logs_in_successfully() {
         // Write code here that turns the phrase above into concrete actions
-        loginInfo.checkAuth(this.username, this.password,-1);
+        loginInfo.checkAuth(this.username, this.password);
         assertTrue(loginInfo.isAdminIsLogged());
 
     }
@@ -54,7 +52,7 @@ public class LoginSteps {
     public void the_owner_logs_in_successfully() {
         // Write code here that turns the phrase above into concrete actions
         this.type="Owner";
-        loginInfo.checkAuth(this.username, this.password,-1);
+        loginInfo.checkAuth(this.username, this.password);
         assertTrue(loginInfo.isOwnerIsLogged());
     }
 
@@ -67,7 +65,7 @@ public class LoginSteps {
     @Then("the Tenant logs in successfully")
     public void the_tenant_logs_in_successfully() {
         // Write code here that turns the phrase above into concrete actions
-        loginInfo.checkAuth(this.username, this.password,-1);
+        loginInfo.checkAuth(this.username, this.password);
         assertTrue(loginInfo.isTenantIsLogged());
     }
     @Given("that the user is not logged in")
@@ -79,7 +77,7 @@ public class LoginSteps {
     @Then("the User will not login")
     public void the_user_will_not_login() {
         // Write code here that turns the phrase above into concrete actions
-        loginInfo.checkAuth(this.username, this.password,-1);
+        loginInfo.checkAuth(this.username, this.password);
         assertFalse(loginInfo.isTenantIsLogged());
         assertFalse(loginInfo.isOwnerIsLogged());
         assertFalse(loginInfo.isAdminIsLogged());
@@ -94,7 +92,7 @@ public class LoginSteps {
     @Then("the user will not login")
     public void theUserWillNotLogin() {
         // Write code here that turns the phrase above into concrete actions
-        loginInfo.checkAuth(this.username, this.password,-1);
+        loginInfo.checkAuth(this.username, this.password);
         assertFalse(loginInfo.isTenantIsLogged());
         assertFalse(loginInfo.isOwnerIsLogged());
         assertFalse(loginInfo.isAdminIsLogged());

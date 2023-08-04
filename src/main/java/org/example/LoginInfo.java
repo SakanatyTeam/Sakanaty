@@ -9,8 +9,9 @@ public class LoginInfo {
     private boolean adminIsLogged;
     private boolean ownerIsLogged;
     private boolean tenantIsLogged;
-    public int checkAuth(String username, String password, Integer id) {
+    public int checkAuth(String username, String password) {
        logout();
+       int id=1;
         for (User user : UsersList.getAdmins()) {
             if (username.equals(user.getUsername()) && password.equals(user.getPassword())) {
                 if (user.getType().equals("Owner"))
@@ -20,10 +21,10 @@ public class LoginInfo {
                     adminIsLogged = true;
                 if (user.getType().equals("Tenant"))
                     tenantIsLogged = true;
-                id = user.getId();
+                id = user.getId() ;
             }
         }
-        return 1;
+        return id;
     }
     public void showError() {
         LOGGER.info("Incorrect Username/Password");

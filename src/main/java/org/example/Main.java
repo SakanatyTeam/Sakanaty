@@ -5,7 +5,6 @@ import role.*;
 import role.Tenant;
 import role.User;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 import java.util.logging.Logger;
@@ -36,7 +35,7 @@ public class Main {
                 break;
             LOGGER.info("Enter Password:");
             String password = scan.nextLine();
-            loginInfo.checkAuth(username, password,userID);
+            userID=loginInfo.checkAuth(username, password);
 
             if (!loginInfo.isAdminIsLogged() && !loginInfo.isOwnerIsLogged() && !loginInfo.isTenantIsLogged())
                 loginInfo.showError();
