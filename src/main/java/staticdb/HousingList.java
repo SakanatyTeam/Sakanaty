@@ -7,6 +7,7 @@ import java.util.List;
 public class HousingList {
 
     public HousingList() {
+        throw new UnsupportedOperationException();
     }
 
     static List<Housing> housing = new ArrayList<Housing>();
