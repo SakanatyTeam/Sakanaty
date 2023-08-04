@@ -159,7 +159,8 @@ public class Main {
                                 String s = "Select house number to view its information:";
                                 LOGGER.info(s);
                                 try {
-                                    tenant.viewDetails(scan.nextInt());
+                                    int a=scan.nextInt();
+                                    tenant.viewDetails(a);
                                     s="Select house number to book it!";
                                     LOGGER.info(s);
                                     int hid = scan.nextInt();
