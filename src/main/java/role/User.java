@@ -80,5 +80,6 @@ public class User {
             i++;
         }
         numHousing = i;
+        return numHousing;
     }
 }
