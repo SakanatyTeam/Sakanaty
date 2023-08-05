@@ -1,33 +1,17 @@
 package org.example;
-
-import StaticDB.HousingList;
-import StaticDB.UsersList;
+import staticdb.UsersList;
 import role.User;
 
-import java.util.ArrayList;
-import java.util.List;
 import java.util.logging.Logger;
 
 public class LoginInfo {
     private static final Logger LOGGER = Logger.getLogger(LoginInfo.class.getName());
-    public boolean adminIsLogged;
-    public boolean ownerIsLogged;
-    public boolean tenantIsLogged;
-
-    public static int userId;
-
-//    public boolean isLogged;
-//    public LoginInfo() {
-//        this.isLogged = false;
-//    }
-
-    public void reset(){
-        adminIsLogged=false; ownerIsLogged=false; tenantIsLogged=false;
-    }
-
+    private boolean adminIsLogged;
+    private boolean ownerIsLogged;
+    private boolean tenantIsLogged;
     public int checkAuth(String username, String password) {
-        reset();
-        int i = 0;
+        logout();
+        int id=1;
         for (User user : UsersList.getAdmins()) {
             if (username.equals(user.getUsername()) && password.equals(user.getPassword())) {
                 if (user.getType().equals("Owner"))
@@ -35,15 +19,12 @@ public class LoginInfo {
 
                 if (user.getType().equals("Admin"))
                     adminIsLogged = true;
-
                 if (user.getType().equals("Tenant"))
                     tenantIsLogged = true;
-
-                i++;
-                Main.userID = user.getId();
+                id = user.getId() ;
             }
         }
-        return 1;
+        return id;
     }
     public void showError() {
         LOGGER.info("Incorrect Username/Password");
@@ -53,34 +34,25 @@ public class LoginInfo {
         return adminIsLogged && ownerIsLogged && tenantIsLogged;
     }
     public void login(){
-//        isLogged = true;
         adminIsLogged=true;
         ownerIsLogged=true;
         tenantIsLogged=true;
     }
     public void logout(){
-//        isLogged = false;
         adminIsLogged=false;
         ownerIsLogged=false;
         tenantIsLogged=false;
     }
 
-
-    public Housing findHousingByNumRow(String numRow) {
-        List<Housing> housingByNumRow = new ArrayList<Housing>();
-        int row = Integer.parseInt(numRow);
-
-        return housingByNumRow.get(row-1);
-    }
-    public void showDetails(Housing housing) {
-        if(housing==null)
-        {
-            LOGGER.info("This product is not exist");
-        }
-        else {
-//            LOGGER.info(" location: " + housing.getLocation() + "Price: " + housing.getPrice());
-//            LOGGER.info("0- Go bake.");
-        }
+    public boolean isAdminIsLogged() {
+        return adminIsLogged;
     }
 
+    public boolean isOwnerIsLogged() {
+        return ownerIsLogged;
+    }
+
+    public boolean isTenantIsLogged() {
+        return tenantIsLogged;
+    }
 }

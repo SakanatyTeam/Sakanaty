@@ -1,18 +1,13 @@
 package role;
-
-import StaticDB.HousingList;
-import StaticDB.TenantsList;
+import staticdb.HousingList;
+import staticdb.TenantsList;
 import org.example.Apartment;
 import org.example.Floor;
 import org.example.Housing;
-import org.example.LoginInfo;
-
-import java.lang.annotation.Target;
 import java.util.*;
 import java.util.logging.Logger;
 
 public class Tenant extends User{
-
 
     public Tenant() {
         setType("Tenant");
@@ -23,7 +18,7 @@ public class Tenant extends User{
     private int age;
     private int tenantId;
     private int apartmentID;
-    private static final Logger LOGGER = Logger.getLogger(LoginInfo.class.getName());
+    private static final Logger LOGGER = Logger.getLogger(Tenant.class.getName());
 
     public Tenant(String username, String password, int tenantId, String type, String major, int age) {
         super(username,password,type,tenantId);
@@ -41,27 +36,12 @@ public class Tenant extends User{
         this.apartmentID = apartmentID;
     }
 
-    public void setMajor(String major) {
-        this.major = major;
-    }
-
-    public void setAge(int age) {
-        this.age = age;
-    }
-
-    public void setTenantId(int tenantId) {
-        this.tenantId = tenantId;
-    }
-    public int viewHousings() {
-        int i=1;
+    public int viewHousings() {int i=1;
         for(Housing housing:HousingList.getHousing()){
-            LOGGER.info(i+ "- Name: "+housing.getName()+"\nLocation: "+ housing.getLocation()+
-                    "\nPrice: "+housing.getPrice()+"\nType: "+housing.getType());
-            i++;
+            String s = i+ "- Name: "+housing.getName()+"\nLocation: "+ housing.getLocation()+ "\nPrice: "+housing.getPrice()+"\nType: "+housing.getType();
+            LOGGER.info(s);i++;
         }
         return 1;
-    }
-    public void wrongID() {
     }
 
     public String getMajor() {
@@ -72,48 +52,62 @@ public class Tenant extends User{
         return age;
     }
 
-    public int getTenantId() {
-        return tenantId;
-    }
-
-    public static int viewDetails(int id) {
-        System.out.println(HousingList.getHousing().get(1).getFloors().size());
+    public int viewDetails(int id) {
         id--;
         Housing housing = HousingList.getHousing().get(id);
-        System.out.println("Name: "+ housing.getName()+"\nFloors: "+housing.getFloors().size());
+        String s;
+        s="Name: "+ housing.getName()+"\nFloors: "+housing.getFloors().size();
+        LOGGER.info(s);
         for(Floor floor:housing.getFloors()){
-            System.out.println("****************\nFloor id: "+floor.getFloorId()+"\nMaximum apartments: "+floor.getMaxApartments());
+            s="****************\nFloor id: "+floor.getFloorId()+"\nMaximum apartments: "+floor.getMaxApartments();
+            LOGGER.info(s);
             for (Apartment apartment: floor.getApartments()){
-                System.out.println("________\nApartment ID:" + apartment.getApartmentId()+"\nMax Tenants: " +apartment.getMaxTenantsNumber()+"\nBathrooms: " + apartment.getBathrooms()+"\nBedrooms = "+apartment.getBedrooms());
-                if (housing.getType()=="Student")
+                s="________\nApartment ID:" + apartment.getApartmentId()+"\nMax Tenants: " +apartment.getMaxTenantsNumber()+"\nBathrooms: " + apartment.getBathrooms()+"\nBedrooms = "+apartment.getBedrooms();
+                LOGGER.info(s);
+                if (housing.getType().equals("Student"))
                 {
-                    System.out.println("Tenants: " + apartment.getCurrTenants());
-                    if(apartment.getTenants().size()==0)
-                        System.out.println("This apartment is empty.");
-                    else
-                    for (Tenant tenant : apartment.getTenants())
-                    {
-                        System.out.println("Name: "+tenant.getUsername()+"\nMajor: "+ tenant.getMajor() + "\nAge: "+ tenant.getAge()+"\n-------");
+                    s="Tenants: " + apartment.getCurrTenants();
+                    LOGGER.info(s);
+                    if(apartment.getTenants().isEmpty()) {
+                        s="This apartment is empty.";
+                        LOGGER.info(s);
+                    }
+                    else {
+                        for (Tenant tenant : apartment.getTenants()) {
+                            s="Name: " + tenant.getUsername() + "\nMajor: " + tenant.getMajor() + "\nAge: " + tenant.getAge() + "\n-------";
+                            LOGGER.info(s);
+                        }
                     }
                 }
-                if(apartment.apartmentIsFull())
-                    System.out.println("Not available - Apartment is full!");
-                else System.out.println("Available - you can rent here!");
+                if(apartment.apartmentIsFull()) {
+                    s = "Not available - Apartment is full!";
+                    LOGGER.info(s);
+                }
+                else {
+                    s="Available - you can rent here!";
+                    LOGGER.info(s);
+                }
             }
-            System.out.println("***************************");
+            s="***************************";
+            LOGGER.info(s);
+            s="Preview: " + housing.getImage();
+            LOGGER.info(s);
         }
         return 1;
     }
 
     public int bookHouse(int id,int floorID, int apartmentID1,Tenant tenant) {
+        String s;
         if(tenant.getApartmentID()!=-1) {
-            System.out.println("You cant rent because you already rented in apartment " + tenant.getApartmentID());
+            s="You cant rent because you already rented in apartment " + tenant.getApartmentID();
+            LOGGER.info(s);
             return 0;
         }
         else {
             Housing housing = HousingList.getHousing().get(id);
             if (housing.getFloors().get(floorID).getApartments().get(apartmentID1).apartmentIsFull()) {
-                System.out.println("You cant book here because this apartment is full!");
+                s="You cant book here because this apartment is full!";
+                LOGGER.info(s);
                 return 1;
             }
             else {
@@ -128,48 +122,55 @@ public class Tenant extends User{
     }
 
     public int viewFurnitures(Tenant tenant) {
-        for (Map.Entry<Tenant,ArrayList<Furniture>> entry : Furniture.furnitureList.entrySet()) {
+        String s;
+        for (Map.Entry<Tenant,ArrayList<Furniture>> entry : Furniture.getFurnitureList().entrySet()) {
             if(entry.getKey()!=tenant) {
-                System.out.println("Owner " + entry.getKey().getUsername() + ":");
+                s="Owner " + entry.getKey().getUsername() + ":";
+                LOGGER.info(s);
                 for (Furniture furniture : entry.getValue()) {
-                    System.out.println(furniture.getName() + "\t|\tPrice: " + furniture.getPrice() + "\t|\t");
+                    s=furniture.getName() + "\t|\tPrice: " + furniture.getPrice() + "\t|\t";
+                    LOGGER.info(s);
                 }
-                System.out.println("*************");
+                s="*************";
+                LOGGER.info(s);
             }
         }
         return 1;
     }
 
     public int buyFurniture(Tenant tenant, String name, String f) {
+        String s;
         Tenant o = null;
         Furniture fr = null;
-        for(Tenant t: TenantsList.tenants){
+        for(Tenant t: TenantsList.getTenants()){
             if(t.getUsername().equals(name))
             {
                 o=t;
             }
         }
         if(o==null){
-            System.out.println("Invalid Name!");
+            s="Invalid Name!";
+            LOGGER.info(s);
             return 0;
         }
-        for(Furniture furniture : Furniture.furnitureList.get(o)) {
+        for(Furniture furniture : Furniture.getFurnitureList().get(o)) {
             if (furniture.getName().equals(f)) {
                 fr = furniture;
             }
         }
         if(fr==null){
-            System.out.println("Invalid Furniture!");
+            s="Invalid Furniture!";
+            LOGGER.info(s);
             return 1;
 
         }
         if(tenant!=o) {
-            Furniture.furnitureList.get(tenant).add(fr);
-            Furniture.furnitureList.get(o).remove(fr);
+            Furniture.getFurnitureList().get(tenant).add(fr);
+            Furniture.getFurnitureList().get(o).remove(fr);
             return 2;
-        }
-        else {
-            System.out.println("You cant buy from yourself!");
+        } else {
+            s= "You cant buy from yourself!";
+            LOGGER.info(s);
             return 3;
         }
     }

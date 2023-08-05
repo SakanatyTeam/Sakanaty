@@ -1,6 +1,5 @@
 package org.example;
 
-import role.Owner;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -20,7 +19,6 @@ public class Housing {
     }
 
     private int ownerID;
-    Owner owner;
     Apartment apartment;
 
     public Housing(String name, String location, String image,int price, String[] services, int ownerID,String type) {
@@ -58,13 +56,8 @@ public class Housing {
     }
 
     public int getOwnerID() { return ownerID; }
-
-    public Owner getOwner() {
-        return owner;
-    }
-
-    public Apartment getApartment() {
-        return apartment;
+    public void setImage(String image) {
+        this.image = image;
     }
 
     public void addFloors(Floor floor11) {

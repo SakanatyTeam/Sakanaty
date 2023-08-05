@@ -7,7 +7,7 @@ import role.Tenant;
 
 import java.util.ArrayList;
 
-import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.*;
 
 public class BuyFurniture {
 Tenant tenant;
@@ -29,13 +29,13 @@ Tenant tenant;
 
     @Then("the tenant buys it")
     public void the_tenant_buys_it() {
-        Furniture.furnitureList.put(tenant,new ArrayList<>());
-        assertTrue(tenant.buyFurniture(tenant,oname,fname)==2);
+        Furniture.getFurnitureList().put(tenant,new ArrayList<>());
+        assertEquals(2,tenant.buyFurniture(tenant,oname,fname));
     }
 
     @Then("the buy fails due to owner name")
     public void the_buy_fails_due_to_owner_name() {
-        assertTrue(tenant.buyFurniture(tenant,oname,fname)==0);
+        assertEquals(0,tenant.buyFurniture(tenant,oname,fname));
     }
 
     @Given("the tenant  enters name of the owner of that furniture")
@@ -45,11 +45,11 @@ Tenant tenant;
 
     @Then("the buy fails due to furniture name")
     public void the_buy_fails_due_to_furniture_name() {
-        assertTrue(tenant.buyFurniture(tenant,oname,fname)==1);
+        assertEquals(1,tenant.buyFurniture(tenant,oname,fname));
     }
     @Given("tenant name is not {string}")
     public void tenant_name_is_not(String string) {
         tenant.setUsername("Yazan");
-        assertTrue(!tenant.getUsername().equals(string));
+        assertNotEquals(string,tenant.getUsername());
     }
 }

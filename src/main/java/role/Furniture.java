@@ -5,11 +5,11 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class Furniture {
-    public Furniture() {
+    public static Map<Tenant, ArrayList<Furniture>> getFurnitureList() {
+        return furnitureList;
     }
 
-    public static Map<Tenant, ArrayList<Furniture>> furnitureList = new HashMap<Tenant, ArrayList<Furniture>>();;
-
+    private static Map<Tenant, ArrayList<Furniture>> furnitureList = new HashMap<Tenant, ArrayList<Furniture>>();
     public static void addFurniture(Tenant tenant,Furniture...furniture){
         furnitureList.put(tenant,new ArrayList<>());
         for(Furniture furniture1:furniture){
@@ -20,22 +20,6 @@ public class Furniture {
     private int id;
     private String name;
     private int price;
-
-    public void setId(int id) {
-        this.id = id;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public void setPrice(int price) {
-        this.price = price;
-    }
-
-    public int getId() {
-        return id;
-    }
 
     public String getName() {
         return name;

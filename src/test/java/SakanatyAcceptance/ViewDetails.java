@@ -7,8 +7,7 @@ import org.junit.function.ThrowingRunnable;
 import role.Tenant;
 import role.User;
 
-import static org.junit.Assert.assertThrows;
-import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.*;
 
 public class ViewDetails {
     private Throwable exception;
@@ -20,7 +19,7 @@ public class ViewDetails {
     int id;
     @Given("that the user is tenant")
     public void that_the_user_is_tenant() {
-        assertTrue(tenant.getType().equals("Tenant"));
+        assertEquals("Tenant",tenant.getType());
     }
     @Given("the housing selected is {int}")
     public void the_housing_selected_is(Integer int1) {
@@ -29,15 +28,13 @@ public class ViewDetails {
 
     @Then("display all details about selected housing")
     public void display_all_details_about_selected_housing() {
-        assertTrue((tenant.viewDetails(id))==1);
+        assertEquals(1,(tenant.viewDetails(id)));
     }
     @Then("display Fails")
     public void display_fails() {
-        exception = assertThrows(IndexOutOfBoundsException.class, () -> {
+
+         assertThrows(IndexOutOfBoundsException.class, () -> {
             int x= tenant.viewDetails(-1);
         });
     }
-
-
-
 }

@@ -1,14 +1,11 @@
 package SakanatyAcceptance;
 
-import StaticDB.HousingList;
+import staticdb.HousingList;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
-import io.cucumber.java.sl.In;
-import junit.framework.TestCase;
 import org.example.Apartment;
 import org.example.Floor;
 import org.example.Housing;
-import org.w3c.dom.ls.LSOutput;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -43,24 +40,23 @@ public void there_is_a_housing_with_name_location_image_price_service_and_type(S
     this.type = string5;
 }
 
-@Given("the housing have floors with id {int} and max apartment {int}")
-public void the_housing_have_floors_with_id_and_max_apartment(Integer int1, Integer int2) {
-    floor = new Floor(int1,int2);
-    floorList.add(floor);
-}
-
-@Given("the floor by id {int} have apartments with id {int} and max tenant number {int}")
-public void the_floor_by_id_have_apartments_with_id_and_max_tenant_number(Integer int1, Integer int2, Integer int3) {
-    apartment= new Apartment(int2,int3);
-    for(;index<floorList.size();index++){
-        {
-            if(floor.getFloorId()==int1)
+    @Given("the housing have floors with id and max apartment {int}")
+    public void theHousingHaveFloorsWithIdAndMaxApartment(Integer int1) {
+        floor = new Floor(Floor.autoIncrementTenantId(),int1);
+        floorList.add(floor);
+    }
+    @Given("the floor by id  have apartments with id and max tenant number {int}")
+    public void theFloorByIdHaveApartmentsWithIdAndMaxTenantNumber(Integer int1) {
+        apartment= new Apartment(Apartment.autoIncrementFloorId(),int1);
+        for(;index<floorList.size();index++){
             {
-                floorList.get(index).addApartment(apartment);
+                if(floor.getFloorId()==int1)
+                {
+                    floorList.get(index).addApartment(apartment);
+                }
             }
         }
     }
-}
 
     @Given("that services are {string}")
     public void that_services_are(String string) {

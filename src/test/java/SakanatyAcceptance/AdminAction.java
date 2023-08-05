@@ -1,14 +1,12 @@
 package SakanatyAcceptance;
 
-import StaticDB.HousingList;
+import staticdb.HousingList;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import org.example.Housing;
 import role.Admin;
 
-import java.util.ArrayList;
-import java.util.List;
-
+import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 
 public class AdminAction {
@@ -38,15 +36,15 @@ public class AdminAction {
     @Then("the house is accepted")
     public void the_house_is_accepted() {
         housing=HousingList.getPendingHousings().get(id-1);
-        assertTrue(admin.takeAction(action,id)==1);
-        HousingList.pendingHousings.add(id-1,housing);
+        assertEquals(1,admin.takeAction(action,id));
+        HousingList.getPendingHousings().add(id-1,housing);
     }
 
     @Then("the house is rejected")
     public void the_house_is_rejected() {
         housing=HousingList.getPendingHousings().get(id-1);
-        assertTrue(admin.takeAction(action,id)==2);
-        HousingList.pendingHousings.add(id-1,housing);
+        assertEquals(2,admin.takeAction(action,id));
+        HousingList.getPendingHousings().add(id-1,housing);
     }
 
 }

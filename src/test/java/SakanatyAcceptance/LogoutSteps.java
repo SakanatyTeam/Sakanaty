@@ -1,17 +1,11 @@
 package SakanatyAcceptance;
-
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import org.example.LoginInfo;
-import role.User;
-
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
-
 public class LogoutSteps {
-
     LoginInfo loginInfo;
-
     public LogoutSteps(LoginInfo loginInfo) { this.loginInfo = loginInfo;}
 
     @Given("that the user is logged in")

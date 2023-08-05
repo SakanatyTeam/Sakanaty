@@ -1,11 +1,14 @@
 package role;
-
-import StaticDB.HousingList;
+import staticdb.HousingList;
 import org.example.Apartment;
 import org.example.Floor;
 import org.example.Housing;
 
+import java.util.Arrays;
+import java.util.logging.Logger;
+
 public class Admin  extends  User{
+    private static final Logger LOGGER = Logger.getLogger(Admin.class.getName());
     public Admin() {
         setType("Admin");
         setUsername("YIS");
@@ -13,13 +16,18 @@ public class Admin  extends  User{
     }
     public int viewRequests() {
         int i=1;
+        String s;
         for(Housing housing: HousingList.getPendingHousings()){
-            System.out.println(i++ + "- Name: "+housing.getName()+"\nLocation: "+housing.getLocation() +"\nOwnerID: "+housing.getOwnerID()+"\nServices: "+ housing.getServices().toString());
-            System.out.println("This housing has "+housing.getFloors().size() +" floors: ");
+            s= i++ + "- Name: "+housing.getName()+"\nLocation: "+housing.getLocation() +"\nOwnerID: "+housing.getOwnerID()+"\nServices: "+ Arrays.toString(housing.getServices());
+            LOGGER.info(s);
+            s= "This housing has "+housing.getFloors().size() +" floors: ";
+            LOGGER.info(s);
             for (Floor floor:housing.getFloors()){
-                System.out.println("Floor ID: " + floor.getFloorId()+"\tMax Apartments: "+floor.getMaxApartments());
+                s="Floor ID: " + floor.getFloorId()+"\tMax Apartments: "+floor.getMaxApartments();
+                LOGGER.info(s);
             }
-            System.out.println("***************");
+            s="***************";
+            LOGGER.info(s);
         }
         return i;
     }
@@ -40,13 +48,15 @@ public class Admin  extends  User{
     }
 
     public int showReservations() {
+        String s;
         for(Housing housing:HousingList.getHousing()){
             for (Floor floor:housing.getFloors())
             {
                 for (Apartment apartment:floor.getApartments())
                 {
                     for(Tenant tenant:apartment.getTenants()){
-                        System.out.println("Tenant Name: " + tenant.getUsername()+"\tHouse: " + housing.getName() +"\tFloor ID: "+floor.getFloorId()+"\tApartment: "+apartment.getApartmentId());
+                        s= "Tenant Name: " + tenant.getUsername()+"\tHouse: " + housing.getName() +"\tFloor ID: "+floor.getFloorId()+"\tApartment: "+apartment.getApartmentId();
+                        LOGGER.info(s);
                     }
                 }
             }

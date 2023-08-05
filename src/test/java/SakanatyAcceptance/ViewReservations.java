@@ -16,7 +16,7 @@ public class ViewReservations {
 
     @Given("that the user is admin")
     public void that_the_user_is_admin() {
-        assertTrue(admin.getType().equals("Admin"));
+        assertEquals("Admin",admin.getType());
     }
 
     @Given("admin chooses {string}")
@@ -26,6 +26,6 @@ public class ViewReservations {
 
     @Then("the the reservations show up")
     public void the_the_reservations_show_up() {
-        assertTrue(1==admin.showReservations());
+        assertEquals(1,admin.showReservations());
     }
 }

@@ -1,16 +1,14 @@
 package SakanatyAcceptance;
 
-import StaticDB.HousingList;
+import staticdb.HousingList;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import org.example.Apartment;
 import org.example.Floor;
 import org.example.Housing;
-import org.example.LoginInfo;
 import role.Tenant;
 
-import static org.junit.Assert.assertFalse;
-import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.*;
 
 public class BookHousing {
     boolean full;
@@ -30,7 +28,7 @@ public class BookHousing {
     @Given("the tenant has apartment ID equals {int}")
     public void the_tenant_has_apartment_id_equals(Integer int1) {
 
-        assertTrue(tenant.getApartmentID()==-1);
+        assertEquals(-1,tenant.getApartmentID());
     }
 
     @Given("tenant enters housing id {int}")
@@ -83,7 +81,7 @@ public class BookHousing {
     }
     @Then("the tenant can reserve this apartment")
     public void the_tenant_can_reserve_this_apartment() {
-        assertTrue(tenant.bookHouse(housingID,floorNum,apartNum,tenant)==2);
+        assertEquals(2,tenant.bookHouse(housingID,floorNum,apartNum,tenant));
     }
 
     @Given("the tenant has apartment ID {int}")
@@ -98,12 +96,12 @@ public class BookHousing {
     @Then("the tenant cant reserve this full apartment")
     public void the_tenant_cant_reserve_this_full_apartment() {
 
-        assertTrue(tenant.bookHouse(housingID,floorNum,apartNum,tenant)==1);
+        assertEquals(1,tenant.bookHouse(housingID,floorNum,apartNum,tenant));
     }
 
 
     @Then("the the tenant cant reserve an apartment")
     public void the_the_tenant_cant_reserve_an_apartment() {
-        assertTrue(tenant.bookHouse(housingID,floorNum,apartNum,tenant)==0);
+        assertEquals(0,tenant.bookHouse(housingID,floorNum,apartNum,tenant));
     }
 }
