@@ -7,7 +7,7 @@ import java.util.List;
 
 public class PendingList {
 
-    static List<Housing> housings =new ArrayList<Housing>();
+    static List<Housing> housings = new ArrayList<Housing>();
     private PendingList() {throw new IllegalStateException("Utility class");}
     static {
 
