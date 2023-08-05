@@ -69,7 +69,7 @@ public class User {
         return housinglist;
     }
 
-    public static void viewMyHousings(List<Housing> housingList) {
+    public static int viewMyHousings(List<Housing> housingList) {
 
         int i = 1;
         for(Housing housing : housingList)
