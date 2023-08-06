@@ -80,14 +80,18 @@ public class Tenant extends User{
         for(Floor floor:housing.getFloors()){
 
             s= FILL + "\nFloor" + z + ", id: "+floor.getFloorId()+"\nMaximum apartments: "+floor.getMaxApartments();
-            s=COLOR_GREEN + s +"\n"+ FILL + COLOR_BLUE;
+            bld=new StringBuilder(s);
+            bld.append(COLOR_GREEN);
             bld.append(s);
+            bld.append("\n");
+            bld.append(FILL);
+            bld.append(COLOR_BLUE);
             s=bld.toString();
             LOGGER.info(s);
             for (Apartment apartment: floor.getApartments()){
                 s="Apartment ID:" + apartment.getApartmentId()+"\nMax Tenants: " +apartment.getMaxTenantsNumber()+"\nBathrooms: " + apartment.getBathrooms()+"\nBedrooms = "+apartment.getBedrooms();
-                s=s + COLOR_BLUE;
-                bld.append(s);
+                bld= new StringBuilder(s);
+                bld.append(COLOR_BLUE);
                 s=bld.toString();
                 LOGGER.info(s);
                 if (housing.getType().equals("Student"))
@@ -118,18 +122,30 @@ public class Tenant extends User{
                 }
                 if(apartment.apartmentIsFull()) {
                     s = "Not available - Apartment is full!";
-                    s="\u001b[31m" + s + COLOR_PURPLE + FILL;
+                    bld= new StringBuilder(s);
+                    bld.append("\u001b[31m");
+                    bld.append(s);
+                    bld.append(COLOR_PURPLE);
+                    bld.append(FILL);
+                    s= bld.toString();
                     LOGGER.info(s);
                 }
                 else {
                     s="Available - you can rent here!";
-                    s=COLOR_FULL_GREEN + s + COLOR_PURPLE + FILL;
+                    bld= new StringBuilder(s);
+                    bld.append(COLOR_FULL_GREEN);
+                    bld.append(s);
+                    bld.append(COLOR_PURPLE);
+                    bld.append(FILL);
+                    s=bld.toString();
                     LOGGER.info(s);
                 }
             }
 
             s= COLOR_BLUE + "\nPreview: " + housing.getImage();
-            s=s + COLOR_GREEN;
+            bld=new StringBuilder(s);
+            bld.append(COLOR_GREEN);
+            s=bld.toString();
             LOGGER.info(s);
             z++;
         }
@@ -175,12 +191,18 @@ public class Tenant extends User{
                 s="\n\u001b[36mOwner " + entry.getKey().getUsername() + ":\n";
                 String str = "";
                 for (Furniture furniture : entry.getValue()) {
-                    str = str + furniture.getName() + "\t|\tPrice: " + furniture.getPrice() + "\t|\t\n";
-                }
-                str = s + str + "\u001b[0m";
-                bld.append(str);
-                str=bld.toString();
+                    bld=new StringBuilder(str);
+                    bld.append(furniture.getName());
+                    bld.append("\t|\tPrice: ");
+                    bld.append(furniture.getPrice());
+                    bld.append("\t|\t\n");
 
+                }
+                bld=new StringBuilder(bld);
+                bld.append(s);
+                bld.append(str);
+                bld.append("\u001b[0m");
+                str=bld.toString();
                 LOGGER.info(str);
                 LOGGER.info(LINE);
             }
