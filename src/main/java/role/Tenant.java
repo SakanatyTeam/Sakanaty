@@ -82,7 +82,6 @@ public class Tenant extends User{
             s= FILL + "\nFloor" + z + ", id: "+floor.getFloorId()+"\nMaximum apartments: "+floor.getMaxApartments();
             bld=new StringBuilder(s);
             bld.append(COLOR_GREEN);
-            bld.append(s);
             bld.append("\n");
             bld.append(FILL);
             bld.append(COLOR_BLUE);
@@ -114,6 +113,7 @@ public class Tenant extends User{
                             s=bld.toString();
                             LOGGER.info(s);
                             s=FILL + COLOR_WHITE;
+                            bld=new StringBuilder(s);
                             bld.append(s);
                             s=bld.toString();
                             LOGGER.info(s);
@@ -121,20 +121,17 @@ public class Tenant extends User{
                     }
                 }
                 if(apartment.apartmentIsFull()) {
-                    s = "Not available - Apartment is full!";
+                    s = "\u001b[31mNot available - Apartment is full!";
                     bld= new StringBuilder(s);
-                    bld.append("\u001b[31m");
-                    bld.append(s);
+
                     bld.append(COLOR_PURPLE);
                     bld.append(FILL);
                     s= bld.toString();
                     LOGGER.info(s);
                 }
                 else {
-                    s="Available - you can rent here!";
+                    s=COLOR_FULL_GREEN+"Available - you can rent here!";
                     bld= new StringBuilder(s);
-                    bld.append(COLOR_FULL_GREEN);
-                    bld.append(s);
                     bld.append(COLOR_PURPLE);
                     bld.append(FILL);
                     s=bld.toString();

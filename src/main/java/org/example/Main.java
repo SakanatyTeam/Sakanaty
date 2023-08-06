@@ -21,7 +21,7 @@ public class Main {
     private static int userID;
     private static final String DASHBOARD = "\u001b[35m--------------- Dashboard -------------------\u001b[0m";
 
-    private static final String line = "\u001b[35m--------------------------------------------\u001b[0m";
+    private static final String LINE = "\u001b[35m--------------------------------------------\u001b[0m";
 
     private static String selectHousing;
 
@@ -161,15 +161,15 @@ public class Main {
                     LOGGER.info("1- View available housings");
                     LOGGER.info("2- View Furnitures");
                     LOGGER.info("3- Sign out");
-                    LOGGER.info(line);
+                    LOGGER.info(LINE);
                     int x = scan.nextInt();
                     scan.nextLine();
                     if (x == 1) {
                         int numHousing = tenant.viewHousings();
-                        LOGGER.info(line);
+                        LOGGER.info(LINE);
                         String s = numHousing + "- Go Back.";
                         LOGGER.info(s);
-                        LOGGER.info(line);
+                        LOGGER.info(LINE);
                         s = "Select number to view housing information or exit: ";
                         LOGGER.info(s);
                         /*----------------------------------------Our Problem---------------------------------------*/
@@ -177,7 +177,7 @@ public class Main {
 
                         try {
                             tenant.viewDetails(zzz);
-                            LOGGER.info(line);
+                            LOGGER.info(LINE);
                             s = "Select house number to book it!, or 0 to cancel: ";
                             LOGGER.info(s);
                             int hid = scan.nextInt();
@@ -210,7 +210,7 @@ public class Main {
                             LOGGER.info(s);
                         }
                     } else if (x == 2) {
-                        LOGGER.info(line);
+                        LOGGER.info(LINE);
                         tenant.viewFurnitures(tenant);
                         String s;
                         s = "\n\u001b[36mEnter Owner name and furniture type you want to buy or enter exit to quit:\u001b[0m";
