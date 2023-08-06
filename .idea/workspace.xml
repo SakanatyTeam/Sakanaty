@@ -9,11 +9,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9b262339-5038-47c3-a39c-a441acc0a66f" name="Changes" comment="pulling">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/staticdb/HousingList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/staticdb/HousingList.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/SakanatyAcceptance/AddHousing.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/SakanatyAcceptance/AddHousing.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/SakanatyAcceptance/ViewTenantHousing.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/SakanatyAcceptance/ViewTenantHousing.java" afterDir="false" />
+    <list default="true" id="9b262339-5038-47c3-a39c-a441acc0a66f" name="Changes" comment="private">
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -216,7 +213,7 @@
       <workItem from="1691149191098" duration="9284000" />
       <workItem from="1691168176241" duration="1527000" />
       <workItem from="1691229060394" duration="950000" />
-      <workItem from="1691314618163" duration="1642000" />
+      <workItem from="1691314618163" duration="1828000" />
     </task>
     <task id="LOCAL-00001" summary="initiate">
       <created>1688402890832</created>
@@ -519,7 +516,14 @@
       <option name="project" value="LOCAL" />
       <updated>1691314656444</updated>
     </task>
-    <option name="localTasksCounter" value="44" />
+    <task id="LOCAL-00044" summary="private">
+      <created>1691316469545</created>
+      <option name="number" value="00044" />
+      <option name="presentableId" value="LOCAL-00044" />
+      <option name="project" value="LOCAL" />
+      <updated>1691316469545</updated>
+    </task>
+    <option name="localTasksCounter" value="45" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -548,7 +552,8 @@
     <MESSAGE value="pushing to cloud3" />
     <MESSAGE value="adam" />
     <MESSAGE value="pulling" />
-    <option name="LAST_COMMIT_MESSAGE" value="pulling" />
+    <MESSAGE value="private" />
+    <option name="LAST_COMMIT_MESSAGE" value="private" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/Sakanaty$Main.ic" NAME="Main Coverage Results" MODIFIED="1690908702644" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">

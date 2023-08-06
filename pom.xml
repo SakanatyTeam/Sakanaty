@@ -11,7 +11,7 @@
     <properties>
         <maven.compiler.source>18</maven.compiler.source>
         <maven.compiler.target>18</maven.compiler.target>
-            <sonar.organization>najahcon</sonar.organization>
+            <sonar.organization>sakanatyteam</sonar.organization>
             <sonar.host.url>https://sonarcloud.io</sonar.host.url>
     </properties>
 
