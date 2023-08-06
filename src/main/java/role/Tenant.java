@@ -96,8 +96,8 @@ public class Tenant extends User{
                     LOGGER.info(s);
                     if(apartment.getTenants().isEmpty()) {
                         s="\u001b[31mThis apartment is empty.";
-                        s=s + COLOR_WHITE;
-                        bld.append(s);
+                        bld=new StringBuilder(s);
+                        bld.append(COLOR_WHITE);
                         s=bld.toString();
                         LOGGER.info(s);
                         LOGGER.info(FILL);
@@ -105,8 +105,8 @@ public class Tenant extends User{
                     else {
                         for (Tenant tenant : apartment.getTenants()) {
                             s="\nName: " + tenant.getUsername() + "\nMajor: " + tenant.getMajor() + "\nAge: " + tenant.getAge();
-                            s=s + "\u001b[33m";
-                            bld.append(s);
+                            bld=new StringBuilder(s);
+                            bld.append("\u001b[33m");
                             s=bld.toString();
                             LOGGER.info(s);
                             s=FILL + COLOR_WHITE;
