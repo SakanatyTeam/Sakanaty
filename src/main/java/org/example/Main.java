@@ -228,7 +228,6 @@ public class Main {
                         String f = scan.nextLine();
                         tenant.buyFurniture(tenant, name, f);
                     } else if (x == 3) break;
-                    else continue;
                 }
             }
         }
