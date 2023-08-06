@@ -54,7 +54,7 @@ public class Apartment {
         this.currTenants = currTenants;
     }
 
-    List<Tenant> tenants = new ArrayList<Tenant>();
+    List<Tenant> tenants = new ArrayList<>();
 
     public Apartment(int apartmentId, int maxTenantsNumber) {
         this.apartmentId = apartmentId;

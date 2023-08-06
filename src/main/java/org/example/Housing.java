@@ -5,8 +5,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Housing {
-    private List<Floor> floors = new ArrayList<Floor>();
-    private int id = 0;
+    private List<Floor> floors = new ArrayList<>();
     private String name;
     private String location;
     private String image;

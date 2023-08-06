@@ -14,7 +14,7 @@ public class Floor {
         return apartments;
     }
 
-    private List<Apartment> apartments = new ArrayList<Apartment>();
+    private List<Apartment> apartments = new ArrayList<>();
     private int floorId;
 
     public int getFloorId() {return floorId;}

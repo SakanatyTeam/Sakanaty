@@ -177,7 +177,6 @@ public class Main {
                         LOGGER.info(s);
                         /*----------------------------------------Our Problem---------------------------------------*/
                         int zzz = scan.nextInt();
-                        if (zzz == numHousing) continue;
 
                         try {
                             tenant.viewDetails(zzz);
@@ -185,7 +184,7 @@ public class Main {
                             s="Select house number to book it!, or 0 to cancel: ";
                             LOGGER.info(s);
                             int hid = scan.nextInt();
-                            if (hid == 0) continue;
+
 
                             Housing housing = HousingList.getHousing().get(--hid);
                             LOGGER.info("Choose floor or 0 to cancel: ");
@@ -195,7 +194,7 @@ public class Main {
                                 LOGGER.info(s);
                             }
                             int floorNum = scan.nextInt();
-                            if (floorNum == 0) continue;
+
 
                             floorNum--;
                             i = 1;
@@ -205,7 +204,7 @@ public class Main {
                                 LOGGER.info(s);
                             }
                             int apartNum = scan.nextInt();
-                            if (apartNum == 0) continue;
+
 
                             apartNum--;
                             tenant.bookHouse(hid, floorNum, apartNum, tenant);
