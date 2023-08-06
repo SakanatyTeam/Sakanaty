@@ -6,6 +6,8 @@ import staticdb.TenantsList;
 import org.example.Apartment;
 import org.example.Floor;
 import org.example.Housing;
+
+import java.lang.module.ModuleDescriptor;
 import java.util.*;
 import java.util.logging.Logger;
 
@@ -68,18 +70,25 @@ public class Tenant extends User{
     public int viewDetails(int id) {
         id--;
         Housing housing = HousingList.getHousing().get(id);
+        StringBuilder bld = new StringBuilder();
         String s;
         s="\n\u001b[33m"+ FILL +"\nName: "+ housing.getName()+"\nFloors: "+housing.getFloors().size() +"\n"+ FILL + COLOR_GREEN;
+        bld.append(s);
+        s=bld.toString();
         LOGGER.info(s);
         int z = 0;
         for(Floor floor:housing.getFloors()){
 
             s= FILL + "\nFloor" + z + ", id: "+floor.getFloorId()+"\nMaximum apartments: "+floor.getMaxApartments();
             s=COLOR_GREEN + s +"\n"+ FILL + COLOR_BLUE;
+            bld.append(s);
+            s=bld.toString();
             LOGGER.info(s);
             for (Apartment apartment: floor.getApartments()){
                 s="Apartment ID:" + apartment.getApartmentId()+"\nMax Tenants: " +apartment.getMaxTenantsNumber()+"\nBathrooms: " + apartment.getBathrooms()+"\nBedrooms = "+apartment.getBedrooms();
                 s=s + COLOR_BLUE;
+                bld.append(s);
+                s=bld.toString();
                 LOGGER.info(s);
                 if (housing.getType().equals("Student"))
                 {
@@ -88,6 +97,8 @@ public class Tenant extends User{
                     if(apartment.getTenants().isEmpty()) {
                         s="\u001b[31mThis apartment is empty.";
                         s=s + COLOR_WHITE;
+                        bld.append(s);
+                        s=bld.toString();
                         LOGGER.info(s);
                         LOGGER.info(FILL);
                     }
@@ -95,8 +106,12 @@ public class Tenant extends User{
                         for (Tenant tenant : apartment.getTenants()) {
                             s="\nName: " + tenant.getUsername() + "\nMajor: " + tenant.getMajor() + "\nAge: " + tenant.getAge();
                             s=s + "\u001b[33m";
+                            bld.append(s);
+                            s=bld.toString();
                             LOGGER.info(s);
                             s=FILL + COLOR_WHITE;
+                            bld.append(s);
+                            s=bld.toString();
                             LOGGER.info(s);
                         }
                     }
@@ -122,6 +137,7 @@ public class Tenant extends User{
     }
 
     public int bookHouse(int id,int floorID, int apartmentID1,Tenant tenant) {
+        StringBuilder bld = new StringBuilder();
         String s;
         if(tenant.getApartmentID()!=-1) {
             s="You cant rent because you already rented in apartment " + tenant.getApartmentID();
@@ -143,6 +159,8 @@ public class Tenant extends User{
                     housing.getFloors().get(floorID).getApartments().get(apartmentID1).setApartmentIsFull(true);
 
                 s="\n\u001b[32mBooking done.\u001b[0m";
+                bld.append(s);
+                s=bld.toString();
                 LOGGER.info(s);
                 return 2;
             }
@@ -150,6 +168,7 @@ public class Tenant extends User{
     }
 
     public int viewFurnitures(Tenant tenant) {
+        StringBuilder bld = new StringBuilder();
         String s;
         for (Map.Entry<Tenant,ArrayList<Furniture>> entry : Furniture.getFurnitureList().entrySet()) {
             if(entry.getKey()!=tenant) {
@@ -159,6 +178,9 @@ public class Tenant extends User{
                     str = str + furniture.getName() + "\t|\tPrice: " + furniture.getPrice() + "\t|\t\n";
                 }
                 str = s + str + "\u001b[0m";
+                bld.append(str);
+                str=bld.toString();
+
                 LOGGER.info(str);
                 LOGGER.info(LINE);
             }
