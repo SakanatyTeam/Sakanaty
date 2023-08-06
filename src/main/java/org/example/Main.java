@@ -19,7 +19,7 @@ public class Main {
     private static LoginInfo loginInfo = new LoginInfo();
 
     private static int userID;
-    private static final String DASHBOARD ="\u001b[35m--------------- Dashboard -------------------\u001b[0m";
+    private static final String DASHBOARD = "\u001b[35m--------------- Dashboard -------------------\u001b[0m";
 
     private static final String ln = "\u001b[35m--------------------------------------------\u001b[0m";
 
@@ -38,7 +38,7 @@ public class Main {
                 break;
             LOGGER.info("Enter Password:");
             String password = scan.nextLine();
-            userID=loginInfo.checkAuth(username, password);
+            userID = loginInfo.checkAuth(username, password);
 
             if (!loginInfo.isAdminIsLogged() && !loginInfo.isOwnerIsLogged() && !loginInfo.isTenantIsLogged())
                 loginInfo.showError();
@@ -58,34 +58,32 @@ public class Main {
                             LOGGER.info(s);
                             int x = scan.nextInt();
                             if (x < i) {
-                                s="Choose Action:\n1-Accept\n2-Reject";
+                                s = "Choose Action:\n1-Accept\n2-Reject";
                                 LOGGER.info(s);
                                 if (admin.takeAction(scan.nextInt(), x) == 1) {
                                     s = "House accepted Successfully";
                                     LOGGER.info(s);
-                                }
-                                else {
-                                    s="House Rejected Successfully";
+                                } else {
+                                    s = "House Rejected Successfully";
                                     LOGGER.info(s);
                                 }
 
                             } else {
-                                s="Wrong house number";
+                                s = "Wrong house number";
                                 LOGGER.info(s);
                             }
 
                         } else {
-                            s="No current requests";
+                            s = "No current requests";
                             LOGGER.info(s);
                         }
                     } else if (in == 2) {
-                        s="test";
+                        s = "test";
                         LOGGER.info(s);
                         admin.showReservations();
                     } else break;
                 }
-            }
-            else if (loginInfo.isOwnerIsLogged()){
+            } else if (loginInfo.isOwnerIsLogged()) {
                 while (true) {
                     LOGGER.info(DASHBOARD);
                     LOGGER.info("1- View My Housing.");
@@ -99,14 +97,13 @@ public class Main {
                             housingList1 = User.getHousingList(userID);
                             LOGGER.info("--------- Select Housing To Update Or Delete ---------");
                             User.viewMyHousings(housingList1);
-                            String s =  User.getNumHousing() + "- Go Back.";
+                            String s = User.getNumHousing() + "- Go Back.";
                             LOGGER.info(s);
                             LOGGER.info("------------------------------------------------------");
                             selectHousing = scan.nextLine();
                             if (Integer.parseInt(selectHousing) == User.getNumHousing()) break;
                         }
-                    }
-                    else if (open.equals("2")) {
+                    } else if (open.equals("2")) {
                         String name;
                         String location;
                         String image;
@@ -168,7 +165,7 @@ public class Main {
                     int x = scan.nextInt();
                     scan.nextLine();
                     if (x == 1) {
-                        int numHousing =  tenant.viewHousings();
+                        int numHousing = tenant.viewHousings();
                         LOGGER.info(ln);
                         String s = numHousing + "- Go Back.";
                         LOGGER.info(s);
@@ -181,7 +178,7 @@ public class Main {
                         try {
                             tenant.viewDetails(zzz);
                             LOGGER.info(ln);
-                            s="Select house number to book it!, or 0 to cancel: ";
+                            s = "Select house number to book it!, or 0 to cancel: ";
                             LOGGER.info(s);
                             int hid = scan.nextInt();
 
@@ -190,7 +187,7 @@ public class Main {
                             LOGGER.info("Choose floor or 0 to cancel: ");
                             int i = 1;
                             for (; i <= housing.getFloors().size(); i++) {
-                                s=String.valueOf(i);
+                                s = String.valueOf(i);
                                 LOGGER.info(s);
                             }
                             int floorNum = scan.nextInt();
@@ -200,7 +197,7 @@ public class Main {
                             i = 1;
                             LOGGER.info("Choose Apartment or 0 to cancel: ");
                             for (; i <= housing.getFloors().get(floorNum).getApartments().size(); i++) {
-                                s=String.valueOf(i);
+                                s = String.valueOf(i);
                                 LOGGER.info(s);
                             }
                             int apartNum = scan.nextInt();
@@ -209,25 +206,26 @@ public class Main {
                             apartNum--;
                             tenant.bookHouse(hid, floorNum, apartNum, tenant);
                         } catch (IndexOutOfBoundsException e) {
-                            s="Wrong ID";
+                            s = "Wrong ID";
                             LOGGER.info(s);
                         }
                     } else if (x == 2) {
                         LOGGER.info(ln);
                         tenant.viewFurnitures(tenant);
                         String s;
-                        s="\n\u001b[36mEnter Owner name and furniture type you want to buy or enter exit to quit:\u001b[0m";
+                        s = "\n\u001b[36mEnter Owner name and furniture type you want to buy or enter exit to quit:\u001b[0m";
                         LOGGER.info(s);
-                        s="Owner name: ";
+                        s = "Owner name: ";
                         LOGGER.info(s);
                         String name = scan.nextLine();
-                        if (name.equals("exit"))
-                            continue;
-                        s="Enter Furniture name as in the list:";
-                        LOGGER.info(s);
-                        String f = scan.nextLine();
-                        tenant.buyFurniture(tenant, name, f);
-                    } else if (x == 3) break;
+                        if (!name.equals("exit")) {
+                            s = "Enter Furniture name as in the list:";
+                            LOGGER.info(s);
+                            String f = scan.nextLine();
+                            tenant.buyFurniture(tenant, name, f);
+                        } else continue;
+                    }
+                    else break;
                 }
             }
         }

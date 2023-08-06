@@ -70,7 +70,7 @@
       <recent name="D:\Software_Project\Sakanaty" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.All in Sakanaty">
+  <component name="RunManager" selected="Application.org.example.Main">
     <configuration name="org.example.Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="org.example.Main" />
       <module name="Sakanaty" />
@@ -186,8 +186,8 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.All in Sakanaty" />
         <item itemvalue="Application.org.example.Main" />
+        <item itemvalue="JUnit.All in Sakanaty" />
         <item itemvalue="Cucumber Java.Feature: view_owner_housings" />
       </list>
     </recent_temporary>
