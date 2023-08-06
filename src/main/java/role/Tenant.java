@@ -157,6 +157,7 @@ public class Tenant extends User{
             if (furniture.getName().equals(f)) {
                 fr = furniture;
             }
+
         }
         if(fr==null){
             System.out.println("Invalid Furniture!");
