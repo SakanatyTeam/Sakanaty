@@ -28,9 +28,9 @@ public class Tenant extends User{
     private int apartmentID;
     private static final Logger LOGGER = Logger.getLogger(Tenant.class.getName());
 
-    private static final String line = "\u001b[35m--------------------------------------------\u001b[0m";
+    private static final String LINE = "\u001b[35m--------------------------------------------\u001b[0m";
 
-    private static final String fill = "--------------------------------------------";
+    private static final String FILL = "--------------------------------------------";
 
     public Tenant(String username, String password, int tenantId, String type, String major, int age) {
         super(username,password,type,tenantId);
@@ -51,7 +51,7 @@ public class Tenant extends User{
     public int viewHousings() {
         int i = 1;
         for(Housing housing:HousingList.getHousing()){
-            String s = line + "\n" + i+ "- Name: "+housing.getName()+"\nLocation: "+ housing.getLocation()+ "\nPrice: "+housing.getPrice()+"\nType: "+housing.getType();
+            String s = LINE + "\n" + i+ "- Name: "+housing.getName()+"\nLocation: "+ housing.getLocation()+ "\nPrice: "+housing.getPrice()+"\nType: "+housing.getType();
             LOGGER.info(s);i++;
         }
         return i;
@@ -69,45 +69,53 @@ public class Tenant extends User{
         id--;
         Housing housing = HousingList.getHousing().get(id);
         String s;
-        s="\n\u001b[33m"+ fill +"\nName: "+ housing.getName()+"\nFloors: "+housing.getFloors().size() +"\n"+ fill + COLOR_GREEN;
+        s="\n\u001b[33m"+ FILL +"\nName: "+ housing.getName()+"\nFloors: "+housing.getFloors().size() +"\n"+ FILL + COLOR_GREEN;
         LOGGER.info(s);
         int z = 0;
         for(Floor floor:housing.getFloors()){
 
-            s= fill + "\nFloor" + z + ", id: "+floor.getFloorId()+"\nMaximum apartments: "+floor.getMaxApartments();
-            LOGGER.info(COLOR_GREEN + s +"\n"+ fill + COLOR_BLUE);
+            s= FILL + "\nFloor" + z + ", id: "+floor.getFloorId()+"\nMaximum apartments: "+floor.getMaxApartments();
+            s=COLOR_GREEN + s +"\n"+ FILL + COLOR_BLUE;
+            LOGGER.info(s);
             for (Apartment apartment: floor.getApartments()){
                 s="Apartment ID:" + apartment.getApartmentId()+"\nMax Tenants: " +apartment.getMaxTenantsNumber()+"\nBathrooms: " + apartment.getBathrooms()+"\nBedrooms = "+apartment.getBedrooms();
-                LOGGER.info(s + COLOR_BLUE);
+                s=s + COLOR_BLUE;
+                LOGGER.info(s);
                 if (housing.getType().equals("Student"))
                 {
-                    s="\u001b[33m\nTenants: " + apartment.getCurrTenants() + "\n" + fill + COLOR_WHITE;
+                    s="\u001b[33m\nTenants: " + apartment.getCurrTenants() + "\n" + FILL + COLOR_WHITE;
                     LOGGER.info(s);
                     if(apartment.getTenants().isEmpty()) {
                         s="\u001b[31mThis apartment is empty.";
-                        LOGGER.info(s + COLOR_WHITE);
-                        LOGGER.info(fill);
+                        s=s + COLOR_WHITE;
+                        LOGGER.info(s);
+                        LOGGER.info(FILL);
                     }
                     else {
                         for (Tenant tenant : apartment.getTenants()) {
                             s="\nName: " + tenant.getUsername() + "\nMajor: " + tenant.getMajor() + "\nAge: " + tenant.getAge();
-                            LOGGER.info(s + "\u001b[33m");
-                            LOGGER.info(fill + COLOR_WHITE);
+                            s=s + "\u001b[33m";
+                            LOGGER.info(s);
+                            s=FILL + COLOR_WHITE;
+                            LOGGER.info(s);
                         }
                     }
                 }
                 if(apartment.apartmentIsFull()) {
                     s = "Not available - Apartment is full!";
-                    LOGGER.info("\u001b[31m" + s + COLOR_PURPLE + fill);
+                    s="\u001b[31m" + s + COLOR_PURPLE + FILL;
+                    LOGGER.info(s);
                 }
                 else {
                     s="Available - you can rent here!";
-                    LOGGER.info(COLOR_FULL_GREEN + s + COLOR_PURPLE + fill);
+                    s=COLOR_FULL_GREEN + s + COLOR_PURPLE + FILL;
+                    LOGGER.info(s);
                 }
             }
 
             s= COLOR_BLUE + "\nPreview: " + housing.getImage();
-            LOGGER.info(s + COLOR_GREEN);
+            s=s + COLOR_GREEN;
+            LOGGER.info(s);
             z++;
         }
         return 1;
@@ -146,14 +154,13 @@ public class Tenant extends User{
         for (Map.Entry<Tenant,ArrayList<Furniture>> entry : Furniture.getFurnitureList().entrySet()) {
             if(entry.getKey()!=tenant) {
                 s="\n\u001b[36mOwner " + entry.getKey().getUsername() + ":\n";
-//                LOGGER.info(s);
                 String str = "";
                 for (Furniture furniture : entry.getValue()) {
                     str = str + furniture.getName() + "\t|\tPrice: " + furniture.getPrice() + "\t|\t\n";
                 }
                 str = s + str + "\u001b[0m";
                 LOGGER.info(str);
-                LOGGER.info(line);
+                LOGGER.info(LINE);
             }
         }
         return 1;
