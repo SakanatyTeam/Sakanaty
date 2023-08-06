@@ -19,8 +19,9 @@ public class Main {
     private static LoginInfo loginInfo = new LoginInfo();
 
     private static int userID;
-    private static final String DASHBOARD ="--------------- Dashboard ---------------";
+    private static final String DASHBOARD ="\u001b[35m--------------- Dashboard -------------------\u001b[0m";
 
+    private static final String ln = "\u001b[35m--------------------------------------------\u001b[0m";
 
     private static String selectHousing;
 
@@ -83,7 +84,8 @@ public class Main {
                         admin.showReservations();
                     } else break;
                 }
-            } else if (loginInfo.isOwnerIsLogged()){
+            }
+            else if (loginInfo.isOwnerIsLogged()){
                 while (true) {
                     LOGGER.info(DASHBOARD);
                     LOGGER.info("1- View My Housing.");
@@ -153,7 +155,6 @@ public class Main {
                 }
             } else if (loginInfo.isTenantIsLogged()) {
 
-
                 for (Tenant tenant1 : TenantsList.getTenants()) {
                     if (tenant1.getUsername().equals(username))
                         tenant = tenant1;
@@ -163,33 +164,49 @@ public class Main {
                     LOGGER.info("1- View available housings");
                     LOGGER.info("2- View Furnitures");
                     LOGGER.info("3- Sign out");
+                    LOGGER.info(ln);
                     int x = scan.nextInt();
                     scan.nextLine();
                     if (x == 1) {
-                        tenant.viewHousings();
-                        String s = "Select house number to view its information:";
+                        int numHousing =  tenant.viewHousings();
+                        LOGGER.info(ln);
+                        String s = numHousing + "- Go Back.";
                         LOGGER.info(s);
+                        LOGGER.info(ln);
+                        s = "Select number to view housing information or exit: ";
+                        LOGGER.info(s);
+                        /*----------------------------------------Our Problem---------------------------------------*/
+                        int zzz = scan.nextInt();
+                        if (zzz == numHousing) continue;
+
                         try {
-                            tenant.viewDetails(scan.nextInt());
-                            s="Select house number to book it!";
+                            tenant.viewDetails(zzz);
+                            LOGGER.info(ln);
+                            s="Select house number to book it!, or 0 to cancel: ";
                             LOGGER.info(s);
                             int hid = scan.nextInt();
+                            if (hid == 0) continue;
+
                             Housing housing = HousingList.getHousing().get(--hid);
-                            LOGGER.info("Choose floor: ");
+                            LOGGER.info("Choose floor or 0 to cancel: ");
                             int i = 1;
                             for (; i <= housing.getFloors().size(); i++) {
                                 s=String.valueOf(i);
                                 LOGGER.info(s);
                             }
                             int floorNum = scan.nextInt();
+                            if (floorNum == 0) continue;
+
                             floorNum--;
                             i = 1;
-                            LOGGER.info("Choose Apartment: ");
+                            LOGGER.info("Choose Apartment or 0 to cancel: ");
                             for (; i <= housing.getFloors().get(floorNum).getApartments().size(); i++) {
                                 s=String.valueOf(i);
                                 LOGGER.info(s);
                             }
                             int apartNum = scan.nextInt();
+                            if (apartNum == 0) continue;
+
                             apartNum--;
                             tenant.bookHouse(hid, floorNum, apartNum, tenant);
                         } catch (IndexOutOfBoundsException e) {
@@ -197,9 +214,10 @@ public class Main {
                             LOGGER.info(s);
                         }
                     } else if (x == 2) {
+                        LOGGER.info(ln);
                         tenant.viewFurnitures(tenant);
                         String s;
-                        s="Enter Owner name and furniture type you want to buy or enter exit to quit:";
+                        s="\n\u001b[36mEnter Owner name and furniture type you want to buy or enter exit to quit:\u001b[0m";
                         LOGGER.info(s);
                         s="Owner name: ";
                         LOGGER.info(s);
@@ -210,10 +228,14 @@ public class Main {
                         LOGGER.info(s);
                         String f = scan.nextLine();
                         tenant.buyFurniture(tenant, name, f);
-                    }
-
+                    } else if (x == 3) break;
+                    else continue;
                 }
             }
         }
     }
 }
+
+
+
+

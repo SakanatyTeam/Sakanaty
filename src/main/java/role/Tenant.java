@@ -1,3 +1,5 @@
+
+
 package role;
 import staticdb.HousingList;
 import staticdb.TenantsList;
@@ -20,6 +22,10 @@ public class Tenant extends User{
     private int apartmentID;
     private static final Logger LOGGER = Logger.getLogger(Tenant.class.getName());
 
+    private static final String ln = "\u001b[35m--------------------------------------------\u001b[0m";
+
+    private static final String fillLn = "--------------------------------------------";
+
     public Tenant(String username, String password, int tenantId, String type, String major, int age) {
         super(username,password,type,tenantId);
         this.major=major;
@@ -36,12 +42,13 @@ public class Tenant extends User{
         this.apartmentID = apartmentID;
     }
 
-    public int viewHousings() {int i=1;
+    public int viewHousings() {
+        int i = 1;
         for(Housing housing:HousingList.getHousing()){
-            String s = i+ "- Name: "+housing.getName()+"\nLocation: "+ housing.getLocation()+ "\nPrice: "+housing.getPrice()+"\nType: "+housing.getType();
+            String s = ln + "\n" + i+ "- Name: "+housing.getName()+"\nLocation: "+ housing.getLocation()+ "\nPrice: "+housing.getPrice()+"\nType: "+housing.getType();
             LOGGER.info(s);i++;
         }
-        return 1;
+        return i;
     }
 
     public String getMajor() {
@@ -56,42 +63,46 @@ public class Tenant extends User{
         id--;
         Housing housing = HousingList.getHousing().get(id);
         String s;
-        s="Name: "+ housing.getName()+"\nFloors: "+housing.getFloors().size();
+        s="\n\u001b[33m"+ fillLn +"\nName: "+ housing.getName()+"\nFloors: "+housing.getFloors().size() +"\n"+ fillLn + "\u001b[36m";
         LOGGER.info(s);
+        int z = 0;
         for(Floor floor:housing.getFloors()){
-            s="****************\nFloor id: "+floor.getFloorId()+"\nMaximum apartments: "+floor.getMaxApartments();
-            LOGGER.info(s);
+
+            s= fillLn + "\nFloor" + z + ", id: "+floor.getFloorId()+"\nMaximum apartments: "+floor.getMaxApartments();
+            LOGGER.info("\u001b[36m" + s +"\n"+ fillLn + "\u001b[35m");
             for (Apartment apartment: floor.getApartments()){
-                s="________\nApartment ID:" + apartment.getApartmentId()+"\nMax Tenants: " +apartment.getMaxTenantsNumber()+"\nBathrooms: " + apartment.getBathrooms()+"\nBedrooms = "+apartment.getBedrooms();
-                LOGGER.info(s);
+                s="Apartment ID:" + apartment.getApartmentId()+"\nMax Tenants: " +apartment.getMaxTenantsNumber()+"\nBathrooms: " + apartment.getBathrooms()+"\nBedrooms = "+apartment.getBedrooms();
+                LOGGER.info(s + "\u001b[35m");
                 if (housing.getType().equals("Student"))
                 {
-                    s="Tenants: " + apartment.getCurrTenants();
+                    s="\u001b[33m\nTenants: " + apartment.getCurrTenants() + "\n" + fillLn + "\u001b[37m";
                     LOGGER.info(s);
                     if(apartment.getTenants().isEmpty()) {
-                        s="This apartment is empty.";
-                        LOGGER.info(s);
+                        s="\u001b[31mThis apartment is empty.";
+                        LOGGER.info(s + "\u001b[37m");
+                        LOGGER.info(fillLn);
                     }
                     else {
                         for (Tenant tenant : apartment.getTenants()) {
-                            s="Name: " + tenant.getUsername() + "\nMajor: " + tenant.getMajor() + "\nAge: " + tenant.getAge() + "\n-------";
-                            LOGGER.info(s);
+                            s="\nName: " + tenant.getUsername() + "\nMajor: " + tenant.getMajor() + "\nAge: " + tenant.getAge();
+                            LOGGER.info(s + "\u001b[33m");
+                            LOGGER.info(fillLn + "\u001b[37m");
                         }
                     }
                 }
                 if(apartment.apartmentIsFull()) {
                     s = "Not available - Apartment is full!";
-                    LOGGER.info(s);
+                    LOGGER.info("\u001b[31m" + s + "\n\u001b[35m" + fillLn);
                 }
                 else {
                     s="Available - you can rent here!";
-                    LOGGER.info(s);
+                    LOGGER.info("\u001b[32m" + s + "\n\u001b[35m"+ fillLn);
                 }
             }
-            s="***************************";
-            LOGGER.info(s);
-            s="Preview: " + housing.getImage();
-            LOGGER.info(s);
+
+            s="\u001b[35m" + "\nPreview: " + housing.getImage();
+            LOGGER.info(s + "\n\u001b[36m");
+            z++;
         }
         return 1;
     }
@@ -116,6 +127,9 @@ public class Tenant extends User{
                 housing.getFloors().get(floorID).getApartments().get(apartmentID1).setCurrTenants(housing.getFloors().get(floorID).getApartments().get(apartmentID1).getCurrTenants() + 1);
                 if (housing.getFloors().get(floorID).getApartments().get(apartmentID1).getMaxTenantsNumber() == housing.getFloors().get(floorID).getApartments().get(apartmentID1).getCurrTenants())
                     housing.getFloors().get(floorID).getApartments().get(apartmentID1).setApartmentIsFull(true);
+
+                s="\n\u001b[32mBooking done.\u001b[0m";
+                LOGGER.info(s);
                 return 2;
             }
         }
@@ -125,14 +139,15 @@ public class Tenant extends User{
         String s;
         for (Map.Entry<Tenant,ArrayList<Furniture>> entry : Furniture.getFurnitureList().entrySet()) {
             if(entry.getKey()!=tenant) {
-                s="Owner " + entry.getKey().getUsername() + ":";
-                LOGGER.info(s);
+                s="\n\u001b[36mOwner " + entry.getKey().getUsername() + ":\n";
+//                LOGGER.info(s);
+                String str = "";
                 for (Furniture furniture : entry.getValue()) {
-                    s=furniture.getName() + "\t|\tPrice: " + furniture.getPrice() + "\t|\t";
-                    LOGGER.info(s);
+                    str = str + furniture.getName() + "\t|\tPrice: " + furniture.getPrice() + "\t|\t\n";
                 }
-                s="*************";
-                LOGGER.info(s);
+                str = s + str + "\u001b[0m";
+                LOGGER.info(str);
+                LOGGER.info(ln);
             }
         }
         return 1;
@@ -175,3 +190,5 @@ public class Tenant extends User{
         }
     }
 }
+
+
