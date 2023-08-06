@@ -139,14 +139,15 @@ public class Tenant extends User{
         String s;
         for (Map.Entry<Tenant,ArrayList<Furniture>> entry : Furniture.getFurnitureList().entrySet()) {
             if(entry.getKey()!=tenant) {
-                s="Owner " + entry.getKey().getUsername() + ":";
-                LOGGER.info(s);
+                s="\n\u001b[36mOwner " + entry.getKey().getUsername() + ":\n";
+//                LOGGER.info(s);
+                String str = "";
                 for (Furniture furniture : entry.getValue()) {
-                    s=furniture.getName() + "\t|\tPrice: " + furniture.getPrice() + "\t|\t";
-                    LOGGER.info(s);
+                    str = str + furniture.getName() + "\t|\tPrice: " + furniture.getPrice() + "\t|\t\n";
                 }
-                s="*************";
-                LOGGER.info(s);
+                str = s + str + "\u001b[0m";
+                LOGGER.info(str);
+                LOGGER.info(ln);
             }
         }
         return 1;

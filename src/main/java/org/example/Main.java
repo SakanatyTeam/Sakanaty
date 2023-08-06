@@ -214,9 +214,10 @@ public class Main {
                             LOGGER.info(s);
                         }
                     } else if (x == 2) {
+                        LOGGER.info(ln);
                         tenant.viewFurnitures(tenant);
                         String s;
-                        s="Enter Owner name and furniture type you want to buy or enter exit to quit:";
+                        s="\n\u001b[36mEnter Owner name and furniture type you want to buy or enter exit to quit:\u001b[0m";
                         LOGGER.info(s);
                         s="Owner name: ";
                         LOGGER.info(s);
