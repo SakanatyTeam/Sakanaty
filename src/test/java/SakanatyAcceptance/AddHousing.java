@@ -44,6 +44,7 @@ public void there_is_a_housing_with_name_location_image_price_service_and_type(S
     public void theHousingHaveFloorsWithIdAndMaxApartment(Integer int1) {
         floor = new Floor(Floor.autoIncrementTenantId(),int1);
         floorList.add(floor);
+        Floor.setFid();
     }
     @Given("the floor by id  have apartments with id and max tenant number {int}")
     public void theFloorByIdHaveApartmentsWithIdAndMaxTenantNumber(Integer int1) {

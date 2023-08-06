@@ -7,7 +7,7 @@ import java.util.List;
 public class HousingList {
 
     private HousingList() {
-            throw new IllegalStateException("Utility class");
+
     }
 
     static List<Housing> housing = new ArrayList<Housing>();

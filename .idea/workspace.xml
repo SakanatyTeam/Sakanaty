@@ -9,9 +9,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9b262339-5038-47c3-a39c-a441acc0a66f" name="Changes" comment="adam">
+    <list default="true" id="9b262339-5038-47c3-a39c-a441acc0a66f" name="Changes" comment="pulling">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/staticdb/HousingList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/staticdb/HousingList.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/SakanatyAcceptance/AddHousing.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/SakanatyAcceptance/AddHousing.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/SakanatyAcceptance/ViewTenantHousing.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/SakanatyAcceptance/ViewTenantHousing.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -70,7 +72,7 @@
       <recent name="D:\Software_Project\Sakanaty" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.org.example.Main">
+  <component name="RunManager" selected="JUnit.All in Sakanaty (1)">
     <configuration name="org.example.Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="org.example.Main" />
       <module name="Sakanaty" />
@@ -127,27 +129,8 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="All in Sakanaty (1)" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="Sakanaty" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="TEST_OBJECT" value="package" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="All in Sakanaty" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Sakanaty" />
-      <extension name="coverage" runner="jacoco">
-        <pattern>
-          <option name="PATTERN" value="org.example.Main" />
-          <option name="ENABLED" value="true" />
-          <option name="INCLUDE" value="false" />
-        </pattern>
-        <pattern>
-          <option name="PATTERN" value="*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
       <option name="PACKAGE_NAME" value="" />
       <option name="MAIN_CLASS_NAME" value="" />
       <option name="METHOD_NAME" value="" />
@@ -190,35 +173,17 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="SakanatyAcceptance in Sakanaty" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="Sakanaty" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="SakanatyAcceptance.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="SakanatyAcceptance" />
-      <option name="TEST_OBJECT" value="package" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <list>
       <item itemvalue="Application.org.example.Main" />
       <item itemvalue="Cucumber Java.Feature: view_owner_housings" />
       <item itemvalue="Cucumber Java.Scenario: Successfull view of the housings" />
       <item itemvalue="JUnit.All in Sakanaty (1)" />
-      <item itemvalue="JUnit.SakanatyAcceptance in Sakanaty" />
-      <item itemvalue="JUnit.All in Sakanaty" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.All in Sakanaty (1)" />
         <item itemvalue="Application.org.example.Main" />
-        <item itemvalue="JUnit.All in Sakanaty" />
-        <item itemvalue="JUnit.SakanatyAcceptance in Sakanaty" />
         <item itemvalue="Cucumber Java.Feature: view_owner_housings" />
-        <item itemvalue="JUnit.All in Sakanaty" />
       </list>
     </recent_temporary>
   </component>
@@ -251,6 +216,7 @@
       <workItem from="1691149191098" duration="9284000" />
       <workItem from="1691168176241" duration="1527000" />
       <workItem from="1691229060394" duration="950000" />
+      <workItem from="1691314618163" duration="1642000" />
     </task>
     <task id="LOCAL-00001" summary="initiate">
       <created>1688402890832</created>
@@ -546,7 +512,14 @@
       <option name="project" value="LOCAL" />
       <updated>1691229233123</updated>
     </task>
-    <option name="localTasksCounter" value="43" />
+    <task id="LOCAL-00043" summary="pulling">
+      <created>1691314656444</created>
+      <option name="number" value="00043" />
+      <option name="presentableId" value="LOCAL-00043" />
+      <option name="project" value="LOCAL" />
+      <updated>1691314656444</updated>
+    </task>
+    <option name="localTasksCounter" value="44" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -574,13 +547,14 @@
     <MESSAGE value="pushing to cloud" />
     <MESSAGE value="pushing to cloud3" />
     <MESSAGE value="adam" />
-    <option name="LAST_COMMIT_MESSAGE" value="adam" />
+    <MESSAGE value="pulling" />
+    <option name="LAST_COMMIT_MESSAGE" value="pulling" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/Sakanaty$Main.ic" NAME="Main Coverage Results" MODIFIED="1690908702644" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>org.example.*</FILTER>
     </SUITE>
-    <SUITE FILE_PATH="coverage/Sakanaty$org_example_Main.ic" NAME="org.example.Main Coverage Results" MODIFIED="1690968563403" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+    <SUITE FILE_PATH="coverage/Sakanaty$org_example_Main.ic" NAME="org.example.Main Coverage Results" MODIFIED="1691315508022" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>org.example.*</FILTER>
       <EXCLUDED_FILTER>org.example.Main</EXCLUDED_FILTER>
     </SUITE>
@@ -588,17 +562,16 @@
       <FILTER>*</FILTER>
       <EXCLUDED_FILTER>org.example.Main</EXCLUDED_FILTER>
     </SUITE>
-    <SUITE FILE_PATH="coverage/Sakanaty$All_in_Sakanaty.ic" NAME="All in Sakanaty Coverage Results" MODIFIED="1691002738049" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+    <SUITE FILE_PATH="coverage/Sakanaty$All_in_Sakanaty.ic" NAME="All in Sakanaty Coverage Results" MODIFIED="1691316398601" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/Sakanaty$SakanatyAcceptance_in_Sakanaty.ic" NAME="SakanatyAcceptance in Sakanaty Coverage Results" MODIFIED="1691316215130" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>*</FILTER>
       <EXCLUDED_FILTER>org.example.Main</EXCLUDED_FILTER>
     </SUITE>
-    <SUITE FILE_PATH="coverage/Sakanaty$SakanatyAcceptance_in_Sakanaty.ic" NAME="SakanatyAcceptance in Sakanaty Coverage Results" MODIFIED="1689187488227" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
-      <FILTER>SakanatyAcceptance.LoginSteps</FILTER>
-    </SUITE>
-    <SUITE FILE_PATH="coverage/Sakanaty$All_in_Sakanaty__1_.ic" NAME="All in Sakanaty (1) Coverage Results" MODIFIED="1691158721689" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/Sakanaty$All_in_Sakanaty__1_.ic" NAME="All in Sakanaty (1) Coverage Results" MODIFIED="1691315530260" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
     <SUITE FILE_PATH="coverage/Sakanaty$AcceptanceTest.ic" NAME="AcceptanceTest Coverage Results" MODIFIED="1690890668694" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>SakanatyAcceptance.*</FILTER>
     </SUITE>
-    <SUITE FILE_PATH="coverage/Sakanaty$All_in_Sakanaty.exec" NAME="All in Sakanaty Coverage Results" MODIFIED="1691159177658" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="jacoco" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+    <SUITE FILE_PATH="coverage/Sakanaty$All_in_Sakanaty.exec" NAME="All in Sakanaty Coverage Results" MODIFIED="1691316085206" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="jacoco" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>*</FILTER>
       <EXCLUDED_FILTER>org.example.Main</EXCLUDED_FILTER>
     </SUITE>
