@@ -11,6 +11,12 @@ import java.util.logging.Logger;
 
 public class Tenant extends User{
 
+    public static final String COLOR_BLUE = "\u001b[35m";
+    public static final String COLOR_GREEN = "\u001b[36m";
+    public static final String COLOR_WHITE = "\u001b[37m";
+    public static final String COLOR_PURPLE = "\n\u001b[35m";
+    public static final String COLOR_FULL_GREEN = "\u001b[32m";
+
     public Tenant() {
         setType("Tenant");
         setApartmentID(-1);
@@ -22,9 +28,9 @@ public class Tenant extends User{
     private int apartmentID;
     private static final Logger LOGGER = Logger.getLogger(Tenant.class.getName());
 
-    private static final String ln = "\u001b[35m--------------------------------------------\u001b[0m";
+    private static final String line = "\u001b[35m--------------------------------------------\u001b[0m";
 
-    private static final String fillLn = "--------------------------------------------";
+    private static final String fill = "--------------------------------------------";
 
     public Tenant(String username, String password, int tenantId, String type, String major, int age) {
         super(username,password,type,tenantId);
@@ -45,7 +51,7 @@ public class Tenant extends User{
     public int viewHousings() {
         int i = 1;
         for(Housing housing:HousingList.getHousing()){
-            String s = ln + "\n" + i+ "- Name: "+housing.getName()+"\nLocation: "+ housing.getLocation()+ "\nPrice: "+housing.getPrice()+"\nType: "+housing.getType();
+            String s = line + "\n" + i+ "- Name: "+housing.getName()+"\nLocation: "+ housing.getLocation()+ "\nPrice: "+housing.getPrice()+"\nType: "+housing.getType();
             LOGGER.info(s);i++;
         }
         return i;
@@ -63,45 +69,45 @@ public class Tenant extends User{
         id--;
         Housing housing = HousingList.getHousing().get(id);
         String s;
-        s="\n\u001b[33m"+ fillLn +"\nName: "+ housing.getName()+"\nFloors: "+housing.getFloors().size() +"\n"+ fillLn + "\u001b[36m";
+        s="\n\u001b[33m"+ fill +"\nName: "+ housing.getName()+"\nFloors: "+housing.getFloors().size() +"\n"+ fill + COLOR_GREEN;
         LOGGER.info(s);
         int z = 0;
         for(Floor floor:housing.getFloors()){
 
-            s= fillLn + "\nFloor" + z + ", id: "+floor.getFloorId()+"\nMaximum apartments: "+floor.getMaxApartments();
-            LOGGER.info("\u001b[36m" + s +"\n"+ fillLn + "\u001b[35m");
+            s= fill + "\nFloor" + z + ", id: "+floor.getFloorId()+"\nMaximum apartments: "+floor.getMaxApartments();
+            LOGGER.info(COLOR_GREEN + s +"\n"+ fill + COLOR_BLUE);
             for (Apartment apartment: floor.getApartments()){
                 s="Apartment ID:" + apartment.getApartmentId()+"\nMax Tenants: " +apartment.getMaxTenantsNumber()+"\nBathrooms: " + apartment.getBathrooms()+"\nBedrooms = "+apartment.getBedrooms();
-                LOGGER.info(s + "\u001b[35m");
+                LOGGER.info(s + COLOR_BLUE);
                 if (housing.getType().equals("Student"))
                 {
-                    s="\u001b[33m\nTenants: " + apartment.getCurrTenants() + "\n" + fillLn + "\u001b[37m";
+                    s="\u001b[33m\nTenants: " + apartment.getCurrTenants() + "\n" + fill + COLOR_WHITE;
                     LOGGER.info(s);
                     if(apartment.getTenants().isEmpty()) {
                         s="\u001b[31mThis apartment is empty.";
-                        LOGGER.info(s + "\u001b[37m");
-                        LOGGER.info(fillLn);
+                        LOGGER.info(s + COLOR_WHITE);
+                        LOGGER.info(fill);
                     }
                     else {
                         for (Tenant tenant : apartment.getTenants()) {
                             s="\nName: " + tenant.getUsername() + "\nMajor: " + tenant.getMajor() + "\nAge: " + tenant.getAge();
                             LOGGER.info(s + "\u001b[33m");
-                            LOGGER.info(fillLn + "\u001b[37m");
+                            LOGGER.info(fill + COLOR_WHITE);
                         }
                     }
                 }
                 if(apartment.apartmentIsFull()) {
                     s = "Not available - Apartment is full!";
-                    LOGGER.info("\u001b[31m" + s + "\n\u001b[35m" + fillLn);
+                    LOGGER.info("\u001b[31m" + s + COLOR_PURPLE + fill);
                 }
                 else {
                     s="Available - you can rent here!";
-                    LOGGER.info("\u001b[32m" + s + "\n\u001b[35m"+ fillLn);
+                    LOGGER.info(COLOR_FULL_GREEN + s + COLOR_PURPLE + fill);
                 }
             }
 
-            s="\u001b[35m" + "\nPreview: " + housing.getImage();
-            LOGGER.info(s + "\n\u001b[36m");
+            s= COLOR_BLUE + "\nPreview: " + housing.getImage();
+            LOGGER.info(s + COLOR_GREEN);
             z++;
         }
         return 1;
@@ -147,7 +153,7 @@ public class Tenant extends User{
                 }
                 str = s + str + "\u001b[0m";
                 LOGGER.info(str);
-                LOGGER.info(ln);
+                LOGGER.info(line);
             }
         }
         return 1;
