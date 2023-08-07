@@ -175,25 +175,27 @@ public class Tenant extends User{
     }
 
     public int viewFurnitures(Tenant tenant) {
-        StringBuilder bld = new StringBuilder();
-        String s;
+
+        String s="";
+        StringBuilder bld;
+        StringBuilder bld2;
+
         for (Map.Entry<Tenant,ArrayList<Furniture>> entry : Furniture.getFurnitureList().entrySet()) {
+            bld=new StringBuilder();
+            bld2=new StringBuilder();
             if(entry.getKey()!=tenant) {
                 s="\n\u001b[36mOwner " + entry.getKey().getUsername() + ":\n";
                 String str = "";
                 for (Furniture furniture : entry.getValue()) {
-                    bld=new StringBuilder(str);
                     bld.append(furniture.getName());
                     bld.append("\t|\tPrice: ");
                     bld.append(furniture.getPrice());
                     bld.append("\t|\t\n");
-
                 }
-                bld=new StringBuilder(bld);
-                bld.append(s);
-                bld.append(str);
-                bld.append("\u001b[0m");
-                str=bld.toString();
+                bld2.append(s);
+                bld2.append(bld);
+                bld2.append("\u001b[0m");
+                str=bld2.toString();
                 LOGGER.info(str);
                 LOGGER.info(LINE);
             }

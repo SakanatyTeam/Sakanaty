@@ -32,7 +32,6 @@ Scenario Outline: Failed booking
  | 211          |
  | 212          |
  | 221          |
-
   Scenario Outline: Unsuccessfully booking of unavailable apartment
     Given that the user is tenant
     And the tenant has apartment ID equals -1

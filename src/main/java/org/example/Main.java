@@ -61,10 +61,10 @@ public class Main {
                                 s = "Choose Action:\n1-Accept\n2-Reject";
                                 LOGGER.info(s);
                                 if (admin.takeAction(scan.nextInt(), x) == 1) {
-                                    s = "House accepted Successfully";
+                                    s = "\u001b[32mHouse Accepted Succefully!";
                                     LOGGER.info(s);
                                 } else {
-                                    s = "House Rejected Successfully";
+                                    s = "\u001b[32mHouse Accepted Succefully!";
                                     LOGGER.info(s);
                                 }
 
