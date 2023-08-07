@@ -97,13 +97,7 @@ public class Tenant extends User{
                 {
                     s="\u001b[33m\nTenants: " + apartment.getCurrTenants() + "\n" + FILL + COLOR_WHITE;
                     LOGGER.info(s);
-                    if(apartment.getTenants().isEmpty()) {
-                        s="\u001b[31mThis apartment is empty.";
-                        bld=new StringBuilder(s);
-                        bld.append(COLOR_WHITE);
-                        s=bld.toString();
-                        LOGGER.info(s);
-                        LOGGER.info(FILL);
+                    if(apartment.getTenants().isEmpty()) {s="\u001b[31mThis apartment is empty.";bld=new StringBuilder(s);bld.append(COLOR_WHITE);s=bld.toString();LOGGER.info(s);LOGGER.info(FILL);
                     }
                     else {
                         for (Tenant tenant : apartment.getTenants()) {
@@ -237,10 +231,7 @@ public class Tenant extends User{
             Furniture.getFurnitureList().get(tenant).add(fr);
             Furniture.getFurnitureList().get(o).remove(fr);
             return 2;
-        } else {
-            s= "You cant buy from yourself!";
-            LOGGER.info(s);
-            return 3;
+        } else {s= "You cant buy from yourself!"; LOGGER.info(s);return 3;
         }
     }
 }

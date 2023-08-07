@@ -8,7 +8,6 @@ import java.util.List;
 
 public class TenantsList {
     private TenantsList() {
-            throw new IllegalStateException("Utility class");
     }
 
     private static final String TENANT = "Tenant";

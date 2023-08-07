@@ -11,8 +11,10 @@
   <component name="ChangeListManager">
     <list default="true" id="9b262339-5038-47c3-a39c-a441acc0a66f" name="Changes" comment="PUSHING">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/role/Admin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/role/Admin.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/role/Tenant.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/role/Tenant.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/staticdb/TenantsList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/staticdb/TenantsList.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/staticdb/UsersList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/staticdb/UsersList.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -71,7 +73,7 @@
       <recent name="D:\Software_Project\Sakanaty" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.org.example.Main">
+  <component name="RunManager" selected="JUnit.All in Sakanaty">
     <configuration name="org.example.Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="org.example.Main" />
       <module name="Sakanaty" />
@@ -187,8 +189,8 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.org.example.Main" />
         <item itemvalue="JUnit.All in Sakanaty" />
+        <item itemvalue="Application.org.example.Main" />
         <item itemvalue="Cucumber Java.Feature: view_owner_housings" />
       </list>
     </recent_temporary>
@@ -226,13 +228,8 @@
       <workItem from="1691320719096" duration="3677000" />
       <workItem from="1691340431927" duration="1603000" />
       <workItem from="1691352489924" duration="833000" />
-    </task>
-    <task id="LOCAL-00005" summary="new message!">
-      <created>1688462095296</created>
-      <option name="number" value="00005" />
-      <option name="presentableId" value="LOCAL-00005" />
-      <option name="project" value="LOCAL" />
-      <updated>1688462095296</updated>
+      <workItem from="1691353344098" duration="135000" />
+      <workItem from="1691387554881" duration="284000" />
     </task>
     <task id="LOCAL-00006" summary="new message!">
       <created>1688483899871</created>
@@ -570,7 +567,14 @@
       <option name="project" value="LOCAL" />
       <updated>1691341406216</updated>
     </task>
-    <option name="localTasksCounter" value="54" />
+    <task id="LOCAL-00054" summary="PUSHING">
+      <created>1691353349713</created>
+      <option name="number" value="00054" />
+      <option name="presentableId" value="LOCAL-00054" />
+      <option name="project" value="LOCAL" />
+      <updated>1691353349713</updated>
+    </task>
+    <option name="localTasksCounter" value="55" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -618,7 +622,7 @@
       <FILTER>*</FILTER>
       <EXCLUDED_FILTER>org.example.Main</EXCLUDED_FILTER>
     </SUITE>
-    <SUITE FILE_PATH="coverage/Sakanaty$All_in_Sakanaty.ic" NAME="All in Sakanaty Coverage Results" MODIFIED="1691321910719" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+    <SUITE FILE_PATH="coverage/Sakanaty$All_in_Sakanaty.ic" NAME="All in Sakanaty Coverage Results" MODIFIED="1691387807161" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <EXCLUDED_FILTER>org.example.Main</EXCLUDED_FILTER>
     </SUITE>
     <SUITE FILE_PATH="coverage/Sakanaty$SakanatyAcceptance_in_Sakanaty.ic" NAME="SakanatyAcceptance in Sakanaty Coverage Results" MODIFIED="1691316215130" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">

@@ -33,8 +33,7 @@ public class Admin  extends  User{
     }
 
     public int takeAction(int nextInt,int id) {
-        if (nextInt != 1 && nextInt!=2)
-            return 0;
+        if (nextInt != 1 && nextInt!=2) return 0;
         else if (nextInt==1)
         {
             HousingList.getHousing().add(HousingList.getPendingHousings().get(--id)) ;
