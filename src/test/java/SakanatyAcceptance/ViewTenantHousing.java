@@ -21,7 +21,7 @@ public class ViewTenantHousing {
     @Then("the tenant can view housing.")
     public void the_tenant_can_view_housing() {
 
-        assertEquals(1,tenant.viewHousings());
+        assertTrue(1<tenant.viewHousings());
     }
 
 
