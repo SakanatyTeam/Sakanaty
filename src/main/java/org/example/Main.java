@@ -60,11 +60,12 @@ public class Main {
                             if (x < i) {
                                 s = "Choose Action:\n1-Accept\n2-Reject";
                                 LOGGER.info(s);
-                                if (admin.takeAction(scan.nextInt(), x) == 1) {
+                                int y = scan.nextInt();
+                                if (admin.takeAction(y, x) == 1) {
                                     s = "\u001b[32mHouse Accepted Succefully!";
                                     LOGGER.info(s);
-                                } else {
-                                    s = "\u001b[32mHouse Accepted Succefully!";
+                                } else if (admin.takeAction(y, x) == 2) {
+                                    s = "\u001b[32mHouse Rejected Succefully!";
                                     LOGGER.info(s);
                                 }
 
